@@ -21,51 +21,52 @@ class _SelectCategoryScreenState extends State<SelectCategoryScreen> {
   final List<Map<String, dynamic>> _fallbackCategories = [
     {
       'id': 1,
-      'name': 'Water Pollution & Effluents',
-      'description':
-          'Water Act, STP/ETP standards, discharge limits & ZLD norms',
-      'icon': Icons.water_drop_outlined,
-      'color': Color(0xFF0284C7),
-    },
-    {
-      'id': 2,
-      'name': 'Air Emissions & Stack Monitoring',
-      'description':
-          'Air Act, DG sets, stack emission limits, CEMS calibration',
-      'icon': Icons.air_rounded,
-      'color': Color(0xFF0D9488),
-    },
-    {
-      'id': 3,
-      'name': 'Hazardous & Solid Waste',
-      'description':
-          'HWM Rules, TSDF manifest tracking, authorized recycler compliance',
-      'icon': Icons.delete_sweep_outlined,
-      'color': Color(0xFFD97706),
-    },
-    {
-      'id': 4,
-      'name': 'Environmental Clearance & CTO/CTE',
-      'description':
-          'EIA notification 2006, Consent to Establish & Operate renewals',
+      'name': 'Environmental Clearance',
+      'description': 'EIA notification, EC conditions and compliance',
       'icon': Icons.verified_outlined,
       'color': Color(0xFF16A34A),
     },
     {
-      'id': 5,
-      'name': 'Forest, Coastal & Biodiversity',
-      'description':
-          'CRZ classifications, forest clearances & state biodiversity rules',
-      'icon': Icons.forest_outlined,
+      'id': 2,
+      'name': 'Construction',
+      'description': 'Building permissions, RERA environmental norms',
+      'icon': Icons.construction_outlined,
+      'color': Color(0xFFD97706),
+    },
+    {
+      'id': 3,
+      'name': 'Real Estate',
+      'description': 'Townships, area development projects compliance',
+      'icon': Icons.apartment_outlined,
       'color': Color(0xFF4338CA),
     },
     {
-      'id': 6,
-      'name': 'Factory Safety & Statutory Notices',
-      'description':
-          'Show cause notices, SPCB directions under section 33A/31A',
-      'icon': Icons.gavel_rounded,
+      'id': 4,
+      'name': 'Mining',
+      'description': 'Mining leases, forest clearance, restoration',
+      'icon': Icons.landscape_outlined,
       'color': Color(0xFFDC2626),
+    },
+    {
+      'id': 5,
+      'name': 'Enviro-Legal',
+      'description': 'NGT cases, SPCB show-cause notices, hearings',
+      'icon': Icons.gavel_rounded,
+      'color': Color(0xFF0D9488),
+    },
+    {
+      'id': 6,
+      'name': 'Industry',
+      'description': 'Manufacturing units, CTO/CTE renewals, inspections',
+      'icon': Icons.factory_outlined,
+      'color': Color(0xFF0284C7),
+    },
+    {
+      'id': 7,
+      'name': 'CRZ & Coastal Regulation',
+      'description': 'Coastal zone projects and shoreline approvals',
+      'icon': Icons.water_drop_outlined,
+      'color': Color(0xFF0284C7),
     },
   ];
 

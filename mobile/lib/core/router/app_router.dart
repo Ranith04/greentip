@@ -33,6 +33,7 @@ import '../../presentation/screens/user/my_queries_screen.dart';
 import '../../presentation/screens/user/notifications_screen.dart';
 import '../../presentation/screens/user/query_details_screen.dart';
 import '../../presentation/screens/user/query_submitted_screen.dart';
+import '../../presentation/screens/user/review_query_screen.dart';
 import '../../presentation/screens/user/review_response_screen.dart';
 import '../../presentation/screens/user/select_category_screen.dart';
 import '../../presentation/screens/user/user_home_screen.dart';
@@ -132,6 +133,14 @@ class AppRouter {
         builder: (context, state) {
           final q = state.extra as QueryModel?;
           return QuerySubmittedScreen(query: q);
+        },
+      ),
+      GoRoute(
+        path: '/user/review-query',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) {
+          final formData = state.extra as Map<String, dynamic>;
+          return ReviewQueryScreen(formData: formData);
         },
       ),
       GoRoute(

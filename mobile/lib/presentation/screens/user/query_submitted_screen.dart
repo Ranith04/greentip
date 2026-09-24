@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../data/models/query_model.dart';
@@ -58,7 +57,7 @@ class QuerySubmittedScreen extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               const Text(
-                'Your compliance inquiry has been officially submitted and routed for technical evaluation.',
+                'Your query has been submitted to GreenTIP.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 14,
@@ -81,56 +80,65 @@ class QuerySubmittedScreen extends StatelessWidget {
                     color: AppColors.primaryLight.withValues(alpha: 0.4),
                   ),
                 ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
+                child: Column(
                   children: [
-                    const Icon(
-                      Icons.confirmation_number_outlined,
-                      size: 20,
-                      color: AppColors.primaryDark,
+                    const Text(
+                      'Query ID',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: AppColors.textSecondary,
+                      ),
                     ),
-                    const SizedBox(width: 10),
+                    const SizedBox(height: 4),
                     Text(
                       formattedRef,
                       style: const TextStyle(
-                        fontSize: 16,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: AppColors.primaryDark,
                         letterSpacing: 0.5,
                       ),
                     ),
-                    const SizedBox(width: 8),
-                    IconButton(
-                      icon: const Icon(
-                        Icons.copy_rounded,
-                        size: 18,
-                        color: AppColors.primaryDark,
+                    const SizedBox(height: 12),
+                    const Text(
+                      'Category',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: AppColors.textSecondary,
                       ),
-                      onPressed: () {
-                        Clipboard.setData(ClipboardData(text: formattedRef));
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text('Reference ID copied to clipboard'),
-                            behavior: SnackBarBehavior.floating,
-                          ),
-                        );
-                      },
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      query?.categoryName ?? 'General',
+                      style: const TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.primary,
+                      ),
                     ),
                   ],
+                ),
+              ),
+              const SizedBox(height: 16),
+              const Text(
+                'You will be notified once an expert responds.',
+                style: TextStyle(
+                  fontSize: 12,
+                  color: AppColors.textSecondary,
                 ),
               ),
               const Spacer(),
 
               // Actions
               AppPrimaryButton(
-                text: 'Track Query Progress',
+                text: 'View Query',
                 onPressed: () {
                   context.go('/user/query-details/$queryId');
                 },
               ),
               const SizedBox(height: 12),
               AppOutlineButton(
-                text: 'Back to Dashboard',
+                text: 'Back to Home',
                 borderColor: AppColors.border,
                 textColor: AppColors.textPrimary,
                 onPressed: () {
