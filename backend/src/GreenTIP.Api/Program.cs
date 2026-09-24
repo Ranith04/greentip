@@ -134,4 +134,29 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+// Seed Dummy Data
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<GreenTIP.Infrastructure.Data.GreenTipDbContext>();
+    var passwordHasher = scope.ServiceProvider.GetRequiredService<GreenTIP.Application.Interfaces.IPasswordHasher>();
+    
+    // Ensure DB is created
+    dbContext.Database.EnsureCreated();
+
+    if (!dbContext.Users.Any(u => u.Email == "user@gmail.com"))
+    {
+        dbContext.Users.Add(new GreenTIP.Domain.Entities.User
+        {
+            Name = "Test User",
+            Email = "user@gmail.com",
+            Password = passwordHasher.HashPassword("12345678"),
+            RoleType = "2",
+            Status = "1",
+            ContactNo = 1234567890,
+            CreatedOn = DateTime.UtcNow
+        });
+        dbContext.SaveChanges();
+    }
+}
+
 app.Run();

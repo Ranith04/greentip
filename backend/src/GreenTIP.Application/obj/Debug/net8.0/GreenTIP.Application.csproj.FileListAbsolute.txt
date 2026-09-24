@@ -13,3 +13,4 @@ D:\greentip\backend\src\GreenTIP.Application\obj\Debug\net8.0\GreenTIP.Applicati
 D:\greentip\backend\src\GreenTIP.Application\obj\Debug\net8.0\refint\GreenTIP.Application.dll
 D:\greentip\backend\src\GreenTIP.Application\obj\Debug\net8.0\GreenTIP.Application.pdb
 D:\greentip\backend\src\GreenTIP.Application\obj\Debug\net8.0\ref\GreenTIP.Application.dll
+D:\greentip\backend\src\GreenTIP.Application\obj\Debug\net8.0\GreenTIP.Application.sourcelink.json

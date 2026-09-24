@@ -7,12 +7,12 @@ class ApiEndpoints {
   static String get baseUrl {
     try {
       if (Platform.isAndroid) {
-        return 'http://10.0.2.2:5000/api/v1';
+        return 'http://10.0.2.2:5296/api/v1';
       }
     } catch (_) {
       // Fallback for web/test
     }
-    return 'http://localhost:5000/api/v1';
+    return 'http://localhost:5296/api/v1';
   }
 
   // Auth

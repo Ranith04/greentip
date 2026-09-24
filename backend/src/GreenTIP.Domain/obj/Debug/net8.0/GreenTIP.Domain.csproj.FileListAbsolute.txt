@@ -9,3 +9,4 @@ D:\greentip\backend\src\GreenTIP.Domain\obj\Debug\net8.0\GreenTIP.Domain.dll
 D:\greentip\backend\src\GreenTIP.Domain\obj\Debug\net8.0\refint\GreenTIP.Domain.dll
 D:\greentip\backend\src\GreenTIP.Domain\obj\Debug\net8.0\GreenTIP.Domain.pdb
 D:\greentip\backend\src\GreenTIP.Domain\obj\Debug\net8.0\ref\GreenTIP.Domain.dll
+D:\greentip\backend\src\GreenTIP.Domain\obj\Debug\net8.0\GreenTIP.Domain.sourcelink.json

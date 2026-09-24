@@ -147,3 +147,4 @@ D:\greentip\backend\src\GreenTIP.Api\obj\Debug\net8.0\GreenTIP.Api.genruntimecon
 D:\greentip\backend\src\GreenTIP.Api\obj\Debug\net8.0\ref\GreenTIP.Api.dll
 D:\greentip\backend\src\GreenTIP.Api\bin\Debug\net8.0\Microsoft.Bcl.Cryptography.dll
 D:\greentip\backend\src\GreenTIP.Api\bin\Debug\net8.0\System.Formats.Asn1.dll
+D:\greentip\backend\src\GreenTIP.Api\obj\Debug\net8.0\GreenTIP.Api.sourcelink.json

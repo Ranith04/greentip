@@ -15,3 +15,4 @@ D:\greentip\backend\src\GreenTIP.Infrastructure\obj\Debug\net8.0\GreenTIP.Infras
 D:\greentip\backend\src\GreenTIP.Infrastructure\obj\Debug\net8.0\refint\GreenTIP.Infrastructure.dll
 D:\greentip\backend\src\GreenTIP.Infrastructure\obj\Debug\net8.0\GreenTIP.Infrastructure.pdb
 D:\greentip\backend\src\GreenTIP.Infrastructure\obj\Debug\net8.0\ref\GreenTIP.Infrastructure.dll
+D:\greentip\backend\src\GreenTIP.Infrastructure\obj\Debug\net8.0\GreenTIP.Infrastructure.sourcelink.json
