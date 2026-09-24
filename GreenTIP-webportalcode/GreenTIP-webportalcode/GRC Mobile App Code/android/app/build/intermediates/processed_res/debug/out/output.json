@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "applicationId": "com.grc_greentip",
+  "variantType": "BASE_APK",
+  "elements": [
+    {
+      "outputType": {
+        "type": "PROCESSED_RES"
+      },
+      "apkData": {
+        "type": "MAIN",
+        "splits": [],
+        "versionCode": 3,
+        "versionName": "1.1",
+        "outputFile": "app-debug.apk",
+        "fullName": "debug",
+        "baseName": "debug",
+        "dirName": ""
+      },
+      "path": "resources-debug.ap_",
+      "properties": {
+        "packageId": "com.grc_greentip",
+        "split": "",
+        "minSdkVersion": "16"
+      }
+    }
+  ]
+}

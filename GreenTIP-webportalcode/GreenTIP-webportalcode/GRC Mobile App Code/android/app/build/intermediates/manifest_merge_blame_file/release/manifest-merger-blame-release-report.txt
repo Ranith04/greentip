@@ -1,0 +1,135 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.grc_greentip"
+4    android:versionCode="3"
+5    android:versionName="1.1" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+8-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:4:5-67
+11-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:4:22-64
+12    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+12-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:5:5-77
+12-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:5:22-75
+13    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+13-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:6:6-81
+13-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:6:23-78
+14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+14-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:7:5-81
+14-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:7:22-78
+15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+15-->[:react-native-community_netinfo] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/release/AndroidManifest.xml:9:5-79
+15-->[:react-native-community_netinfo] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/release/AndroidManifest.xml:9:22-76
+16    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+16-->[:react-native-community_netinfo] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/release/AndroidManifest.xml:10:5-76
+16-->[:react-native-community_netinfo] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/release/AndroidManifest.xml:10:22-73
+17    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+17-->[:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:5-83
+17-->[:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:22-80
+18
+19    <application
+19-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:8:5-30:19
+20        android:name="com.grc_greentip.MainApplication"
+20-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:9:7-38
+21        android:allowBackup="false"
+21-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:12:7-34
+22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+22-->[androidx.core:core:1.6.0-beta01] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/671cd0f50fc241d5a9ff286720ad814c/core-1.6.0-beta01/AndroidManifest.xml:24:18-86
+23        android:icon="@mipmap/ic_launcher"
+23-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:11:7-41
+24        android:label="@string/app_name"
+24-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:10:7-39
+25        android:theme="@style/AppTheme"
+25-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:13:7-38
+26        android:usesCleartextTraffic="true" >
+26-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:14:9-44
+27        <activity
+27-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:16:7-28:18
+28            android:name="com.grc_greentip.MainActivity"
+28-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:17:9-37
+29            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+29-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:19:9-86
+30            android:label="@string/app_name"
+30-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:18:9-41
+31            android:launchMode="singleTask"
+31-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:20:9-40
+32            android:windowSoftInputMode="adjustResize" >
+32-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:21:11-53
+33            <intent-filter>
+33-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:22:9-27:25
+34                <action android:name="android.intent.action.MAIN" />
+34-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:23:13-65
+34-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:23:21-62
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:24:13-73
+36-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:24:23-70
+37
+38                <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
+38-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:25:12-76
+38-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:25:20-74
+39            </intent-filter>
+40        </activity>
+41        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+41-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:29:7-84
+41-->/Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:29:17-81
+42        <!-- Android 7.0 照片、APK下载保存路径 -->
+43        <provider
+43-->[:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/release/AndroidManifest.xml:19:9-27:20
+44            android:name="androidx.core.content.FileProvider"
+44-->[:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/release/AndroidManifest.xml:20:13-62
+45            android:authorities="com.mayenjoy.RNDownloadManager.fileProvider"
+45-->[:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/release/AndroidManifest.xml:21:13-78
+46            android:exported="false"
+46-->[:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/release/AndroidManifest.xml:22:13-37
+47            android:grantUriPermissions="true" >
+47-->[:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/release/AndroidManifest.xml:23:13-47
+48            <meta-data
+48-->[:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/release/AndroidManifest.xml:24:13-26:58
+49                android:name="android.support.FILE_PROVIDER_PATHS"
+49-->[:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/release/AndroidManifest.xml:25:17-67
+50                android:resource="@xml/provider_paths" />
+50-->[:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/release/AndroidManifest.xml:26:17-55
+51        </provider>
+52        <provider
+52-->[:react-native-image-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:10:9-18:20
+53            android:name="com.imagepicker.FileProvider"
+53-->[:react-native-image-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:11:13-56
+54            android:authorities="com.grc_greentip.provider"
+54-->[:react-native-image-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:13-60
+55            android:exported="false"
+55-->[:react-native-image-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:13:13-37
+56            android:grantUriPermissions="true" >
+56-->[:react-native-image-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/release/AndroidManifest.xml:14:13-47
+57            <meta-data
+57-->[:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/release/AndroidManifest.xml:24:13-26:58
+58                android:name="android.support.FILE_PROVIDER_PATHS"
+58-->[:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/release/AndroidManifest.xml:25:17-67
+59                android:resource="@xml/provider_paths" />
+59-->[:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/release/AndroidManifest.xml:26:17-55
+60        </provider>
+61        <provider
+61-->[:react-native-webview] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:12:9-20:20
+62            android:name="com.reactnativecommunity.webview.RNCWebViewFileProvider"
+62-->[:react-native-webview] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:13:13-83
+63            android:authorities="com.grc_greentip.fileprovider"
+63-->[:react-native-webview] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:14:13-64
+64            android:exported="false"
+64-->[:react-native-webview] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:15:13-37
+65            android:grantUriPermissions="true" >
+65-->[:react-native-webview] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-webview/android/build/intermediates/library_manifest/release/AndroidManifest.xml:16:13-47
+66            <meta-data
+66-->[:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/release/AndroidManifest.xml:24:13-26:58
+67                android:name="android.support.FILE_PROVIDER_PATHS"
+67-->[:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/release/AndroidManifest.xml:25:17-67
+68                android:resource="@xml/file_provider_paths" />
+68-->[:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/release/AndroidManifest.xml:26:17-55
+69        </provider>
+70    </application>
+71
+72</manifest>

@@ -1,0 +1,6 @@
+module Pods_grc {
+  umbrella header "Pods-grc-umbrella.h"
+
+  export *
+  module * { export * }
+}

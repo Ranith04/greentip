@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="grc/app" />
+      <module fileurl="file://$PROJECT_DIR$/grc.iml" filepath="$PROJECT_DIR$/grc.iml" group="grc" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-678930259/grc-react-native-community_netinfo.iml" filepath="$PROJECT_DIR$/.idea/modules/-678930259/grc-react-native-community_netinfo.iml" group="grc/react-native-community_netinfo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-769729816/grc-react-native-fetch-blob.iml" filepath="$PROJECT_DIR$/.idea/modules/-769729816/grc-react-native-fetch-blob.iml" group="grc/react-native-fetch-blob" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/@react-native-community/async-storage/android/react-native-community_async-storage.iml" filepath="$PROJECT_DIR$/../node_modules/@react-native-community/async-storage/android/react-native-community_async-storage.iml" group="grc/react-native-community_async-storage" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/@react-native-community/masked-view/android/react-native-community_masked-view.iml" filepath="$PROJECT_DIR$/../node_modules/@react-native-community/masked-view/android/react-native-community_masked-view.iml" group="grc/react-native-community_masked-view" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/@react-native-community/netinfo/android/react-native-community_netinfo.iml" filepath="$PROJECT_DIR$/../node_modules/@react-native-community/netinfo/android/react-native-community_netinfo.iml" group="grc/react-native-community_netinfo" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-document-picker/android/react-native-document-picker.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-document-picker/android/react-native-document-picker.iml" group="grc/react-native-document-picker" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-easy-downloader/android/react-native-easy-downloader.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-easy-downloader/android/react-native-easy-downloader.iml" group="grc/react-native-easy-downloader" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-fetch-blob/android/react-native-fetch-blob.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-fetch-blob/android/react-native-fetch-blob.iml" group="grc/react-native-fetch-blob" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-fs/android/react-native-fs.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-fs/android/react-native-fs.iml" group="grc/react-native-fs" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-gesture-handler/android/react-native-gesture-handler.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-gesture-handler/android/react-native-gesture-handler.iml" group="grc/react-native-gesture-handler" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1996797096/react-native-image-picker.iml" filepath="$PROJECT_DIR$/.idea/modules/-1996797096/react-native-image-picker.iml" group="grc/react-native-image-picker" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-reanimated/android/react-native-reanimated.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-reanimated/android/react-native-reanimated.iml" group="grc/react-native-reanimated" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-safe-area-context/android/react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-safe-area-context/android/react-native-safe-area-context.iml" group="grc/react-native-safe-area-context" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-screens/android/react-native-screens.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-screens/android/react-native-screens.iml" group="grc/react-native-screens" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-splash-screen/android/react-native-splash-screen.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-splash-screen/android/react-native-splash-screen.iml" group="grc/react-native-splash-screen" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-vector-icons/android/react-native-vector-icons.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-vector-icons/android/react-native-vector-icons.iml" group="grc/react-native-vector-icons" />
+      <module fileurl="file://$PROJECT_DIR$/../node_modules/react-native-webview/android/react-native-webview.iml" filepath="$PROJECT_DIR$/../node_modules/react-native-webview/android/react-native-webview.iml" group="grc/react-native-webview" />
+    </modules>
+  </component>
+</project>

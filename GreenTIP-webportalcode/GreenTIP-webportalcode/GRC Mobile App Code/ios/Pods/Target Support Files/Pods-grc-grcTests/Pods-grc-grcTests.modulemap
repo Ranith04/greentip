@@ -1,0 +1,6 @@
+module Pods_grc_grcTests {
+  umbrella header "Pods-grc-grcTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

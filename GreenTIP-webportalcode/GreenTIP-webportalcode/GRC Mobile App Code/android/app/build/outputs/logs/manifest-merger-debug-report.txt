@@ -1,0 +1,364 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:1:1-32:12
+MERGED from [com.facebook.flipper:flipper:0.33.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/b3766e41095604756aa8f8129dbc38ae/jetified-flipper-0.33.1/AndroidManifest.xml:8:1-18:12
+MERGED from [com.facebook.flipper:flipper-network-plugin:0.33.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/98cff26851b718fc79fbd189f6068387/jetified-flipper-network-plugin-0.33.1/AndroidManifest.xml:8:1-15:12
+MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.33.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/64bb1b3134fd7ac0b01982588cbbe6c2/jetified-flipper-fresco-plugin-0.33.1/AndroidManifest.xml:8:1-15:12
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/a14105437c28665c85d041980d4b9c2a/multidex-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [:react-native-splash-screen] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-14:12
+MERGED from [:react-native-document-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-document-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-fs] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-fs/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-13:12
+MERGED from [:react-native-community_async-storage] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-community_masked-view] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-community_netinfo] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-12:12
+MERGED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-30:12
+MERGED from [:react-native-fetch-blob] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-14:12
+MERGED from [:react-native-gesture-handler] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-image-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-21:12
+MERGED from [:react-native-reanimated] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-safe-area-context] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-safe-area-context/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-screens] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-vector-icons] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-11:12
+MERGED from [:react-native-webview] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-23:12
+MERGED from [com.facebook.react:react-native:0.62.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/e8cc44f6b68a0716d1e72d9130280ae3/jetified-react-native-0.62.0/AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/54972eed75d5a0ae7261aba7ffc821e2/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [org.webkit:android-jsc:r245459] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/fc98648796d67b908efa63b74da71f96/jetified-android-jsc-r245459/AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.fresco:flipper:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/1cc199438b8a9cb271c306b2dff2e706/jetified-flipper-2.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:stetho:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/d9ae8033c41de887902b6d22300f11e5/jetified-stetho-2.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:fresco:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/e87ed8e39b909aa96c8f7d54bdda078b/jetified-fresco-2.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/df5249d0eadc487462183f02d8e836a0/jetified-imagepipeline-okhttp3-2.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/73383fceffa62887d7b22cef48ef2c18/jetified-drawee-2.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/2a9e9211e0905ba56299ef119684fdd5/jetified-nativeimagefilters-2.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/e6288047acb4c26fa303fca75bb6b0f3/jetified-imagepipeline-2.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/7cabff7638cebdbd3fe05f1d2591e907/jetified-nativeimagetranscoder-2.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/9635f121f065334393b1885d2ff82775/jetified-imagepipeline-base-2.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.8.2] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/5d9ba724a20d023a58df2be0e0f95854/jetified-soloader-0.8.2/AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.android.material:material:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/33e8ce2a63b5b691b21b1eb67462e4a2/material-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/d31435c4afe13012f248cb173a0b4b36/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/0e4e9b14dce0e7dee78fb692237ab917/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/cd02317c23e662d0fa4ab88d0d0916d7/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/65c3d4650b10035e3c16dbbe7955e172/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/f509f6d2f9c1ff170092c34a0922c9f9/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.2.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/072161845c1ac7ba4ad633efc915f376/fragment-1.2.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/be0b3c7258e6da73a16db7ad25cbd1f2/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/f082c57b244577a22e1236d38388ce52/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/e492391935922ce61c196b0901270ddd/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/e62f873cf4263d40c7b89017e7a83d01/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/38fa8e3fc15eea0e4bd1cc9b7f46d185/jetified-activity-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/7ced6c91ac482bc6e6ce9aa80fc65495/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/a3ff52c02bd8c6ecf6b5c868009ecb0c/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/8c15fd988bc26238d3de2baef228f7dc/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/10fcddba391b31bd86d702ee5aeb2035/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.6.0-beta01] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/671cd0f50fc241d5a9ff286720ad814c/core-1.6.0-beta01/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/1e931abee3afbede18629b7ccd33d0ef/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/c954b9dc49d813a57e53fca9fa824039/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/a9b5a5fc54865b7c521ab531bcfd4f5e/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/7583a1193aea876241da18273384578b/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/b1af4f2bb3cdb8a270b23f3dd207998b/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/dd9afa252f6f41ce3d69c8be02d16bd6/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/6a6af4ea2fadaa66c773f3ffe79910a7/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/8a5e36edf0bf6877cab03a462d62c58d/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/f308a80268527ee3a98b201ce58e0ed5/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/b00e05c5496a872f0e85a2965fea390a/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.facebook.soloader:annotation:0.8.2] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/f3de27f7197d701b243fa66e86298a49/jetified-annotation-0.8.2/AndroidManifest.xml:2:1-13:12
+MERGED from [com.facebook.fresco:fbcore:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/9512fe00df1377b65e6066f0e13506d3/jetified-fbcore-2.0.0/AndroidManifest.xml:2:1-9:12
+INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:1:1-32:12
+	package
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:2:3-29
+		INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:1:1-32:12
+		INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:1:1-32:12
+		INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:4:5-67
+MERGED from [com.facebook.flipper:flipper:0.33.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/b3766e41095604756aa8f8129dbc38ae/jetified-flipper-0.33.1/AndroidManifest.xml:15:5-67
+MERGED from [com.facebook.flipper:flipper:0.33.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/b3766e41095604756aa8f8129dbc38ae/jetified-flipper-0.33.1/AndroidManifest.xml:15:5-67
+MERGED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-67
+MERGED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:4:22-64
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:5:5-77
+	android:name
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:5:22-75
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:6:6-81
+MERGED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:5-80
+MERGED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:5-80
+	android:name
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:6:23-78
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:7:5-81
+MERGED from [:react-native-fs] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-fs/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-81
+MERGED from [:react-native-fs] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-fs/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-81
+MERGED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-81
+MERGED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:5-81
+	android:name
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:7:22-78
+application
+ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:8:5-30:19
+MERGED from [:react-native-splash-screen] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-12:19
+MERGED from [:react-native-splash-screen] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-12:19
+MERGED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:5-28:19
+MERGED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:5-28:19
+MERGED from [:react-native-fetch-blob] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-12:19
+MERGED from [:react-native-fetch-blob] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-12:19
+MERGED from [:react-native-image-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-image-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-webview] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-21:19
+MERGED from [:react-native-webview] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-21:19
+MERGED from [com.facebook.react:react-native:0.62.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/e8cc44f6b68a0716d1e72d9130280ae3/jetified-react-native-0.62.0/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.react:react-native:0.62.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/e8cc44f6b68a0716d1e72d9130280ae3/jetified-react-native-0.62.0/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.8.2] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/5d9ba724a20d023a58df2be0e0f95854/jetified-soloader-0.8.2/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.8.2] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/5d9ba724a20d023a58df2be0e0f95854/jetified-soloader-0.8.2/AndroidManifest.xml:11:5-20
+MERGED from [com.google.android.material:material:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/33e8ce2a63b5b691b21b1eb67462e4a2/material-1.1.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/33e8ce2a63b5b691b21b1eb67462e4a2/material-1.1.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.core:core:1.6.0-beta01] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/671cd0f50fc241d5a9ff286720ad814c/core-1.6.0-beta01/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.6.0-beta01] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/671cd0f50fc241d5a9ff286720ad814c/core-1.6.0-beta01/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/c954b9dc49d813a57e53fca9fa824039/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/c954b9dc49d813a57e53fca9fa824039/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [com.facebook.soloader:annotation:0.8.2] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/f3de27f7197d701b243fa66e86298a49/jetified-annotation-0.8.2/AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:annotation:0.8.2] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/f3de27f7197d701b243fa66e86298a49/jetified-annotation-0.8.2/AndroidManifest.xml:11:5-20
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.6.0-beta01] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/671cd0f50fc241d5a9ff286720ad814c/core-1.6.0-beta01/AndroidManifest.xml:24:18-86
+	android:label
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:10:7-39
+	android:icon
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:11:7-41
+	android:allowBackup
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:12:7-34
+	android:theme
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:13:7-38
+	android:usesCleartextTraffic
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:14:9-44
+	android:name
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:9:7-38
+activity#com.grc_greentip.MainActivity
+ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:16:7-28:18
+	android:label
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:18:9-41
+	android:launchMode
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:20:9-40
+	android:windowSoftInputMode
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:21:11-53
+	android:configChanges
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:19:9-86
+	android:name
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:17:9-37
+intent-filter#action:name:android.intent.action.DOWNLOAD_COMPLETE+action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:22:9-27:25
+action#android.intent.action.MAIN
+ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:23:13-65
+	android:name
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:23:21-62
+category#android.intent.category.LAUNCHER
+ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:24:13-73
+	android:name
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:24:23-70
+action#android.intent.action.DOWNLOAD_COMPLETE
+ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:25:12-76
+	android:name
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:25:20-74
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:29:7-84
+	android:name
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml:29:17-81
+uses-sdk
+INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+MERGED from [com.facebook.flipper:flipper:0.33.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/b3766e41095604756aa8f8129dbc38ae/jetified-flipper-0.33.1/AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper:0.33.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/b3766e41095604756aa8f8129dbc38ae/jetified-flipper-0.33.1/AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper-network-plugin:0.33.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/98cff26851b718fc79fbd189f6068387/jetified-flipper-network-plugin-0.33.1/AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper-network-plugin:0.33.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/98cff26851b718fc79fbd189f6068387/jetified-flipper-network-plugin-0.33.1/AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.33.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/64bb1b3134fd7ac0b01982588cbbe6c2/jetified-flipper-fresco-plugin-0.33.1/AndroidManifest.xml:11:5-13:41
+MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.33.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/64bb1b3134fd7ac0b01982588cbbe6c2/jetified-flipper-fresco-plugin-0.33.1/AndroidManifest.xml:11:5-13:41
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/a14105437c28665c85d041980d4b9c2a/multidex-2.0.0/AndroidManifest.xml:20:5-43
+MERGED from [androidx.multidex:multidex:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/a14105437c28665c85d041980d4b9c2a/multidex-2.0.0/AndroidManifest.xml:20:5-43
+MERGED from [:react-native-splash-screen] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-splash-screen] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-splash-screen/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-document-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-document-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-document-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-document-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-fs] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-fs/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-fs] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-fs/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-community_async-storage] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_async-storage] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/@react-native-community/async-storage/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_masked-view] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_masked-view] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/@react-native-community/masked-view/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_netinfo] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_netinfo] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-fetch-blob] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-fetch-blob] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-fetch-blob/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-gesture-handler] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-gesture-handler/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-image-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-reanimated] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-reanimated] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-reanimated/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-safe-area-context] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-safe-area-context/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-safe-area-context] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-safe-area-context/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-screens] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-screens] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-screens/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-vector-icons/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-webview] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-webview] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.62.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/e8cc44f6b68a0716d1e72d9130280ae3/jetified-react-native-0.62.0/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.62.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/e8cc44f6b68a0716d1e72d9130280ae3/jetified-react-native-0.62.0/AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/54972eed75d5a0ae7261aba7ffc821e2/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/54972eed75d5a0ae7261aba7ffc821e2/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [org.webkit:android-jsc:r245459] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/fc98648796d67b908efa63b74da71f96/jetified-android-jsc-r245459/AndroidManifest.xml:7:5-9:41
+MERGED from [org.webkit:android-jsc:r245459] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/fc98648796d67b908efa63b74da71f96/jetified-android-jsc-r245459/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.fresco:flipper:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/1cc199438b8a9cb271c306b2dff2e706/jetified-flipper-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:flipper:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/1cc199438b8a9cb271c306b2dff2e706/jetified-flipper-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:stetho:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/d9ae8033c41de887902b6d22300f11e5/jetified-stetho-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:stetho:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/d9ae8033c41de887902b6d22300f11e5/jetified-stetho-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/e87ed8e39b909aa96c8f7d54bdda078b/jetified-fresco-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/e87ed8e39b909aa96c8f7d54bdda078b/jetified-fresco-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/df5249d0eadc487462183f02d8e836a0/jetified-imagepipeline-okhttp3-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/df5249d0eadc487462183f02d8e836a0/jetified-imagepipeline-okhttp3-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/73383fceffa62887d7b22cef48ef2c18/jetified-drawee-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/73383fceffa62887d7b22cef48ef2c18/jetified-drawee-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/2a9e9211e0905ba56299ef119684fdd5/jetified-nativeimagefilters-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagefilters:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/2a9e9211e0905ba56299ef119684fdd5/jetified-nativeimagefilters-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/e6288047acb4c26fa303fca75bb6b0f3/jetified-imagepipeline-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/e6288047acb4c26fa303fca75bb6b0f3/jetified-imagepipeline-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/7cabff7638cebdbd3fe05f1d2591e907/jetified-nativeimagetranscoder-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:nativeimagetranscoder:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/7cabff7638cebdbd3fe05f1d2591e907/jetified-nativeimagetranscoder-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/9635f121f065334393b1885d2ff82775/jetified-imagepipeline-base-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/9635f121f065334393b1885d2ff82775/jetified-imagepipeline-base-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.8.2] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/5d9ba724a20d023a58df2be0e0f95854/jetified-soloader-0.8.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.8.2] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/5d9ba724a20d023a58df2be0e0f95854/jetified-soloader-0.8.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.material:material:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/33e8ce2a63b5b691b21b1eb67462e4a2/material-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/33e8ce2a63b5b691b21b1eb67462e4a2/material-1.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/d31435c4afe13012f248cb173a0b4b36/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/d31435c4afe13012f248cb173a0b4b36/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/0e4e9b14dce0e7dee78fb692237ab917/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/0e4e9b14dce0e7dee78fb692237ab917/jetified-appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/cd02317c23e662d0fa4ab88d0d0916d7/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/cd02317c23e662d0fa4ab88d0d0916d7/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/65c3d4650b10035e3c16dbbe7955e172/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/65c3d4650b10035e3c16dbbe7955e172/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/f509f6d2f9c1ff170092c34a0922c9f9/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/f509f6d2f9c1ff170092c34a0922c9f9/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.2.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/072161845c1ac7ba4ad633efc915f376/fragment-1.2.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.2.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/072161845c1ac7ba4ad633efc915f376/fragment-1.2.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/be0b3c7258e6da73a16db7ad25cbd1f2/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/be0b3c7258e6da73a16db7ad25cbd1f2/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/f082c57b244577a22e1236d38388ce52/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/f082c57b244577a22e1236d38388ce52/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/e492391935922ce61c196b0901270ddd/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/e492391935922ce61c196b0901270ddd/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/e62f873cf4263d40c7b89017e7a83d01/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/e62f873cf4263d40c7b89017e7a83d01/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/38fa8e3fc15eea0e4bd1cc9b7f46d185/jetified-activity-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/38fa8e3fc15eea0e4bd1cc9b7f46d185/jetified-activity-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/7ced6c91ac482bc6e6ce9aa80fc65495/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/7ced6c91ac482bc6e6ce9aa80fc65495/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/a3ff52c02bd8c6ecf6b5c868009ecb0c/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/a3ff52c02bd8c6ecf6b5c868009ecb0c/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/8c15fd988bc26238d3de2baef228f7dc/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/8c15fd988bc26238d3de2baef228f7dc/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/10fcddba391b31bd86d702ee5aeb2035/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/10fcddba391b31bd86d702ee5aeb2035/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.6.0-beta01] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/671cd0f50fc241d5a9ff286720ad814c/core-1.6.0-beta01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.6.0-beta01] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/671cd0f50fc241d5a9ff286720ad814c/core-1.6.0-beta01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/1e931abee3afbede18629b7ccd33d0ef/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/1e931abee3afbede18629b7ccd33d0ef/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/c954b9dc49d813a57e53fca9fa824039/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/c954b9dc49d813a57e53fca9fa824039/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/a9b5a5fc54865b7c521ab531bcfd4f5e/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/a9b5a5fc54865b7c521ab531bcfd4f5e/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/7583a1193aea876241da18273384578b/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/7583a1193aea876241da18273384578b/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/b1af4f2bb3cdb8a270b23f3dd207998b/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/b1af4f2bb3cdb8a270b23f3dd207998b/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/dd9afa252f6f41ce3d69c8be02d16bd6/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/dd9afa252f6f41ce3d69c8be02d16bd6/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/6a6af4ea2fadaa66c773f3ffe79910a7/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/6a6af4ea2fadaa66c773f3ffe79910a7/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/8a5e36edf0bf6877cab03a462d62c58d/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/8a5e36edf0bf6877cab03a462d62c58d/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/f308a80268527ee3a98b201ce58e0ed5/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/f308a80268527ee3a98b201ce58e0ed5/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/b00e05c5496a872f0e85a2965fea390a/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/b00e05c5496a872f0e85a2965fea390a/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.facebook.soloader:annotation:0.8.2] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/f3de27f7197d701b243fa66e86298a49/jetified-annotation-0.8.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:annotation:0.8.2] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/f3de27f7197d701b243fa66e86298a49/jetified-annotation-0.8.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.fresco:fbcore:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/9512fe00df1377b65e6066f0e13506d3/jetified-fbcore-2.0.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:2.0.0] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/9512fe00df1377b65e6066f0e13506d3/jetified-fbcore-2.0.0/AndroidManifest.xml:5:5-7:41
+INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/android/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from [com.facebook.flipper:flipper:0.33.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/b3766e41095604756aa8f8129dbc38ae/jetified-flipper-0.33.1/AndroidManifest.xml:16:5-76
+MERGED from [:react-native-community_netinfo] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:5-76
+MERGED from [:react-native-community_netinfo] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:5-76
+	android:name
+		ADDED from [com.facebook.flipper:flipper:0.33.1] /Users/mukeshkaswan/.gradle/caches/transforms-2/files-2.1/b3766e41095604756aa8f8129dbc38ae/jetified-flipper-0.33.1/AndroidManifest.xml:16:22-73
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [:react-native-community_netinfo] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from [:react-native-community_netinfo] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/@react-native-community/netinfo/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:9:22-76
+uses-permission#android.permission.REQUEST_INSTALL_PACKAGES
+ADDED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-83
+	android:name
+		ADDED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-80
+provider#androidx.core.content.FileProvider
+ADDED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:9-27:20
+	android:grantUriPermissions
+		ADDED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:13-47
+	android:authorities
+		ADDED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:13-78
+	android:exported
+		ADDED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:22:13-37
+	android:name
+		ADDED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-26:58
+	android:resource
+		ADDED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:26:17-55
+	android:name
+		ADDED from [:react-native-easy-downloader] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-easy-downloader/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:17-67
+provider#com.imagepicker.FileProvider
+ADDED from [:react-native-image-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:9-18:20
+	android:grantUriPermissions
+		ADDED from [:react-native-image-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-47
+	android:authorities
+		ADDED from [:react-native-image-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-60
+	android:exported
+		ADDED from [:react-native-image-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-37
+	android:name
+		ADDED from [:react-native-image-picker] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-image-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-56
+provider#com.reactnativecommunity.webview.RNCWebViewFileProvider
+ADDED from [:react-native-webview] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-20:20
+	android:grantUriPermissions
+		ADDED from [:react-native-webview] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-47
+	android:authorities
+		ADDED from [:react-native-webview] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-64
+	android:exported
+		ADDED from [:react-native-webview] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-37
+	android:name
+		ADDED from [:react-native-webview] /Users/mukeshkaswan/Documents/Mukri/GreenTip/grc 2/node_modules/react-native-webview/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-83
