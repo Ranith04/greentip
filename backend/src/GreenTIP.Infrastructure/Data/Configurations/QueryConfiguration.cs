@@ -21,11 +21,11 @@ public class QueryConfiguration : IEntityTypeConfiguration<Query>
         builder.Property(q => q.ModifiedOn).HasColumnName("modified_on");
 
         // Structured fields for mobile (additive columns)
-        builder.Property(q => q.QueryCode).HasColumnName("query_code").HasMaxLength(50);
-        builder.Property(q => q.QueryTitle).HasColumnName("query_title").HasMaxLength(255);
-        builder.Property(q => q.ProjectType).HasColumnName("project_type").HasMaxLength(100);
-        builder.Property(q => q.Location).HasColumnName("location").HasMaxLength(255);
-        builder.Property(q => q.ProjectAreaSqm).HasColumnName("project_area_sqm");
+        // builder.Property(q => q.QueryCode).HasColumnName("query_code").HasMaxLength(50);
+        // builder.Property(q => q.QueryTitle).HasColumnName("query_title").HasMaxLength(255);
+        // builder.Property(q => q.ProjectType).HasColumnName("project_type").HasMaxLength(100);
+        // builder.Property(q => q.Location).HasColumnName("location").HasMaxLength(255);
+        // builder.Property(q => q.ProjectAreaSqm).HasColumnName("project_area_sqm");
 
         builder.Ignore(q => q.QueryStatus);
 

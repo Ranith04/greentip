@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/app_strings.dart';
 import '../../blocs/auth/auth_bloc.dart';
 import '../../blocs/auth/auth_event.dart';
 import '../../blocs/auth/auth_state.dart';
-import '../../widgets/buttons/app_buttons.dart';
 import '../../widgets/inputs/app_text_field.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -65,69 +63,95 @@ class _LoginScreenState extends State<LoginScreen> {
         body: SafeArea(
           child: Center(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 24.0,
-                vertical: 16.0,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
               child: Form(
                 key: _formKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Brand Logo
-                    Container(
-                      width: 52,
-                      height: 52,
-                      decoration: BoxDecoration(
-                        color: AppColors.primary,
-                        borderRadius: BorderRadius.circular(14),
-                      ),
-                      child: const Icon(
-                        Icons.eco_rounded,
-                        color: Colors.white,
-                        size: 30,
+                    // Brand Logo Area
+                    Center(
+                      child: Column(
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: 42,
+                                height: 42,
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFDDF3E4),
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: const Icon(
+                                  Icons.eco,
+                                  color: Color(0xFF136433),
+                                  size: 26,
+                                ),
+                              ),
+                              const SizedBox(width: 12),
+                              const Text(
+                                'GRC GreenTIP',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.w900,
+                                  color: Color(0xFF034D2A),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 8),
+                          const Text(
+                            'TECHNICAL INTERACTIVE PLATFORM',
+                            style: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.bold,
+                              letterSpacing: 1.5,
+                              color: Color(0xFF8B9B92),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    const SizedBox(height: 24),
+                    const SizedBox(height: 60),
+
                     const Text(
-                      AppStrings.welcomeBack,
+                      'Welcome Back',
                       style: TextStyle(
-                        fontSize: 26,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.textPrimary,
+                        fontSize: 32,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.black,
                         letterSpacing: -0.5,
                       ),
                     ),
                     const SizedBox(height: 8),
                     const Text(
-                      AppStrings.loginSubtitle,
+                      'Login to your account',
                       style: TextStyle(
-                        fontSize: 14,
-                        color: AppColors.textSecondary,
+                        fontSize: 16,
+                        color: Color(0xFF6B7280),
                       ),
                     ),
-                    const SizedBox(height: 32),
+                    const SizedBox(height: 40),
 
                     // Inputs
                     AppTextField(
                       controller: _emailController,
-                      label: AppStrings.emailOrUsername,
-                      hint: 'name@industry.com',
-                      prefixIcon: Icons.email_outlined,
+                      label: 'Email address',
+                      hint: 'you@example.com',
                       keyboardType: TextInputType.emailAddress,
                       validator: (val) {
                         if (val == null || val.isEmpty) {
-                          return 'Please enter your email or username';
+                          return 'Please enter your email';
                         }
                         return null;
                       },
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 24),
                     AppTextField(
                       controller: _passwordController,
-                      label: AppStrings.password,
+                      label: 'Password',
                       hint: '••••••••',
-                      prefixIcon: Icons.lock_outline_rounded,
                       isPassword: true,
                       validator: (val) {
                         if (val == null || val.isEmpty) {
@@ -136,7 +160,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         return null;
                       },
                     ),
-                    const SizedBox(height: 14),
+                    const SizedBox(height: 16),
 
                     // Remember Me & Forgot Password
                     Row(
@@ -149,10 +173,11 @@ class _LoginScreenState extends State<LoginScreen> {
                               height: 24,
                               child: Checkbox(
                                 value: _rememberMe,
-                                activeColor: AppColors.primary,
+                                activeColor: const Color(0xFF288B46),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(4),
                                 ),
+                                side: const BorderSide(color: Color(0xFFD1D5DB)),
                                 onChanged: (val) {
                                   setState(() {
                                     _rememberMe = val ?? false;
@@ -162,68 +187,29 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                             const SizedBox(width: 8),
                             const Text(
-                              AppStrings.rememberMe,
+                              'Remember me',
                               style: TextStyle(
-                                fontSize: 13,
-                                color: AppColors.textSecondary,
+                                fontSize: 14,
+                                color: Color(0xFF4B5563),
                               ),
                             ),
                           ],
                         ),
                         TextButton(
                           onPressed: () {
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              const SnackBar(
-                                content: Text(
-                                  'Please contact administrator to reset password.',
-                                ),
-                              ),
-                            );
+                            // Forgot password action
                           },
-                          child: const Text(
-                            AppStrings.forgotPassword,
-                            style: TextStyle(
-                              fontSize: 13,
-                              fontWeight: FontWeight.w600,
-                              color: AppColors.primary,
-                            ),
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                            minimumSize: Size.zero,
+                            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
                           ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 24),
-
-                    // Submit
-                    BlocBuilder<AuthBloc, AuthState>(
-                      builder: (context, state) {
-                        return AppPrimaryButton(
-                          text: AppStrings.login,
-                          isLoading: state is AuthLoading,
-                          onPressed: _onLogin,
-                        );
-                      },
-                    ),
-                    const SizedBox(height: 24),
-
-                    // Register Link
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          AppStrings.dontHaveAccount,
-                          style: TextStyle(
-                            fontSize: 14,
-                            color: AppColors.textSecondary,
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () => context.push('/signup'),
                           child: const Text(
-                            'Create Account',
+                            'Forgot Password?',
                             style: TextStyle(
                               fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.primary,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xFF2563EB), // Blue link
                             ),
                           ),
                         ),
@@ -231,19 +217,68 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     const SizedBox(height: 32),
 
-                    // Admin Login Switch
-                    Center(
-                      child: TextButton.icon(
-                        icon: const Icon(
-                          Icons.admin_panel_settings_outlined,
-                          size: 18,
+                    // Submit
+                    BlocBuilder<AuthBloc, AuthState>(
+                      builder: (context, state) {
+                        return SizedBox(
+                          width: double.infinity,
+                          height: 56,
+                          child: ElevatedButton(
+                            onPressed: state is AuthLoading ? null : _onLogin,
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xFF288B46),
+                              foregroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(28),
+                              ),
+                              elevation: 0,
+                            ),
+                            child: state is AuthLoading
+                                ? const SizedBox(
+                                    width: 24,
+                                    height: 24,
+                                    child: CircularProgressIndicator(
+                                      strokeWidth: 2,
+                                      color: Colors.white,
+                                    ),
+                                  )
+                                : const Text(
+                                    'Login',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                          ),
+                        );
+                      },
+                    ),
+                    const SizedBox(height: 40),
+
+                    // Register Link
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text(
+                          "Don't have an account?",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Color(0xFF6B7280),
+                          ),
                         ),
-                        label: const Text('Admin Console Login'),
-                        style: TextButton.styleFrom(
-                          foregroundColor: AppColors.secondary,
+                        const SizedBox(width: 4),
+                        GestureDetector(
+                          onTap: () => context.push('/signup'),
+                          child: const Text(
+                            'Create Account',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xFF034D2A),
+                            ),
+                          ),
                         ),
-                        onPressed: () => context.push('/admin/login'),
-                      ),
+                      ],
                     ),
                   ],
                 ),

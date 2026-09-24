@@ -12,7 +12,7 @@ class AuthRepository {
   Future<UserModel> login(String emailOrMobile, String password) async {
     final response = await _apiClient.post(
       ApiEndpoints.login,
-      data: {'emailOrMobile': emailOrMobile, 'password': password},
+      data: {'email': emailOrMobile, 'password': password},
     );
 
     final data = response.data as Map<String, dynamic>;
@@ -37,8 +37,9 @@ class AuthRepository {
       data: {
         'name': name,
         'email': email,
-        'mobile': mobile,
+        'contactNo': mobile,
         'password': password,
+        'confirmPassword': password,
         'organization': organization,
         'designation': designation,
       },
@@ -48,7 +49,7 @@ class AuthRepository {
   Future<UserModel> verifyOtp(String emailOrMobile, String otp) async {
     final response = await _apiClient.post(
       ApiEndpoints.verifyOtp,
-      data: {'emailOrMobile': emailOrMobile, 'otp': otp},
+      data: {'email': emailOrMobile, 'otpCode': otp},
     );
 
     final data = response.data as Map<String, dynamic>;
@@ -63,7 +64,7 @@ class AuthRepository {
   Future<void> resendOtp(String emailOrMobile) async {
     await _apiClient.post(
       ApiEndpoints.resendOtp,
-      data: {'emailOrMobile': emailOrMobile},
+      data: {'email': emailOrMobile},
     );
   }
 

@@ -13,10 +13,15 @@ public class Query
     public DateTime? ModifiedOn { get; set; } = DateTime.UtcNow;
 
     // Structured fields for mobile app (additive, non-destructive)
+    [System.ComponentModel.DataAnnotations.Schema.NotMapped]
     public string? QueryCode { get; set; } // e.g. "GT-2026-00125"
+    [System.ComponentModel.DataAnnotations.Schema.NotMapped]
     public string? QueryTitle { get; set; }
+    [System.ComponentModel.DataAnnotations.Schema.NotMapped]
     public string? ProjectType { get; set; }
+    [System.ComponentModel.DataAnnotations.Schema.NotMapped]
     public string? Location { get; set; }
+    [System.ComponentModel.DataAnnotations.Schema.NotMapped]
     public double? ProjectAreaSqm { get; set; }
 
     // Helper status enum

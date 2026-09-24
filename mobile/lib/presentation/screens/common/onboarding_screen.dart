@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/app_strings.dart';
 import '../../../core/di/injection.dart';
 import '../../../core/storage/secure_storage_service.dart';
-import '../../widgets/buttons/app_buttons.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -19,22 +17,19 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
   final List<_OnboardingItem> _items = [
     _OnboardingItem(
-      icon: Icons.verified_user_outlined,
-      iconColor: AppColors.primary,
-      title: AppStrings.onboardingTitle1,
-      description: AppStrings.onboardingDesc1,
+      image: 'assets/images/onboarding1.jpg',
+      title: 'Ask Environmental\nQuestions',
+      description: 'Get expert guidance on environmental\nand regulatory matters.',
     ),
     _OnboardingItem(
-      icon: Icons.support_agent_rounded,
-      iconColor: AppColors.secondary,
-      title: AppStrings.onboardingTitle2,
-      description: AppStrings.onboardingDesc2,
+      image: 'assets/images/onboarding2.jpg',
+      title: 'Connect With\nExperts',
+      description: 'Submit your query and get responses\nfrom relevant domain experts.',
     ),
     _OnboardingItem(
-      icon: Icons.track_changes_rounded,
-      iconColor: AppColors.tertiary,
-      title: AppStrings.onboardingTitle3,
-      description: AppStrings.onboardingDesc3,
+      image: 'assets/images/onboarding3.jpg',
+      title: 'Track Your Queries',
+      description: 'Easily track submitted queries, expert\nresponses and previous discussions.',
     ),
   ];
 
@@ -48,25 +43,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        actions: [
-          if (_currentPage < _items.length - 1)
-            TextButton(
-              onPressed: _completeOnboarding,
-              child: const Text(
-                'Skip',
-                style: TextStyle(
-                  color: AppColors.textSecondary,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-        ],
-      ),
+      backgroundColor: const Color(0xFFF1F8F4), // Light greenish background
       body: SafeArea(
         child: Column(
           children: [
@@ -81,54 +58,56 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 },
                 itemBuilder: (context, index) {
                   final item = _items[index];
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 32.0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 140,
-                          height: 140,
-                          decoration: BoxDecoration(
-                            color: item.iconColor.withValues(alpha: 0.1),
-                            shape: BoxShape.circle,
-                          ),
-                          child: Icon(
-                            item.icon,
-                            size: 64,
-                            color: item.iconColor,
-                          ),
+                  return Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const SizedBox(height: 40),
+                      Text(
+                        item.title,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 28,
+                          fontWeight: FontWeight.w900,
+                          color: Color(0xFF034D2A), // Dark Green
+                          height: 1.2,
                         ),
-                        const SizedBox(height: 40),
-                        Text(
-                          item.title,
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.textPrimary,
-                            height: 1.25,
-                          ),
+                      ),
+                      const Spacer(),
+                      // Using a circular clip for the image since screenshots show a circular light background
+                      Container(
+                        width: 280,
+                        height: 280,
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
                         ),
-                        const SizedBox(height: 16),
-                        Text(
+                        clipBehavior: Clip.antiAlias,
+                        child: Image.asset(
+                          item.image,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      const Spacer(),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 40.0),
+                        child: Text(
                           item.description,
                           textAlign: TextAlign.center,
                           style: const TextStyle(
-                            fontSize: 14,
-                            color: AppColors.textSecondary,
+                            fontSize: 15,
+                            color: Color(0xFF5D7365), // Muted dark green/gray
                             height: 1.5,
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                      const SizedBox(height: 40),
+                    ],
                   );
                 },
               ),
             ),
             // Bottom controls
             Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding: const EdgeInsets.only(left: 32.0, right: 32.0, bottom: 40.0, top: 16.0),
               child: Column(
                 children: [
                   // Indicators
@@ -139,48 +118,49 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       return AnimatedContainer(
                         duration: const Duration(milliseconds: 250),
                         margin: const EdgeInsets.symmetric(horizontal: 4),
-                        width: isActive ? 24 : 8,
+                        width: isActive ? 32 : 8,
                         height: 8,
                         decoration: BoxDecoration(
                           color: isActive
-                              ? AppColors.primary
-                              : Colors.grey.shade300,
+                              ? const Color(0xFF288B46) // Active green
+                              : const Color(0xFFC8D5CE), // Inactive gray/green
                           borderRadius: BorderRadius.circular(4),
                         ),
                       );
                     }),
                   ),
                   const SizedBox(height: 32),
-                  if (_currentPage == _items.length - 1)
-                    AppPrimaryButton(
-                      text: 'Get Started',
-                      onPressed: _completeOnboarding,
-                    )
-                  else
-                    Row(
-                      children: [
-                        Expanded(
-                          child: AppOutlineButton(
-                            text: 'Skip',
-                            borderColor: AppColors.border,
-                            textColor: AppColors.textSecondary,
-                            onPressed: _completeOnboarding,
-                          ),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 56,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        if (_currentPage == _items.length - 1) {
+                          _completeOnboarding();
+                        } else {
+                          _pageController.nextPage(
+                            duration: const Duration(milliseconds: 300),
+                            curve: Curves.easeInOut,
+                          );
+                        }
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF288B46),
+                        foregroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(28),
                         ),
-                        const SizedBox(width: 16),
-                        Expanded(
-                          child: AppPrimaryButton(
-                            text: 'Next',
-                            onPressed: () {
-                              _pageController.nextPage(
-                                duration: const Duration(milliseconds: 300),
-                                curve: Curves.easeInOut,
-                              );
-                            },
-                          ),
+                        elevation: 0,
+                      ),
+                      child: Text(
+                        _currentPage == _items.length - 1 ? 'Get Started' : 'Next',
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
                         ),
-                      ],
+                      ),
                     ),
+                  ),
                 ],
               ),
             ),
@@ -192,14 +172,12 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 }
 
 class _OnboardingItem {
-  final IconData icon;
-  final Color iconColor;
+  final String image;
   final String title;
   final String description;
 
   _OnboardingItem({
-    required this.icon,
-    required this.iconColor,
+    required this.image,
     required this.title,
     required this.description,
   });
