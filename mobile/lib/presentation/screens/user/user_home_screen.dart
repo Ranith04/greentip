@@ -118,7 +118,7 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                 onTap: () => context.push('/user/select-category'),
                 child: Container(
                   width: double.infinity,
-                  height: 140,
+                  constraints: const BoxConstraints(minHeight: 160),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     image: const DecorationImage(
@@ -395,7 +395,7 @@ class _UserHomeScreenState extends State<UserHomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    query.queryCode ?? 'Do I require EC for my proje...', // truncate title logic
+                    query.title,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,

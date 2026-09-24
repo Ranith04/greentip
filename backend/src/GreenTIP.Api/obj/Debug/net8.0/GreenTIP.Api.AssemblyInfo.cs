@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GreenTIP.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c8fad76eb2e6f56ab355da84c6d627f756f94d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+49c4f264625e3152e13f01c4d259b1632990774a")]
 [assembly: System.Reflection.AssemblyProductAttribute("GreenTIP.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GreenTIP.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
