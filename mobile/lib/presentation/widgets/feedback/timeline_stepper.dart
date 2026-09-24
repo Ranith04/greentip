@@ -12,7 +12,7 @@ class TimelineStepper extends StatelessWidget {
   Widget build(BuildContext context) {
     final stages = [
       _TimelineStep(
-        title: 'Query Submitted',
+        title: 'Submitted',
         description: 'Query filed and statutory reference generated',
         date: query.createdAt,
         isCompleted: query.status >= 0,
@@ -28,17 +28,17 @@ class TimelineStepper extends StatelessWidget {
         isActive: query.status == 1,
       ),
       _TimelineStep(
-        title: 'Under Technical Review',
-        description: 'Analyzing legal notices, PCB standards & documentation',
+        title: 'Expert Responded',
+        description: 'Expert provided technical recommendation and response',
         date: query.assignedAt?.add(const Duration(hours: 2)),
         isCompleted: query.status >= 2,
         isActive: query.status == 2,
       ),
       _TimelineStep(
-        title: 'Response & Resolution',
-        description: query.respondedAt != null
-            ? 'Expert recommendations and compliance opinion provided'
-            : 'Estimated within statutory SLA timeframe',
+        title: 'Closed',
+        description: query.status == 3
+            ? 'Query resolved and closed by user/admin'
+            : 'Pending final resolution',
         date: query.respondedAt,
         isCompleted: query.status >= 3,
         isActive: query.status >= 3,

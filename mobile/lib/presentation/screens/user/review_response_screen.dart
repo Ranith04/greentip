@@ -18,16 +18,13 @@ class ReviewResponseScreen extends StatefulWidget {
 
 class _ReviewResponseScreenState extends State<ReviewResponseScreen> {
   int _rating = 5;
-  String? _selectedTag = 'Actionable Guidance';
+  String? _selectedTag = 'Yes';
   final TextEditingController _commentController = TextEditingController();
 
-  final List<String> _feedbackTags = [
-    'Actionable Guidance',
-    'Timely Response',
-    'Thorough Analysis',
-    'Clear PCB Reference',
-    'Statutory Precision',
-    'Helpful Next Steps',
+  final List<String> _resolutionOptions = [
+    'Yes',
+    'Partially',
+    'No',
   ];
 
   String _getRatingText(int rating) {
@@ -156,51 +153,35 @@ class _ReviewResponseScreenState extends State<ReviewResponseScreen> {
                   ),
                 ),
                 const SizedBox(height: 32),
-
-                // Tags
+                // Resolution Radio Group
                 const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    'What went well? (Optional)',
+                    'Was your query resolved?',
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                 ),
                 const SizedBox(height: 12),
-                Wrap(
-                  spacing: 8,
-                  runSpacing: 8,
-                  children: _feedbackTags.map((tag) {
-                    final isSelected = _selectedTag == tag;
-                    return FilterChip(
-                      label: Text(tag),
-                      selected: isSelected,
-                      onSelected: (val) {
+                Column(
+                  children: _resolutionOptions.map((option) {
+                    return RadioListTile<String>(
+                      title: Text(
+                        option,
+                        style: const TextStyle(fontSize: 14),
+                      ),
+                      value: option,
+                      groupValue: _selectedTag,
+                      activeColor: AppColors.primary,
+                      contentPadding: EdgeInsets.zero,
+                      onChanged: (val) {
                         setState(() {
-                          _selectedTag = val ? tag : null;
+                          _selectedTag = val;
                         });
                       },
-                      selectedColor: AppColors.primaryContainer,
-                      labelStyle: TextStyle(
-                        fontSize: 12,
-                        fontWeight: isSelected
-                            ? FontWeight.bold
-                            : FontWeight.normal,
-                        color: isSelected
-                            ? AppColors.primaryDark
-                            : AppColors.textPrimary,
-                      ),
-                      side: BorderSide(
-                        color: isSelected
-                            ? AppColors.primary
-                            : AppColors.divider,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20),
-                      ),
                     );
                   }).toList(),
                 ),
-                const SizedBox(height: 28),
+                const SizedBox(height: 16),
 
                 // Comment input
                 const Align(

@@ -228,8 +228,43 @@ class ExpertResponseScreen extends StatelessWidget {
                       ],
                     ),
                   ),
+                  // Helpful / Not Helpful Section
+                  Row(
+                    children: [
+                      Expanded(
+                        child: OutlinedButton.icon(
+                          onPressed: () {},
+                          icon: const Icon(Icons.thumb_up_alt_outlined, size: 18),
+                          label: const Text('Helpful'),
+                          style: OutlinedButton.styleFrom(
+                            foregroundColor: AppColors.success,
+                            side: const BorderSide(color: AppColors.success),
+                            padding: const EdgeInsets.symmetric(vertical: 12),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: OutlinedButton.icon(
+                          onPressed: () {},
+                          icon: const Icon(Icons.thumb_down_alt_outlined, size: 18),
+                          label: const Text('Not Helpful'),
+                          style: OutlinedButton.styleFrom(
+                            foregroundColor: AppColors.error,
+                            side: const BorderSide(color: AppColors.error),
+                            padding: const EdgeInsets.symmetric(vertical: 12),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                   const SizedBox(height: 20),
-
                   // Rating preview if already reviewed
                   if (query.review != null) ...[
                     Container(
@@ -312,8 +347,8 @@ class ExpertResponseScreen extends StatelessWidget {
                 border: Border(top: BorderSide(color: AppColors.divider)),
               ),
               child: AppPrimaryButton(
-                text: 'Rate Resolution & Provide Feedback',
-                icon: Icons.star_rate_rounded,
+                text: 'Review Answer',
+                icon: Icons.rate_review_rounded,
                 onPressed: () {
                   context.push(
                     '/user/review-response/${query.id}',

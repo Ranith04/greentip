@@ -23,7 +23,7 @@ class _MyQueriesScreenState extends State<MyQueriesScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
     _tabController.addListener(_onTabChanged);
     _loadQueries();
   }
@@ -36,10 +36,13 @@ class _MyQueriesScreenState extends State<MyQueriesScreen>
           _statusFilter = null; // All
           break;
         case 1:
-          _statusFilter = 1; // Open / In Progress (status 0,1,2)
+          _statusFilter = 0; // Pending (status 0)
           break;
         case 2:
-          _statusFilter = 3; // Answered / Resolved
+          _statusFilter = 2; // Responded (status 2)
+          break;
+        case 3:
+          _statusFilter = 3; // Closed (status 3)
           break;
       }
     });
@@ -79,9 +82,10 @@ class _MyQueriesScreenState extends State<MyQueriesScreen>
             fontSize: 13,
           ),
           tabs: const [
-            Tab(text: 'All Queries'),
-            Tab(text: 'Open & Active'),
-            Tab(text: 'Resolved'),
+            Tab(text: 'All'),
+            Tab(text: 'Pending'),
+            Tab(text: 'Responded'),
+            Tab(text: 'Closed'),
           ],
         ),
       ),
