@@ -113,45 +113,52 @@ class UserProfileScreen extends StatelessWidget {
               child: Column(
                 children: [
                   _menuItem(
-                    icon: Icons.person_outline_rounded,
-                    title: 'Edit Profile & Contact',
-                    subtitle: 'Update phone, name, or company designation',
-                    onTap: () => context.push('/user/edit-profile'),
+                    icon: Icons.assignment_outlined,
+                    title: 'My Queries',
+                    subtitle: 'View and track your submitted queries',
+                    onTap: () => context.push('/user/home'), // or switch tab to my queries
                   ),
                   const Divider(height: 1),
                   _menuItem(
                     icon: Icons.notifications_outlined,
-                    title: 'Alert Notifications',
-                    subtitle: 'Email and push notification triggers',
+                    title: 'Notifications',
+                    subtitle: 'Manage your alerts and updates',
                     onTap: () => context.push('/user/notifications'),
                   ),
                   const Divider(height: 1),
                   _menuItem(
-                    icon: Icons.shield_outlined,
-                    title: 'Statutory Data & Consent',
-                    subtitle: 'Consent to Operate & SPCB registry records',
-                    onTap: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text(
-                            'Registered unit verified with State PCB.',
-                          ),
-                        ),
-                      );
-                    },
+                    icon: Icons.person_outline_rounded,
+                    title: 'Edit Profile',
+                    subtitle: 'Update your personal information',
+                    onTap: () => context.push('/user/edit-profile'),
+                  ),
+                  const Divider(height: 1),
+                  _menuItem(
+                    icon: Icons.lock_outline_rounded,
+                    title: 'Change Password',
+                    subtitle: 'Update your account security',
+                    onTap: () => context.push('/user/change-password'),
                   ),
                   const Divider(height: 1),
                   _menuItem(
                     icon: Icons.help_outline_rounded,
-                    title: 'Help & Support Helpline',
-                    subtitle: 'Contact GreenTIP technical desk',
-                    onTap: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text('Helpline: compliance@greentip.gov.in'),
-                        ),
-                      );
-                    },
+                    title: 'Help & Support',
+                    subtitle: 'FAQs, Contact Us, and App Guide',
+                    onTap: () => context.push('/user/help-support'),
+                  ),
+                  const Divider(height: 1),
+                  _menuItem(
+                    icon: Icons.privacy_tip_outlined,
+                    title: 'Privacy Policy',
+                    subtitle: 'Read our data privacy guidelines',
+                    onTap: () {},
+                  ),
+                  const Divider(height: 1),
+                  _menuItem(
+                    icon: Icons.description_outlined,
+                    title: 'Terms & Conditions',
+                    subtitle: 'Read our terms of service',
+                    onTap: () {},
                   ),
                 ],
               ),

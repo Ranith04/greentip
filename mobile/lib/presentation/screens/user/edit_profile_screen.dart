@@ -18,6 +18,7 @@ class EditProfileScreen extends StatefulWidget {
 
 class _EditProfileScreenState extends State<EditProfileScreen> {
   final _nameController = TextEditingController();
+  final _emailController = TextEditingController();
   final _mobileController = TextEditingController();
   final _orgController = TextEditingController();
   final _designationController = TextEditingController();
@@ -30,6 +31,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     if (authState is Authenticated) {
       final user = authState.user;
       _nameController.text = user.name;
+      _emailController.text = user.email;
       _mobileController.text = user.mobile;
       _orgController.text = user.organization ?? '';
       _designationController.text = user.designation ?? '';
@@ -39,6 +41,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   @override
   void dispose() {
     _nameController.dispose();
+    _emailController.dispose();
     _mobileController.dispose();
     _orgController.dispose();
     _designationController.dispose();
@@ -95,10 +98,51 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
           child: Column(
             children: [
+              // Photo Upload
+              Center(
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundColor: AppColors.primaryContainer,
+                      child: Text(
+                        _nameController.text.isNotEmpty
+                            ? _nameController.text[0].toUpperCase()
+                            : 'U',
+                        style: const TextStyle(
+                          fontSize: 32,
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.primaryDark,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        'Change Photo',
+                        style: TextStyle(
+                          color: AppColors.primary,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 24),
               AppTextField(
                 controller: _nameController,
                 label: 'Full Name',
                 prefixIcon: Icons.person_outline_rounded,
+              ),
+              const SizedBox(height: 18),
+              AppTextField(
+                controller: _emailController,
+                label: 'Email Address',
+                prefixIcon: Icons.email_outlined,
+                keyboardType: TextInputType.emailAddress,
+                enabled: false, // Typically email cannot be changed easily
               ),
               const SizedBox(height: 18),
               AppTextField(

@@ -117,14 +117,28 @@ class _KnowledgeCenterScreenState extends State<KnowledgeCenterScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               children: [
                 _filterChip('All Domains', null),
-                _filterChip('Water Pollution', 1),
-                _filterChip('Air Standards', 2),
-                _filterChip('Hazardous Waste', 3),
-                _filterChip('Consents & Clearances', 4),
+                _filterChip('Environmental Clearance', 1),
+                _filterChip('Construction', 2),
+                _filterChip('Real Estate', 3),
+                _filterChip('Mining', 4),
               ],
             ),
           ),
           const Divider(height: 1),
+          const Padding(
+            padding: EdgeInsets.fromLTRB(16, 16, 16, 4),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Recent Articles',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textPrimary,
+                ),
+              ),
+            ),
+          ),
 
           // Article List
           Expanded(
@@ -174,88 +188,91 @@ class _KnowledgeCenterScreenState extends State<KnowledgeCenterScreen> {
                           borderRadius: BorderRadius.circular(16),
                           border: Border.all(color: AppColors.divider),
                         ),
-                        child: Column(
+                        child: Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.symmetric(
-                                    horizontal: 8,
-                                    vertical: 3,
+                            // Thumbnail Image
+                            Container(
+                              width: 80,
+                              height: 80,
+                              decoration: BoxDecoration(
+                                color: AppColors.primaryContainer.withValues(alpha: 0.5),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: const Icon(
+                                Icons.image_outlined,
+                                size: 32,
+                                color: AppColors.primary,
+                              ),
+                            ),
+                            const SizedBox(width: 16),
+                            // Details
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.symmetric(
+                                          horizontal: 8,
+                                          vertical: 3,
+                                        ),
+                                        decoration: BoxDecoration(
+                                          color: AppColors.primaryContainer,
+                                          borderRadius: BorderRadius.circular(6),
+                                        ),
+                                        child: Text(
+                                          article.category ?? 'Compliance',
+                                          style: const TextStyle(
+                                            fontSize: 10,
+                                            fontWeight: FontWeight.bold,
+                                            color: AppColors.primaryDark,
+                                          ),
+                                        ),
+                                      ),
+                                      Text(
+                                        'Sep 10, 2026', // Mock date
+                                        style: const TextStyle(
+                                          fontSize: 11,
+                                          color: AppColors.textMuted,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  decoration: BoxDecoration(
-                                    color: AppColors.primaryContainer,
-                                    borderRadius: BorderRadius.circular(6),
-                                  ),
-                                  child: Text(
-                                    article.category ?? 'Compliance',
+                                  const SizedBox(height: 8),
+                                  Text(
+                                    article.title,
                                     style: const TextStyle(
-                                      fontSize: 11,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.bold,
-                                      color: AppColors.primaryDark,
+                                      color: AppColors.textPrimary,
+                                      height: 1.3,
                                     ),
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
                                   ),
-                                ),
-                                Row(
-                                  children: [
-                                    const Icon(
-                                      Icons.timer_outlined,
-                                      size: 13,
-                                      color: AppColors.textMuted,
-                                    ),
-                                    const SizedBox(width: 4),
-                                    Text(
-                                      article.readTime ?? '5 min read',
-                                      style: const TextStyle(
-                                        fontSize: 11,
+                                  const SizedBox(height: 6),
+                                  Row(
+                                    children: [
+                                      const Icon(
+                                        Icons.timer_outlined,
+                                        size: 12,
                                         color: AppColors.textMuted,
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            const SizedBox(height: 10),
-                            Text(
-                              article.title,
-                              style: const TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.textPrimary,
-                                height: 1.3,
-                              ),
-                            ),
-                            const SizedBox(height: 6),
-                            Text(
-                              article.content,
-                              maxLines: 2,
-                              overflow: TextOverflow.ellipsis,
-                              style: const TextStyle(
-                                fontSize: 13,
-                                color: AppColors.textSecondary,
-                                height: 1.4,
-                              ),
-                            ),
-                            const SizedBox(height: 12),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                const Text(
-                                  'Read full guideline',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.primary,
+                                      const SizedBox(width: 4),
+                                      Text(
+                                        article.readTime ?? '5 min read',
+                                        style: const TextStyle(
+                                          fontSize: 11,
+                                          color: AppColors.textMuted,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ),
-                                const Icon(
-                                  Icons.arrow_forward_rounded,
-                                  size: 16,
-                                  color: AppColors.primary,
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ],
                         ),

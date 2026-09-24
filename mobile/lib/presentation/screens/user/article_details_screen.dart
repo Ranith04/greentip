@@ -39,6 +39,22 @@ class ArticleDetailsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Large Header Image
+            Container(
+              height: 200,
+              width: double.infinity,
+              margin: const EdgeInsets.only(bottom: 16),
+              decoration: BoxDecoration(
+                color: AppColors.primaryContainer.withValues(alpha: 0.6),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: const Icon(
+                Icons.image_outlined,
+                size: 64,
+                color: AppColors.primary,
+              ),
+            ),
+            
             // Category Badge
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),

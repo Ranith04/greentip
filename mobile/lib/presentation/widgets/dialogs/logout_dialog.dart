@@ -48,23 +48,12 @@ class LogoutDialog extends StatelessWidget {
             ),
             const SizedBox(height: 18),
             Text(
-              isAdmin ? 'Sign Out of Admin Console?' : 'Log Out from GreenTIP?',
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: AppColors.textPrimary,
-              ),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              isAdmin
-                  ? 'Your active administrative session will be securely terminated. Any unsaved drafts will be cleared.'
-                  : 'You will need to sign back in with your credentials to access your queries and compliance alerts.',
+              isAdmin ? 'Sign Out of Admin Console?' : 'Are you sure you want to logout from your account?',
               textAlign: TextAlign.center,
               style: const TextStyle(
-                fontSize: 13,
-                color: AppColors.textSecondary,
-                height: 1.4,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: AppColors.textPrimary,
               ),
             ),
             const SizedBox(height: 24),
@@ -81,7 +70,7 @@ class LogoutDialog extends StatelessWidget {
                 const SizedBox(width: 12),
                 Expanded(
                   child: AppPrimaryButton(
-                    text: 'Sign Out',
+                    text: 'Logout',
                     backgroundColor: AppColors.error,
                     onPressed: () {
                       Navigator.of(context).pop();

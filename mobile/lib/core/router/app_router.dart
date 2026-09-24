@@ -26,7 +26,9 @@ import '../../presentation/screens/common/signup_screen.dart';
 import '../../presentation/screens/common/splash_screen.dart';
 import '../../presentation/screens/user/article_details_screen.dart';
 import '../../presentation/screens/user/ask_query_form_screen.dart';
+import '../../presentation/screens/user/change_password_screen.dart';
 import '../../presentation/screens/user/edit_profile_screen.dart';
+import '../../presentation/screens/user/help_support_screen.dart';
 import '../../presentation/screens/user/expert_response_screen.dart';
 import '../../presentation/screens/user/knowledge_center_screen.dart';
 import '../../presentation/screens/user/my_queries_screen.dart';
@@ -184,6 +186,16 @@ class AppRouter {
         path: '/user/edit-profile',
         parentNavigatorKey: _rootNavigatorKey,
         builder: (context, state) => const EditProfileScreen(),
+      ),
+      GoRoute(
+        path: '/user/change-password',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const ChangePasswordScreen(),
+      ),
+      GoRoute(
+        path: '/user/help-support',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const HelpSupportScreen(),
       ),
 
       // Admin Shell Navigation

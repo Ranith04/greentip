@@ -144,25 +144,39 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(
-                              color: isUnread
-                                  ? AppColors.primaryContainer
-                                  : Colors.grey.shade100,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: Icon(
-                              notif.type == 'SlaAlert'
-                                  ? Icons.access_time_rounded
-                                  : notif.type == 'QueryUpdate'
-                                  ? Icons.assignment_turned_in_rounded
-                                  : Icons.notifications_active_rounded,
-                              size: 20,
-                              color: isUnread
-                                  ? AppColors.primaryDark
-                                  : AppColors.textSecondary,
-                            ),
+                          Builder(
+                            builder: (context) {
+                              Color iconColor;
+                              Color bgColor;
+                              IconData iconData;
+
+                              if (notif.type == 'Response') {
+                                iconColor = Colors.green;
+                                bgColor = Colors.green.withValues(alpha: 0.1);
+                                iconData = Icons.check_circle_outline_rounded;
+                              } else if (notif.type == 'Assigned') {
+                                iconColor = Colors.orange;
+                                bgColor = Colors.orange.withValues(alpha: 0.1);
+                                iconData = Icons.person_add_alt_1_rounded;
+                              } else {
+                                iconColor = Colors.purple;
+                                bgColor = Colors.purple.withValues(alpha: 0.1);
+                                iconData = Icons.update_rounded;
+                              }
+
+                              return Container(
+                                padding: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  color: isUnread ? bgColor : Colors.grey.shade100,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: Icon(
+                                  iconData,
+                                  size: 20,
+                                  color: isUnread ? iconColor : AppColors.textSecondary,
+                                ),
+                              );
+                            },
                           ),
                           const SizedBox(width: 14),
                           Expanded(
