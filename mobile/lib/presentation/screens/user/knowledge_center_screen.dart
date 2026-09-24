@@ -15,41 +15,69 @@ class KnowledgeCenterScreen extends StatefulWidget {
 
 class _KnowledgeCenterScreenState extends State<KnowledgeCenterScreen> {
   final TextEditingController _searchController = TextEditingController();
-  int? _selectedCategory;
   String _searchQuery = '';
+
+  // Category grid data matching reference design
+  final List<Map<String, dynamic>> _categories = [
+    {
+      'name': 'Environmental Clearance',
+      'icon': Icons.eco,
+      'bgColor': Color(0xFFE8F5E9),
+      'iconColor': Color(0xFF2E7D32),
+    },
+    {
+      'name': 'Construction',
+      'icon': Icons.home_work_outlined,
+      'bgColor': Color(0xFFE8F5E9),
+      'iconColor': Color(0xFF2E7D32),
+    },
+    {
+      'name': 'Real Estate',
+      'icon': Icons.apartment_outlined,
+      'bgColor': Color(0xFFE8EAF6),
+      'iconColor': Color(0xFF3F51B5),
+    },
+    {
+      'name': 'NOC',
+      'icon': Icons.assignment_outlined,
+      'bgColor': Color(0xFFE3F2FD),
+      'iconColor': Color(0xFF1565C0),
+    },
+    {
+      'name': 'Mining',
+      'icon': Icons.landscape_outlined,
+      'bgColor': Color(0xFFFFF3E0),
+      'iconColor': Color(0xFFE65100),
+    },
+    {
+      'name': 'Enviro-Legal',
+      'icon': Icons.gavel_rounded,
+      'bgColor': Color(0xFFF3E5F5),
+      'iconColor': Color(0xFF7B1FA2),
+    },
+  ];
 
   final List<ArticleModel> _fallbackArticles = const [
     ArticleModel(
       id: 1,
-      title: 'Water Act 1974: Standard Operating Limits & Penal Provisions',
-      content:
-          'Under the Water (Prevention and Control of Pollution) Act, 1974, all industrial units discharging sewage or trade effluents into water bodies, sewers, or on land must obtain prior Consent to Operate (CTO). Key requirements include zero untreated effluent discharge, strict adherence to BOD/COD thresholds, and real-time CEMS integration.',
-      category: 'Water Pollution',
+      title: 'Understanding EC Requirements for Development Projects',
+      content: 'Under the Water (Prevention and Control of Pollution) Act, all industrial units must obtain prior Consent to Operate.',
+      category: 'Environmental Clearance',
       readTime: '4 min read',
     ),
     ArticleModel(
       id: 2,
-      title: 'Air Pollution Standards for Captive DG Sets & Boiler Stacks',
-      content:
-          'SPCB and CPCB regulations dictate mandatory acoustic enclosures and minimum stack heights calculated based on generator capacity (H = h + 0.2 × √kVA). Regular flue gas emission testing for Particulate Matter (PM), SO2, and NOx is strictly enforced during biannual audits.',
-      category: 'Air Standards',
+      title: 'Mining Lease Process: Step by Step Guide',
+      content: 'A complete walkthrough of the mining lease process from application to approval.',
+      category: 'Mining',
       readTime: '5 min read',
     ),
     ArticleModel(
       id: 3,
-      title: 'Hazardous Waste Management Rules: Form 10 Manifest Protocol',
-      content:
-          'Transportation of hazardous wastes to Common TSDF facilities requires strict adherence to the 7-copy Form 10 manifest system. Industrial facilities must maintain Form 3 register of waste generation and submit annual Form 4 returns before June 30th each year.',
-      category: 'Hazardous Waste',
+      title: 'CRZ Regulations: What You Need to Know',
+      content: 'Coastal Regulation Zone guidelines for construction near shorelines.',
+      category: 'CRZ & Coastal',
       readTime: '6 min read',
-    ),
-    ArticleModel(
-      id: 4,
-      title: 'Step-by-Step Guide for Consent to Operate (CTO) Renewal in 2024',
-      content:
-          'Renewals must be submitted at least 120 days prior to expiry via the state online single window portal. Essential attachments include capital investment CA certificates, past year production logs, effluent analysis, and proof of green belt development.',
-      category: 'Consents & Clearances',
-      readTime: '7 min read',
     ),
   ];
 
@@ -68,248 +96,291 @@ class _KnowledgeCenterScreenState extends State<KnowledgeCenterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: const Text('Statutory Knowledge Center'),
-      ),
-      body: Column(
-        children: [
-          // Search Box
-          Container(
-            color: Colors.white,
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16.0,
-              vertical: 12.0,
-            ),
-            child: TextField(
-              controller: _searchController,
-              onChanged: (val) {
-                setState(() {
-                  _searchQuery = val.toLowerCase();
-                });
-              },
-              decoration: InputDecoration(
-                hintText: 'Search laws, acts, thresholds, forms...',
-                prefixIcon: const Icon(
-                  Icons.search,
-                  size: 20,
-                  color: AppColors.textMuted,
-                ),
-                contentPadding: const EdgeInsets.symmetric(vertical: 10),
-                filled: true,
-                fillColor: AppColors.background,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide.none,
-                ),
+      backgroundColor: const Color(0xFFF1F8F4),
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Header
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 16, 20, 0),
+              child: Row(
+                children: [
+                  GestureDetector(
+                    onTap: () => context.pop(),
+                    child: const Icon(Icons.chevron_left, size: 28, color: Colors.black),
+                  ),
+                  const SizedBox(width: 8),
+                  const Text(
+                    'Knowledge Center',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.black,
+                    ),
+                  ),
+                ],
               ),
             ),
-          ),
+            const SizedBox(height: 20),
 
-          // Categories Filter Row
-          Container(
-            color: Colors.white,
-            height: 48,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              children: [
-                _filterChip('All Domains', null),
-                _filterChip('Environmental Clearance', 1),
-                _filterChip('Construction', 2),
-                _filterChip('Real Estate', 3),
-                _filterChip('Mining', 4),
-              ],
-            ),
-          ),
-          const Divider(height: 1),
-          const Padding(
-            padding: EdgeInsets.fromLTRB(16, 16, 16, 4),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Recent Articles',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.textPrimary,
-                ),
-              ),
-            ),
-          ),
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Search bar
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(28),
+                        border: Border.all(color: const Color(0xFFE2E8F0)),
+                      ),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: TextField(
+                              controller: _searchController,
+                              onChanged: (val) {
+                                setState(() => _searchQuery = val.toLowerCase());
+                              },
+                              decoration: const InputDecoration(
+                                hintText: 'Search articles...',
+                                hintStyle: TextStyle(
+                                  color: Color(0xFF9CA3AF),
+                                  fontSize: 15,
+                                ),
+                                prefixIcon: Icon(
+                                  Icons.search,
+                                  color: Color(0xFF9CA3AF),
+                                  size: 22,
+                                ),
+                                border: InputBorder.none,
+                                contentPadding: EdgeInsets.symmetric(
+                                  horizontal: 20,
+                                  vertical: 14,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            margin: const EdgeInsets.only(right: 6),
+                            decoration: const BoxDecoration(
+                              color: Color(0xFFF5F5F5),
+                              shape: BoxShape.circle,
+                            ),
+                            child: IconButton(
+                              icon: const Icon(
+                                Icons.arrow_forward,
+                                color: Color(0xFF0F6B35),
+                                size: 20,
+                              ),
+                              onPressed: () {},
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 24),
 
-          // Article List
-          Expanded(
-            child: BlocBuilder<KnowledgeBloc, KnowledgeState>(
-              builder: (context, state) {
-                List<ArticleModel> articles = _fallbackArticles;
-                if (state is KnowledgeLoaded && state.articles.isNotEmpty) {
-                  articles = state.articles;
-                }
-
-                final filtered = articles.where((a) {
-                  if (_searchQuery.isNotEmpty &&
-                      !a.title.toLowerCase().contains(_searchQuery) &&
-                      !a.content.toLowerCase().contains(_searchQuery)) {
-                    return false;
-                  }
-                  return true;
-                }).toList();
-
-                if (filtered.isEmpty) {
-                  return const EmptyStateWidget(
-                    icon: Icons.menu_book_outlined,
-                    title: 'No Articles Found',
-                    description:
-                        'Try adjusting your search keywords or filter.',
-                  );
-                }
-
-                return ListView.separated(
-                  padding: const EdgeInsets.all(16.0),
-                  itemCount: filtered.length,
-                  separatorBuilder: (_, _) => const SizedBox(height: 12),
-                  itemBuilder: (context, index) {
-                    final article = filtered[index];
-                    return InkWell(
-                      onTap: () {
-                        context.push(
-                          '/user/article-details/${article.id}',
-                          extra: article,
+                    // Category grid (2 columns, 3 rows)
+                    GridView.builder(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 14,
+                        mainAxisSpacing: 14,
+                        childAspectRatio: 1.3,
+                      ),
+                      itemCount: _categories.length,
+                      itemBuilder: (context, index) {
+                        final cat = _categories[index];
+                        return Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(16),
+                            border: Border.all(color: const Color(0xFFE2E8F0)),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: 48,
+                                height: 48,
+                                decoration: BoxDecoration(
+                                  color: cat['bgColor'] as Color,
+                                  borderRadius: BorderRadius.circular(12),
+                                ),
+                                child: Icon(
+                                  cat['icon'] as IconData,
+                                  color: cat['iconColor'] as Color,
+                                  size: 24,
+                                ),
+                              ),
+                              const SizedBox(height: 10),
+                              Text(
+                                cat['name'] as String,
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w600,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ],
+                          ),
                         );
                       },
-                      borderRadius: BorderRadius.circular(16),
-                      child: Container(
-                        padding: const EdgeInsets.all(16),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(16),
-                          border: Border.all(color: AppColors.divider),
-                        ),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            // Thumbnail Image
-                            Container(
-                              width: 80,
-                              height: 80,
-                              decoration: BoxDecoration(
-                                color: AppColors.primaryContainer.withValues(alpha: 0.5),
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                              child: const Icon(
-                                Icons.image_outlined,
-                                size: 32,
-                                color: AppColors.primary,
-                              ),
-                            ),
-                            const SizedBox(width: 16),
-                            // Details
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Container(
-                                        padding: const EdgeInsets.symmetric(
-                                          horizontal: 8,
-                                          vertical: 3,
-                                        ),
-                                        decoration: BoxDecoration(
-                                          color: AppColors.primaryContainer,
-                                          borderRadius: BorderRadius.circular(6),
-                                        ),
-                                        child: Text(
-                                          article.category ?? 'Compliance',
-                                          style: const TextStyle(
-                                            fontSize: 10,
-                                            fontWeight: FontWeight.bold,
-                                            color: AppColors.primaryDark,
-                                          ),
-                                        ),
-                                      ),
-                                      Text(
-                                        'Sep 10, 2026', // Mock date
-                                        style: const TextStyle(
-                                          fontSize: 11,
-                                          color: AppColors.textMuted,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  const SizedBox(height: 8),
-                                  Text(
-                                    article.title,
-                                    style: const TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.textPrimary,
-                                      height: 1.3,
-                                    ),
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                  const SizedBox(height: 6),
-                                  Row(
-                                    children: [
-                                      const Icon(
-                                        Icons.timer_outlined,
-                                        size: 12,
-                                        color: AppColors.textMuted,
-                                      ),
-                                      const SizedBox(width: 4),
-                                      Text(
-                                        article.readTime ?? '5 min read',
-                                        style: const TextStyle(
-                                          fontSize: 11,
-                                          color: AppColors.textMuted,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                );
-              },
-            ),
-          ),
-        ],
-      ),
-    );
-  }
+                    ),
+                    const SizedBox(height: 28),
 
-  Widget _filterChip(String label, int? categoryId) {
-    final isSelected = _selectedCategory == categoryId;
-    return Padding(
-      padding: const EdgeInsets.only(right: 8.0),
-      child: FilterChip(
-        label: Text(label),
-        selected: isSelected,
-        onSelected: (val) {
-          setState(() {
-            _selectedCategory = val ? categoryId : null;
-          });
-        },
-        selectedColor: AppColors.primaryContainer,
-        labelStyle: TextStyle(
-          fontSize: 12,
-          fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-          color: isSelected ? AppColors.primaryDark : AppColors.textPrimary,
+                    // Recent Articles header
+                    const Text(
+                      'Recent Articles',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.black,
+                      ),
+                    ),
+                    const SizedBox(height: 16),
+
+                    // Articles list
+                    BlocBuilder<KnowledgeBloc, KnowledgeState>(
+                      builder: (context, state) {
+                        List<ArticleModel> articles = _fallbackArticles;
+                        if (state is KnowledgeLoaded && state.articles.isNotEmpty) {
+                          articles = state.articles;
+                        }
+
+                        final filtered = articles.where((a) {
+                          if (_searchQuery.isNotEmpty &&
+                              !a.title.toLowerCase().contains(_searchQuery) &&
+                              !a.content.toLowerCase().contains(_searchQuery)) {
+                            return false;
+                          }
+                          return true;
+                        }).toList();
+
+                        if (filtered.isEmpty) {
+                          return const EmptyStateWidget(
+                            icon: Icons.menu_book_outlined,
+                            title: 'No Articles Found',
+                            description: 'Try adjusting your search keywords.',
+                          );
+                        }
+
+                        return ListView.separated(
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
+                          itemCount: filtered.length,
+                          separatorBuilder: (_, __) => const SizedBox(height: 12),
+                          itemBuilder: (context, index) {
+                            final article = filtered[index];
+                            return InkWell(
+                              onTap: () {
+                                context.push(
+                                  '/user/article-details/${article.id}',
+                                  extra: article,
+                                );
+                              },
+                              borderRadius: BorderRadius.circular(16),
+                              child: Container(
+                                padding: const EdgeInsets.all(14),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(16),
+                                  border: Border.all(color: const Color(0xFFE2E8F0)),
+                                ),
+                                child: Row(
+                                  children: [
+                                    // Thumbnail
+                                    Container(
+                                      width: 64,
+                                      height: 64,
+                                      decoration: BoxDecoration(
+                                        color: const Color(0xFFE8F5E9),
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: const Icon(
+                                        Icons.eco,
+                                        size: 28,
+                                        color: Color(0xFF2E7D32),
+                                      ),
+                                    ),
+                                    const SizedBox(width: 14),
+                                    Expanded(
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            article.title,
+                                            style: const TextStyle(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w700,
+                                              color: Colors.black,
+                                              height: 1.3,
+                                            ),
+                                            maxLines: 2,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                          const SizedBox(height: 6),
+                                          Row(
+                                            children: [
+                                              const Icon(
+                                                Icons.timer_outlined,
+                                                size: 12,
+                                                color: Color(0xFF9CA3AF),
+                                              ),
+                                              const SizedBox(width: 4),
+                                              Text(
+                                                article.readTime ?? '5 min read',
+                                                style: const TextStyle(
+                                                  fontSize: 11,
+                                                  color: Color(0xFF9CA3AF),
+                                                ),
+                                              ),
+                                              const SizedBox(width: 12),
+                                              Container(
+                                                padding: const EdgeInsets.symmetric(
+                                                  horizontal: 8,
+                                                  vertical: 2,
+                                                ),
+                                                decoration: BoxDecoration(
+                                                  color: const Color(0xFFE8F5E9),
+                                                  borderRadius: BorderRadius.circular(6),
+                                                ),
+                                                child: Text(
+                                                  article.category ?? 'General',
+                                                  style: const TextStyle(
+                                                    fontSize: 10,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: Color(0xFF0F6B35),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        );
+                      },
+                    ),
+                    const SizedBox(height: 20),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
-        side: BorderSide(
-          color: isSelected ? AppColors.primary : AppColors.divider,
-        ),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       ),
     );
   }

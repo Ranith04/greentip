@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../../data/models/category_model.dart';
 import '../../blocs/query/query_bloc.dart';
-import '../../widgets/buttons/app_buttons.dart';
 
 class SelectCategoryScreen extends StatefulWidget {
   const SelectCategoryScreen({super.key});
@@ -14,23 +13,21 @@ class SelectCategoryScreen extends StatefulWidget {
 }
 
 class _SelectCategoryScreenState extends State<SelectCategoryScreen> {
-  final TextEditingController _searchController = TextEditingController();
   CategoryModel? _selectedCategory;
-  String _searchQuery = '';
 
-  final List<Map<String, dynamic>> _fallbackCategories = [
+  final List<Map<String, dynamic>> _categories = [
     {
       'id': 1,
       'name': 'Environmental Clearance',
       'description': 'EIA notification, EC conditions and compliance',
-      'icon': Icons.verified_outlined,
-      'color': Color(0xFF16A34A),
+      'icon': Icons.eco,
+      'color': Color(0xFF2E7D32),
     },
     {
       'id': 2,
       'name': 'Construction',
       'description': 'Building permissions, RERA environmental norms',
-      'icon': Icons.construction_outlined,
+      'icon': Icons.home_work_outlined,
       'color': Color(0xFFD97706),
     },
     {
@@ -61,13 +58,6 @@ class _SelectCategoryScreenState extends State<SelectCategoryScreen> {
       'icon': Icons.factory_outlined,
       'color': Color(0xFF0284C7),
     },
-    {
-      'id': 7,
-      'name': 'CRZ & Coastal Regulation',
-      'description': 'Coastal zone projects and shoreline approvals',
-      'icon': Icons.water_drop_outlined,
-      'color': Color(0xFF0284C7),
-    },
   ];
 
   @override
@@ -77,84 +67,70 @@ class _SelectCategoryScreenState extends State<SelectCategoryScreen> {
   }
 
   @override
-  void dispose() {
-    _searchController.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: const Text('Select Compliance Domain'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded, size: 20),
-          onPressed: () => context.pop(),
-        ),
-      ),
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Search Input
+            // Header
             Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20.0,
-                vertical: 8.0,
-              ),
-              child: TextField(
-                controller: _searchController,
-                onChanged: (val) {
-                  setState(() {
-                    _searchQuery = val.toLowerCase();
-                  });
-                },
-                decoration: InputDecoration(
-                  hintText: 'Search domain, legal provision, or waste type...',
-                  prefixIcon: const Icon(
-                    Icons.search,
-                    size: 20,
-                    color: AppColors.textMuted,
+              padding: const EdgeInsets.fromLTRB(20, 16, 20, 0),
+              child: Row(
+                children: [
+                  GestureDetector(
+                    onTap: () => context.pop(),
+                    child: const Icon(Icons.chevron_left, size: 28, color: Colors.black),
                   ),
-                  filled: true,
-                  fillColor: AppColors.background,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide.none,
+                  const SizedBox(width: 8),
+                  const Text(
+                    'Select Category',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.black,
+                    ),
                   ),
-                ),
+                ],
               ),
             ),
             const SizedBox(height: 8),
 
-            // Categories List
-            Expanded(
-              child: ListView.separated(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20.0,
-                  vertical: 12.0,
+            // Subtitle
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Text(
+                'Choose the category that best fits your query',
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Color(0xFF6B7280),
                 ),
-                itemCount: _fallbackCategories.length,
-                separatorBuilder: (_, _) => const SizedBox(height: 12),
+              ),
+            ),
+            const SizedBox(height: 24),
+
+            // Categories Grid (2 columns)
+            Expanded(
+              child: GridView.builder(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 14,
+                  mainAxisSpacing: 14,
+                  childAspectRatio: 1.0,
+                ),
+                itemCount: _categories.length,
                 itemBuilder: (context, index) {
-                  final cat = _fallbackCategories[index];
+                  final cat = _categories[index];
+                  final id = cat['id'] as int;
                   final name = cat['name'] as String;
                   final desc = cat['description'] as String;
                   final icon = cat['icon'] as IconData;
                   final color = cat['color'] as Color;
-                  final id = cat['id'] as int;
-
-                  if (_searchQuery.isNotEmpty &&
-                      !name.toLowerCase().contains(_searchQuery) &&
-                      !desc.toLowerCase().contains(_searchQuery)) {
-                    return const SizedBox.shrink();
-                  }
-
                   final isSelected = _selectedCategory?.id == id;
 
-                  return InkWell(
+                  return GestureDetector(
                     onTap: () {
                       setState(() {
                         _selectedCategory = CategoryModel(
@@ -164,66 +140,56 @@ class _SelectCategoryScreenState extends State<SelectCategoryScreen> {
                         );
                       });
                     },
-                    borderRadius: BorderRadius.circular(16),
-                    child: Container(
+                    child: AnimatedContainer(
+                      duration: const Duration(milliseconds: 200),
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
                         color: isSelected
-                            ? AppColors.primaryContainer.withValues(alpha: 0.5)
+                            ? const Color(0xFFE8F5E9)
                             : Colors.white,
                         borderRadius: BorderRadius.circular(16),
                         border: Border.all(
                           color: isSelected
-                              ? AppColors.primary
-                              : AppColors.divider,
+                              ? const Color(0xFF0F6B35)
+                              : const Color(0xFFE2E8F0),
                           width: isSelected ? 2 : 1,
                         ),
                       ),
-                      child: Row(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Container(
-                            width: 48,
-                            height: 48,
+                            width: 52,
+                            height: 52,
                             decoration: BoxDecoration(
                               color: color.withValues(alpha: 0.12),
-                              borderRadius: BorderRadius.circular(12),
+                              borderRadius: BorderRadius.circular(14),
                             ),
-                            child: Icon(icon, color: color, size: 24),
+                            child: Icon(icon, color: color, size: 26),
                           ),
-                          const SizedBox(width: 14),
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  name,
-                                  style: const TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColors.textPrimary,
-                                  ),
-                                ),
-                                const SizedBox(height: 4),
-                                Text(
-                                  desc,
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    color: AppColors.textSecondary,
-                                    height: 1.3,
-                                  ),
-                                ),
-                              ],
+                          const SizedBox(height: 12),
+                          Text(
+                            name,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                              color: isSelected
+                                  ? const Color(0xFF0F6B35)
+                                  : Colors.black,
                             ),
                           ),
-                          const SizedBox(width: 8),
-                          Icon(
-                            isSelected
-                                ? Icons.radio_button_checked
-                                : Icons.radio_button_off_rounded,
-                            color: isSelected
-                                ? AppColors.primary
-                                : Colors.grey.shade400,
-                            size: 22,
+                          const SizedBox(height: 4),
+                          Text(
+                            desc,
+                            textAlign: TextAlign.center,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              fontSize: 11,
+                              color: Color(0xFF9CA3AF),
+                              height: 1.3,
+                            ),
                           ),
                         ],
                       ),
@@ -233,23 +199,38 @@ class _SelectCategoryScreenState extends State<SelectCategoryScreen> {
               ),
             ),
 
-            // Bottom Continue
+            // Bottom button
             Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border(top: BorderSide(color: AppColors.divider)),
-              ),
-              child: AppPrimaryButton(
-                text: 'Continue with Selected Domain',
-                onPressed: _selectedCategory == null
-                    ? null
-                    : () {
-                        context.push(
-                          '/user/ask-query',
-                          extra: _selectedCategory,
-                        );
-                      },
+              padding: const EdgeInsets.fromLTRB(20, 12, 20, 20),
+              child: SizedBox(
+                width: double.infinity,
+                height: 56,
+                child: ElevatedButton(
+                  onPressed: _selectedCategory == null
+                      ? null
+                      : () {
+                          context.push(
+                            '/user/ask-query',
+                            extra: _selectedCategory,
+                          );
+                        },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF0F6B35),
+                    foregroundColor: Colors.white,
+                    disabledBackgroundColor: const Color(0xFFD1D5DB),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(28),
+                    ),
+                    elevation: 0,
+                  ),
+                  child: const Text(
+                    'Continue',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
               ),
             ),
           ],

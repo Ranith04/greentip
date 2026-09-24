@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/app_strings.dart';
 import '../../blocs/auth/auth_bloc.dart';
 import '../../blocs/auth/auth_event.dart';
 import '../../blocs/auth/auth_state.dart';
-import '../../widgets/buttons/app_buttons.dart';
 import '../../widgets/inputs/otp_pin_field.dart';
 
 class OtpVerificationScreen extends StatefulWidget {
@@ -124,23 +122,24 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                 Container(
                   width: 80,
                   height: 80,
-                  decoration: BoxDecoration(
-                    color: AppColors.primaryContainer,
+                  decoration: const BoxDecoration(
+                    color: Color(0xFFE8F5E9),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
                     Icons.mark_email_read_outlined,
                     size: 40,
-                    color: AppColors.primary,
+                    color: Color(0xFF0F6B35),
                   ),
                 ),
-                const SizedBox(height: 28),
+                const SizedBox(height: 32),
                 const Text(
-                  AppStrings.otpTitle,
+                  'Verify Code',
                   style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.textPrimary,
+                    fontSize: 28,
+                    fontWeight: FontWeight.w900,
+                    color: Colors.black,
+                    letterSpacing: -0.5,
                   ),
                 ),
                 const SizedBox(height: 12),
@@ -150,13 +149,13 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                     'We sent a 6-digit code to\n${widget.emailOrMobile.isNotEmpty ? widget.emailOrMobile : "your registered email"}',
                     textAlign: TextAlign.center,
                     style: const TextStyle(
-                      fontSize: 14,
-                      color: AppColors.textSecondary,
+                      fontSize: 15,
+                      color: Color(0xFF6B7280),
                       height: 1.4,
                     ),
                   ),
                 ),
-                const SizedBox(height: 36),
+                const SizedBox(height: 40),
 
                 // OTP inputs
                 OtpPinField(
@@ -177,8 +176,8 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                       Text(
                         'Resend code in ${_timerSeconds}s',
                         style: const TextStyle(
-                          fontSize: 13,
-                          color: AppColors.textMuted,
+                          fontSize: 14,
+                          color: Color(0xFF6B7280),
                           fontWeight: FontWeight.w500,
                         ),
                       )
@@ -186,11 +185,11 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
                       TextButton(
                         onPressed: _onResend,
                         child: const Text(
-                          AppStrings.resendOtp,
+                          'Resend Code',
                           style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 15,
                             fontWeight: FontWeight.bold,
-                            color: AppColors.primary,
+                            color: Color(0xFF0F6B35),
                           ),
                         ),
                       ),
@@ -200,10 +199,36 @@ class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
 
                 BlocBuilder<AuthBloc, AuthState>(
                   builder: (context, state) {
-                    return AppPrimaryButton(
-                      text: AppStrings.verifyOtp,
-                      isLoading: state is AuthLoading,
-                      onPressed: _onVerify,
+                    return SizedBox(
+                      width: double.infinity,
+                      height: 56,
+                      child: ElevatedButton(
+                        onPressed: state is AuthLoading ? null : _onVerify,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFF288B46),
+                          foregroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(28),
+                          ),
+                          elevation: 0,
+                        ),
+                        child: state is AuthLoading
+                            ? const SizedBox(
+                                width: 24,
+                                height: 24,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                  color: Colors.white,
+                                ),
+                              )
+                            : const Text(
+                                'Verify & Continue',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                      ),
                     );
                   },
                 ),

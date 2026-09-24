@@ -5,8 +5,6 @@ import '../../../core/constants/app_colors.dart';
 import '../../../core/utils/date_formatter.dart';
 import '../../../data/models/query_model.dart';
 import '../../blocs/query/query_bloc.dart';
-import '../../widgets/buttons/app_buttons.dart';
-import '../../widgets/feedback/status_badge.dart';
 import '../../widgets/feedback/timeline_stepper.dart';
 
 class QueryDetailsScreen extends StatefulWidget {
@@ -28,78 +26,124 @@ class _QueryDetailsScreenState extends State<QueryDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.background,
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        elevation: 0,
-        title: Text('#QT-${widget.queryId.toString().padLeft(4, '0')}'),
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios_new_rounded, size: 20),
-          onPressed: () => context.pop(),
-        ),
-      ),
-      body: BlocBuilder<QueryBloc, QueryState>(
-        builder: (context, state) {
-          if (state is QueryLoading) {
-            return const Center(
-              child: CircularProgressIndicator(color: AppColors.primary),
-            );
-          }
-
-          if (state is QueryError) {
-            return Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+      backgroundColor: const Color(0xFFF1F8F4), // Light mint background
+      body: SafeArea(
+        child: Column(
+          children: [
+            // Header
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 16, 20, 0),
+              child: Row(
                 children: [
-                  const Icon(
-                    Icons.error_outline,
-                    size: 48,
-                    color: AppColors.error,
+                  GestureDetector(
+                    onTap: () => context.pop(),
+                    child: const Icon(Icons.chevron_left, size: 28, color: Colors.black),
                   ),
-                  const SizedBox(height: 12),
+                  const SizedBox(width: 8),
                   Text(
-                    state.message,
-                    style: const TextStyle(color: AppColors.textSecondary),
-                  ),
-                  const SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () => context.read<QueryBloc>().add(
-                      LoadQueryDetailsEvent(widget.queryId),
+                    '#QT-${widget.queryId.toString().padLeft(4, '0')}',
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.black,
                     ),
-                    child: const Text('Retry'),
                   ),
                 ],
               ),
-            );
-          }
+            ),
+            const SizedBox(height: 20),
 
-          if (state is QueryDetailsLoaded) {
-            final query = state.query;
-            return _buildContent(query);
-          }
+            Expanded(
+              child: BlocBuilder<QueryBloc, QueryState>(
+                builder: (context, state) {
+                  if (state is QueryLoading) {
+                    return const Center(
+                      child: CircularProgressIndicator(color: Color(0xFF0F6B35)),
+                    );
+                  }
 
-          return const SizedBox.shrink();
-        },
+                  if (state is QueryError) {
+                    return Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(Icons.error_outline, size: 48, color: AppColors.error),
+                          const SizedBox(height: 12),
+                          Text(state.message, style: const TextStyle(color: AppColors.textSecondary)),
+                          const SizedBox(height: 16),
+                          ElevatedButton(
+                            onPressed: () => context.read<QueryBloc>().add(LoadQueryDetailsEvent(widget.queryId)),
+                            child: const Text('Retry'),
+                          ),
+                        ],
+                      ),
+                    );
+                  }
+
+                  if (state is QueryDetailsLoaded) {
+                    return _buildContent(state.query);
+                  }
+
+                  return const SizedBox.shrink();
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
 
   Widget _buildContent(QueryModel query) {
+    // Status colors
+    Color statusBgColor;
+    Color statusTextColor;
+    String statusLabel = query.statusName ?? 'Pending';
+
+    switch (statusLabel.toLowerCase()) {
+      case 'responded':
+      case 'answered':
+        statusBgColor = const Color(0xFF0F6B35);
+        statusTextColor = Colors.white;
+        statusLabel = 'Responded';
+        break;
+      case 'pending':
+      case 'submitted':
+        statusBgColor = const Color(0xFFEA580C);
+        statusTextColor = Colors.white;
+        statusLabel = 'Pending';
+        break;
+      case 'in progress':
+      case 'assigned':
+        statusBgColor = const Color(0xFF1D4ED8);
+        statusTextColor = Colors.white;
+        statusLabel = 'In Progress';
+        break;
+      case 'closed':
+        statusBgColor = const Color(0xFF475569);
+        statusTextColor = Colors.white;
+        statusLabel = 'Closed';
+        break;
+      default:
+        statusBgColor = const Color(0xFF6B7280);
+        statusTextColor = Colors.white;
+    }
+
     return Column(
       children: [
         Expanded(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.symmetric(horizontal: 20.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Header Card
+                // Top Card
                 Container(
-                  padding: const EdgeInsets.all(18),
+                  padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: AppColors.divider),
+                    border: Border.all(color: const Color(0xFFE2E8F0)),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -108,50 +152,57 @@ class _QueryDetailsScreenState extends State<QueryDetailsScreen> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Container(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 10,
-                              vertical: 4,
-                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                             decoration: BoxDecoration(
-                              color: AppColors.primaryContainer,
-                              borderRadius: BorderRadius.circular(8),
+                              color: const Color(0xFFE8F5E9),
+                              borderRadius: BorderRadius.circular(20),
                             ),
                             child: Text(
-                              query.categoryName ?? 'Environmental Compliance',
+                              query.categoryName ?? 'General',
                               style: const TextStyle(
                                 fontSize: 12,
-                                fontWeight: FontWeight.bold,
-                                color: AppColors.primaryDark,
+                                fontWeight: FontWeight.w700,
+                                color: Color(0xFF0F6B35),
                               ),
                             ),
                           ),
-                          StatusBadge(status: query.status),
+                          Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+                            decoration: BoxDecoration(
+                              color: statusBgColor,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Text(
+                              statusLabel,
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                                color: statusTextColor,
+                              ),
+                            ),
+                          ),
                         ],
                       ),
-                      const SizedBox(height: 14),
+                      const SizedBox(height: 16),
                       Text(
                         query.title,
                         style: const TextStyle(
                           fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.textPrimary,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.black,
                           height: 1.3,
                         ),
                       ),
-                      const SizedBox(height: 10),
+                      const SizedBox(height: 12),
                       Row(
                         children: [
-                          const Icon(
-                            Icons.calendar_today_outlined,
-                            size: 14,
-                            color: AppColors.textMuted,
-                          ),
-                          const SizedBox(width: 6),
+                          const Icon(Icons.calendar_today_outlined, size: 16, color: Color(0xFF6B7280)),
+                          const SizedBox(width: 8),
                           Text(
                             'Filed on ${DateFormatter.formatWithTime(query.createdAt)}',
                             style: const TextStyle(
-                              fontSize: 12,
-                              color: AppColors.textMuted,
+                              fontSize: 13,
+                              color: Color(0xFF6B7280),
                             ),
                           ),
                         ],
@@ -161,13 +212,13 @@ class _QueryDetailsScreenState extends State<QueryDetailsScreen> {
                 ),
                 const SizedBox(height: 20),
 
-                // 4-Stage Stepper
+                // Resolution Timeline
                 Container(
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: AppColors.divider),
+                    border: Border.all(color: const Color(0xFFE2E8F0)),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -175,25 +226,25 @@ class _QueryDetailsScreenState extends State<QueryDetailsScreen> {
                       const Text(
                         'Resolution Timeline',
                         style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.textPrimary,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.black,
                         ),
                       ),
-                      const SizedBox(height: 16),
+                      const SizedBox(height: 24),
                       TimelineStepper(query: query),
                     ],
                   ),
                 ),
                 const SizedBox(height: 20),
 
-                // Query Details Card
+                // Original Query Details
                 Container(
-                  padding: const EdgeInsets.all(18),
+                  padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: AppColors.divider),
+                    border: Border.all(color: const Color(0xFFE2E8F0)),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -201,38 +252,33 @@ class _QueryDetailsScreenState extends State<QueryDetailsScreen> {
                       const Text(
                         'Original Query Details',
                         style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: AppColors.textPrimary,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w800,
+                          color: Colors.black,
                         ),
                       ),
-                      const SizedBox(height: 12),
-                      Text(
-                        query.description,
-                        style: const TextStyle(
-                          fontSize: 14,
-                          color: AppColors.textSecondary,
-                          height: 1.5,
-                        ),
-                      ),
-                      const Divider(height: 24),
-                      _detailItem('Plant Unit', query.industryName),
-                      _detailItem('Sector', query.sector),
-                      _detailItem('PCB Jurisdiction', query.state),
-                      _detailItem('CTO/CTE Number', query.consentNumber),
+                      const SizedBox(height: 20),
+                      
+                      _buildDetailField('Description', query.description),
+                      const SizedBox(height: 16),
+                      _buildDetailField('Project Type', query.sector),
+                      const SizedBox(height: 16),
+                      _buildDetailField('Location', query.state),
+                      const SizedBox(height: 16),
+                      _buildDetailField('Project Area (sq m)', query.consentNumber),
                     ],
                   ),
                 ),
                 const SizedBox(height: 20),
 
-                // Attachments List
+                // Attachments
                 if (query.attachments.isNotEmpty) ...[
                   Container(
-                    padding: const EdgeInsets.all(18),
+                    padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(16),
-                      border: Border.all(color: AppColors.divider),
+                      border: Border.all(color: const Color(0xFFE2E8F0)),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -240,43 +286,34 @@ class _QueryDetailsScreenState extends State<QueryDetailsScreen> {
                         Text(
                           'Attached Documents (${query.attachments.length})',
                           style: const TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.black,
                           ),
                         ),
-                        const SizedBox(height: 12),
+                        const SizedBox(height: 16),
                         ...query.attachments.map(
                           (a) => Container(
-                            margin: const EdgeInsets.only(bottom: 8),
-                            padding: const EdgeInsets.all(12),
+                            margin: const EdgeInsets.only(bottom: 12),
+                            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
                             decoration: BoxDecoration(
-                              color: AppColors.background,
-                              borderRadius: BorderRadius.circular(10),
+                              color: const Color(0xFFF9FAFB),
+                              borderRadius: BorderRadius.circular(14),
+                              border: Border.all(color: const Color(0xFFE2E8F0)),
                             ),
                             child: Row(
                               children: [
-                                const Icon(
-                                  Icons.picture_as_pdf_outlined,
-                                  color: AppColors.error,
-                                  size: 22,
-                                ),
-                                const SizedBox(width: 10),
+                                const Icon(Icons.description_outlined, color: Color(0xFF0F6B35), size: 24),
+                                const SizedBox(width: 12),
                                 Expanded(
                                   child: Text(
                                     a.fileName,
                                     maxLines: 1,
                                     overflow: TextOverflow.ellipsis,
-                                    style: const TextStyle(
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.w600,
-                                    ),
+                                    style: const TextStyle(fontSize: 14, color: Colors.black, fontWeight: FontWeight.w500),
                                   ),
                                 ),
-                                const Icon(
-                                  Icons.download_rounded,
-                                  size: 20,
-                                  color: AppColors.primary,
-                                ),
+                                const Icon(Icons.download_rounded, color: Color(0xFF6B7280), size: 20),
                               ],
                             ),
                           ),
@@ -294,45 +331,54 @@ class _QueryDetailsScreenState extends State<QueryDetailsScreen> {
         // Bottom Action Bar
         Container(
           padding: const EdgeInsets.all(20),
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Colors.white,
-            border: Border(top: BorderSide(color: AppColors.divider)),
+            border: Border(top: BorderSide(color: Color(0xFFE2E8F0))),
           ),
           child: query.status >= 3
-              ? AppPrimaryButton(
-                  text: 'View Expert Opinion & Resolution',
-                  icon: Icons.verified_rounded,
-                  onPressed: () {
-                    context.push(
-                      '/user/expert-response/${query.id}',
-                      extra: query,
-                    );
-                  },
+              ? SizedBox(
+                  width: double.infinity,
+                  height: 56,
+                  child: ElevatedButton.icon(
+                    onPressed: () {
+                      context.push('/user/expert-response/${query.id}', extra: query);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color(0xFF0F6B35),
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(28),
+                      ),
+                      elevation: 0,
+                    ),
+                    icon: const Icon(Icons.verified_rounded, size: 20),
+                    label: const Text(
+                      'View Expert Opinion & Resolution',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
                 )
               : Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 14,
-                    vertical: 12,
-                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                   decoration: BoxDecoration(
-                    color: AppColors.primaryContainer.withValues(alpha: 0.5),
-                    borderRadius: BorderRadius.circular(12),
+                    color: const Color(0xFFE8F5E9),
+                    borderRadius: BorderRadius.circular(14),
                   ),
                   child: Row(
                     children: [
-                      const Icon(
-                        Icons.info_outline_rounded,
-                        color: AppColors.primaryDark,
-                        size: 20,
-                      ),
-                      const SizedBox(width: 10),
+                      const Icon(Icons.info_outline_rounded, color: Color(0xFF0F6B35), size: 22),
+                      const SizedBox(width: 12),
                       const Expanded(
                         child: Text(
                           'Assigned expert is evaluating this statutory case. You will be notified upon resolution.',
                           style: TextStyle(
-                            fontSize: 12,
-                            color: AppColors.primaryDark,
-                            height: 1.3,
+                            fontSize: 13,
+                            color: Color(0xFF0F6B35),
+                            fontWeight: FontWeight.w500,
+                            height: 1.4,
                           ),
                         ),
                       ),
@@ -344,32 +390,38 @@ class _QueryDetailsScreenState extends State<QueryDetailsScreen> {
     );
   }
 
-  Widget _detailItem(String label, String? value) {
+  Widget _buildDetailField(String label, String? value) {
     if (value == null || value.isEmpty) return const SizedBox.shrink();
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 8.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            width: 120,
-            child: Text(
-              label,
-              style: const TextStyle(fontSize: 12, color: AppColors.textMuted),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+            color: Colors.black,
+          ),
+        ),
+        const SizedBox(height: 8),
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          decoration: BoxDecoration(
+            color: const Color(0xFFF9FAFB),
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(color: const Color(0xFFE2E8F0)),
+          ),
+          child: Text(
+            value,
+            style: const TextStyle(
+              fontSize: 15,
+              color: Colors.black,
+              height: 1.4,
             ),
           ),
-          Expanded(
-            child: Text(
-              value,
-              style: const TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w600,
-                color: AppColors.textPrimary,
-              ),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

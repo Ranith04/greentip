@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
 import '../../blocs/query/query_bloc.dart';
-import '../../widgets/buttons/app_buttons.dart';
 
 class ReviewQueryScreen extends StatelessWidget {
   final Map<String, dynamic> formData;
@@ -15,12 +14,12 @@ class ReviewQueryScreen extends StatelessWidget {
       SubmitQueryEvent(
         title: formData['title'],
         description: formData['description'],
-        urgency: 'Normal', // Default as per prompt 3 logic
+        urgency: 'Normal',
         categoryId: formData['categoryId'],
-        industryName: formData['projectType'], // Mapping projectType as there is no specific field for projectType in SubmitQueryEvent, or pass via sector
-        sector: formData['projectType'], 
+        industryName: formData['projectType'],
+        sector: formData['projectType'],
         state: formData['location'],
-        consentNumber: formData['projectArea'], // Mapping projectArea 
+        consentNumber: formData['projectArea'],
         filePaths: formData['filePaths'] as List<String>?,
       ),
     );
@@ -46,94 +45,189 @@ class ReviewQueryScreen extends StatelessWidget {
       },
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 0,
-          title: const Text('Review Your Query'),
-          leading: IconButton(
-            icon: const Icon(Icons.arrow_back_ios_new_rounded, size: 20),
-            onPressed: () => context.pop(),
-          ),
-        ),
         body: SafeArea(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Header
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 16, 20, 0),
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () => context.pop(),
+                      child: const Icon(Icons.chevron_left, size: 28, color: Colors.black),
+                    ),
+                    const SizedBox(width: 8),
+                    const Text(
+                      'Review Your Query',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 8),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Text(
+                  'Please check the details before submitting',
+                  style: TextStyle(fontSize: 15, color: Color(0xFF6B7280)),
+                ),
+              ),
+              const SizedBox(height: 24),
+
               Expanded(
                 child: SingleChildScrollView(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 24.0,
-                    vertical: 20.0,
-                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Please check the details before submitting',
-                        style: TextStyle(fontSize: 14, color: AppColors.textSecondary),
-                      ),
-                      const SizedBox(height: 24),
-                      
-                      _buildInfoRow('Category', formData['categoryName']?.toString() ?? 'General'),
-                      _buildInfoRow('Title', formData['title']),
-                      _buildInfoRow('Description', formData['description']),
-                      _buildInfoRow('Project Type', formData['projectType']),
-                      _buildInfoRow('Location', formData['location']),
-                      _buildInfoRow('Project Area (sqm)', formData['projectArea']),
-                      
-                      const SizedBox(height: 16),
-                      const Text(
-                        'Attachments',
-                        style: TextStyle(
-                          fontSize: 13,
-                          fontWeight: FontWeight.w600,
-                          color: AppColors.textMuted,
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      Row(
-                        children: [
-                          const Icon(Icons.attach_file, size: 16, color: AppColors.primary),
-                          const SizedBox(width: 4),
-                          Text(
-                            '${attachments.length} files attached',
+                      // Category badge
+                      if (formData['categoryName'] != null) ...[
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                          decoration: BoxDecoration(
+                            color: const Color(0xFFE8F5E9),
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: Text(
+                            formData['categoryName'].toString(),
                             style: const TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.primary,
+                              fontSize: 13,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xFF0F6B35),
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                        const SizedBox(height: 24),
+                      ],
+
+                      _buildReviewField('Query Title', formData['title']),
+                      const SizedBox(height: 20),
+                      
+                      _buildReviewField('Description', formData['description']),
+                      const SizedBox(height: 20),
+                      
+                      _buildReviewField('Project Type', formData['projectType']),
+                      const SizedBox(height: 20),
+                      
+                      _buildReviewField('Location', formData['location']),
+                      const SizedBox(height: 20),
+                      
+                      _buildReviewField('Project Area (sq m)', formData['projectArea']),
+                      const SizedBox(height: 20),
+
+                      if (attachments.isNotEmpty) ...[
+                        const Text(
+                          'Attachments',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.black,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        ...List.generate(attachments.length, (index) {
+                          final filePath = attachments[index];
+                          final fileName = filePath.split('/').last.split('\\').last;
+                          return Container(
+                            margin: const EdgeInsets.only(bottom: 8),
+                            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFF9FAFB),
+                              borderRadius: BorderRadius.circular(14),
+                              border: Border.all(color: const Color(0xFFE2E8F0)),
+                            ),
+                            child: Row(
+                              children: [
+                                const Icon(Icons.description_outlined, color: Color(0xFF0F6B35), size: 22),
+                                const SizedBox(width: 12),
+                                Expanded(
+                                  child: Text(
+                                    fileName,
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: const TextStyle(fontSize: 14, color: Colors.black),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        }),
+                        const SizedBox(height: 16),
+                      ],
                     ],
                   ),
                 ),
               ),
+
+              // Bottom buttons
               Container(
                 padding: const EdgeInsets.all(20),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
-                  border: Border(top: BorderSide(color: AppColors.divider)),
+                  border: Border(top: BorderSide(color: Color(0xFFE2E8F0))),
                 ),
                 child: Row(
                   children: [
                     Expanded(
                       flex: 1,
-                      child: AppOutlineButton(
-                        text: 'Edit',
-                        borderColor: AppColors.border,
-                        textColor: AppColors.textPrimary,
-                        onPressed: () => context.pop(),
+                      child: SizedBox(
+                        height: 56,
+                        child: OutlinedButton(
+                          onPressed: () => context.pop(),
+                          style: OutlinedButton.styleFrom(
+                            foregroundColor: Colors.black,
+                            side: const BorderSide(color: Color(0xFFD1D5DB)),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(28),
+                            ),
+                          ),
+                          child: const Text(
+                            'Edit',
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                        ),
                       ),
                     ),
-                    const SizedBox(width: 14),
+                    const SizedBox(width: 16),
                     Expanded(
                       flex: 2,
                       child: BlocBuilder<QueryBloc, QueryState>(
                         builder: (context, state) {
-                          return AppPrimaryButton(
-                            text: 'Submit',
-                            isLoading: state is QueryLoading,
-                            onPressed: () => _submitQuery(context),
+                          return SizedBox(
+                            height: 56,
+                            child: ElevatedButton(
+                              onPressed: state is QueryLoading ? null : () => _submitQuery(context),
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: const Color(0xFF0F6B35),
+                                foregroundColor: Colors.white,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(28),
+                                ),
+                                elevation: 0,
+                              ),
+                              child: state is QueryLoading
+                                  ? const SizedBox(
+                                      width: 24,
+                                      height: 24,
+                                      child: CircularProgressIndicator(
+                                        strokeWidth: 2,
+                                        color: Colors.white,
+                                      ),
+                                    )
+                                  : const Text(
+                                      'Submit',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                            ),
                           );
                         },
                       ),
@@ -148,32 +242,37 @@ class ReviewQueryScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildInfoRow(String label, String value) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            label,
-            style: const TextStyle(
-              fontSize: 13,
-              fontWeight: FontWeight.w600,
-              color: AppColors.textMuted,
-            ),
+  Widget _buildReviewField(String label, String? value) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          label,
+          style: const TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+            color: Colors.black,
           ),
-          const SizedBox(height: 4),
-          Text(
-            value.isNotEmpty ? value : 'N/A',
+        ),
+        const SizedBox(height: 8),
+        Container(
+          width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          decoration: BoxDecoration(
+            color: const Color(0xFFF9FAFB),
+            borderRadius: BorderRadius.circular(14),
+            border: Border.all(color: const Color(0xFFE2E8F0)),
+          ),
+          child: Text(
+            (value == null || value.isEmpty) ? 'Not provided' : value,
             style: const TextStyle(
               fontSize: 15,
-              fontWeight: FontWeight.bold,
-              color: AppColors.textPrimary,
+              color: Colors.black,
               height: 1.4,
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

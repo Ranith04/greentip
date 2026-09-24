@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/app_strings.dart';
 import '../../blocs/auth/auth_bloc.dart';
 import '../../blocs/auth/auth_event.dart';
 import '../../blocs/auth/auth_state.dart';
-import '../../widgets/buttons/app_buttons.dart';
 import '../../widgets/inputs/app_text_field.dart';
 
 class SignupScreen extends StatefulWidget {
@@ -89,41 +87,37 @@ class _SignupScreenState extends State<SignupScreen> {
         ),
         body: SafeArea(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 24.0,
-              vertical: 8.0,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8.0),
             child: Form(
               key: _formKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    AppStrings.createAccount,
+                    'Create Account',
                     style: TextStyle(
-                      fontSize: 26,
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.textPrimary,
+                      fontSize: 32,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.black,
                       letterSpacing: -0.5,
                     ),
                   ),
                   const SizedBox(height: 8),
                   const Text(
-                    AppStrings.signupSubtitle,
+                    'Sign up to get started',
                     style: TextStyle(
-                      fontSize: 14,
-                      color: AppColors.textSecondary,
+                      fontSize: 16,
+                      color: Color(0xFF6B7280),
                     ),
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 32),
 
                   AppTextField(
                     controller: _nameController,
-                    label: AppStrings.fullName,
+                    label: 'Full Name',
                     hint: 'e.g. Rajesh Sharma',
                     prefixIcon: Icons.person_outline_rounded,
-                    validator: (v) =>
-                        v?.isEmpty ?? true ? 'Enter your full name' : null,
+                    validator: (v) => v?.isEmpty ?? true ? 'Enter your full name' : null,
                   ),
                   const SizedBox(height: 16),
 
@@ -134,12 +128,8 @@ class _SignupScreenState extends State<SignupScreen> {
                     prefixIcon: Icons.email_outlined,
                     keyboardType: TextInputType.emailAddress,
                     validator: (v) {
-                      if (v == null || v.isEmpty) {
-                        return 'Enter your email';
-                      }
-                      if (!v.contains('@')) {
-                        return 'Enter a valid corporate email';
-                      }
+                      if (v == null || v.isEmpty) return 'Enter your email';
+                      if (!v.contains('@')) return 'Enter a valid corporate email';
                       return null;
                     },
                   ),
@@ -147,35 +137,31 @@ class _SignupScreenState extends State<SignupScreen> {
 
                   AppTextField(
                     controller: _mobileController,
-                    label: AppStrings.phone,
+                    label: 'Phone Number',
                     hint: '9876543210',
                     prefixIcon: Icons.phone_outlined,
                     keyboardType: TextInputType.phone,
-                    validator: (v) =>
-                        v?.isEmpty ?? true ? 'Enter mobile number' : null,
+                    validator: (v) => v?.isEmpty ?? true ? 'Enter mobile number' : null,
                   ),
                   const SizedBox(height: 16),
 
                   AppTextField(
                     controller: _orgController,
-                    label: AppStrings.organization,
+                    label: 'Organization',
                     hint: 'e.g. Apex Chemicals Pvt Ltd',
                     prefixIcon: Icons.business_outlined,
-                    validator: (v) =>
-                        v?.isEmpty ?? true ? 'Enter organization name' : null,
+                    validator: (v) => v?.isEmpty ?? true ? 'Enter organization name' : null,
                   ),
                   const SizedBox(height: 16),
 
                   AppTextField(
                     controller: _passwordController,
-                    label: AppStrings.password,
+                    label: 'Password',
                     hint: '••••••••',
                     prefixIcon: Icons.lock_outline_rounded,
                     isPassword: true,
                     validator: (v) {
-                      if (v == null || v.length < 6) {
-                        return 'Password must be at least 6 characters';
-                      }
+                      if (v == null || v.length < 6) return 'Password must be at least 6 characters';
                       return null;
                     },
                   ),
@@ -183,18 +169,16 @@ class _SignupScreenState extends State<SignupScreen> {
 
                   AppTextField(
                     controller: _confirmPasswordController,
-                    label: AppStrings.confirmPassword,
+                    label: 'Confirm Password',
                     hint: '••••••••',
                     prefixIcon: Icons.lock_reset_rounded,
                     isPassword: true,
                     validator: (v) {
-                      if (v != _passwordController.text) {
-                        return 'Passwords do not match';
-                      }
+                      if (v != _passwordController.text) return 'Passwords do not match';
                       return null;
                     },
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 24),
 
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -204,10 +188,11 @@ class _SignupScreenState extends State<SignupScreen> {
                         height: 24,
                         child: Checkbox(
                           value: _agreeTerms,
-                          activeColor: AppColors.primary,
+                          activeColor: const Color(0xFF288B46),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4),
                           ),
+                          side: const BorderSide(color: Color(0xFFD1D5DB)),
                           onChanged: (val) {
                             setState(() {
                               _agreeTerms = val ?? false;
@@ -218,55 +203,81 @@ class _SignupScreenState extends State<SignupScreen> {
                       const SizedBox(width: 10),
                       const Expanded(
                         child: Text(
-                          AppStrings.agreeTerms,
+                          'I agree to the Terms of Service & Privacy Policy',
                           style: TextStyle(
-                            fontSize: 12,
-                            color: AppColors.textSecondary,
+                            fontSize: 14,
+                            color: Color(0xFF4B5563),
                             height: 1.4,
                           ),
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 32),
 
                   BlocBuilder<AuthBloc, AuthState>(
                     builder: (context, state) {
-                      return AppPrimaryButton(
-                        text: 'Verify',
-                        isLoading: state is AuthLoading,
-                        onPressed: _onRegister,
+                      return SizedBox(
+                        width: double.infinity,
+                        height: 56,
+                        child: ElevatedButton(
+                          onPressed: state is AuthLoading ? null : _onRegister,
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xFF288B46),
+                            foregroundColor: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(28),
+                            ),
+                            elevation: 0,
+                          ),
+                          child: state is AuthLoading
+                              ? const SizedBox(
+                                  width: 24,
+                                  height: 24,
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 2,
+                                    color: Colors.white,
+                                  ),
+                                )
+                              : const Text(
+                                  'Register',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                        ),
                       );
                     },
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 32),
 
                   Center(
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text(
-                          'Already registered? ',
+                          'Already have an account? ',
                           style: TextStyle(
-                            fontSize: 14,
-                            color: AppColors.textSecondary,
+                            fontSize: 15,
+                            color: Color(0xFF6B7280),
                           ),
                         ),
                         GestureDetector(
                           onTap: () => context.pop(),
                           child: const Text(
-                            'Sign In',
+                            'Log in',
                             style: TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold,
-                              color: AppColors.primary,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w800,
+                              color: Color(0xFF034D2A),
                             ),
                           ),
                         ),
                       ],
                     ),
                   ),
-                  const SizedBox(height: 24),
+                  const SizedBox(height: 32),
                 ],
               ),
             ),
