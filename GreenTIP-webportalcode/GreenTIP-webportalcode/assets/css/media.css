@@ -1,0 +1,218 @@
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+    .ask_query {
+        padding-left: 0rem;
+    }
+    .arrow_image img {
+        display: none;
+    }
+    .divider {
+        margin-top: -5rem;padding: 0rem;
+    }
+    .body-container h3.title {
+        margin: 0.5em 0 1em;
+    }
+    ul.list-group li p {
+        width: 89%;
+    }
+    button.btn.btn-postquery {
+        margin-top: 0%;
+    }
+    .ask_query p {
+        font-size: 18px;
+    }
+    .ask_query h2 {
+        font-size: 27px;
+    }
+    .exportMsgCard .card {
+        padding: 3% 3% 8%;
+    }
+    .notiBackgound {
+        margin: 0 0 0 20%;
+        top: -50px;
+    }
+    .notiBackgound .notificationNumber {
+
+    }
+    .expert_container .outer_block {
+        width: 100%;
+    }
+    .expert_block .icon-bar p {
+        width: 50%;
+    }
+    .section-footer .navbar ul li {
+        float: none;
+    }
+    .navbar-toggle {
+        padding: 9px 10px;
+        margin-top: 37px;
+        margin-right: 0px;
+    }
+    .section-header .navv {
+        display: inline;
+        float: none;
+    }
+    .section-header h4.banner-tag {
+        font-size: 1.6em; text-align: center;
+    }
+    .section-header header {
+        height:auto; background-position: right;
+    }
+    .modal-content {
+        width: 100%;    margin-left: 0;
+        margin-top: 65%;
+    }
+    a.second {
+        text-align: right;
+        float: right;
+        font-size: 1.4em;
+    }
+    a.first {
+        font-size: 1.4em;
+    }
+    .expert_block .icon-bar a i {
+        font-size: 25px!important;
+        vertical-align: text-bottom;
+    }
+    .newslatter input {
+        width: 70% !important;
+    }
+    .ask_Export .media{
+        margin-bottom: 15px;
+    }
+    .ask_Export .exportTextAria{
+        margin-bottom: 4%;
+    }
+    .exportTextAria .userName {
+        margin: -7% 0 0 12%!important;
+    }
+    .section-footer .navbar{
+        padding: 5% 0 0% 0px!important;;
+    }
+    .tab button {
+        width: 100%;
+    }
+    .exportMsgCard select{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .slider li {
+        left: 0%;position: inherit;
+    }
+    .section-header header{
+        background: url(../img/header_banner.png) no-repeat scroll center bottom/cover;
+        background-color: #d5f3e0;
+    }
+    .mainmenu-area{
+        background-color: rgb(191, 247, 191);
+    }
+    header .navbar-inverse .navbar-nav>li>a {
+        border-bottom: 1px solid #95dc96;
+    }
+    /* .inboxCount{
+       width: auto;
+     } */
+    .exportTextAria .userName{
+        margin: -5% 0 0 10%;
+    }
+
+    .steperConte .borderB_step {
+        width: 33.33%;
+        margin: 3% 0 0 0;
+    }
+}
+/* // Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    .expert_block .icon-bar a.first {
+        padding-right: 4px;
+    }
+    a.second {
+        padding-left: 4px;
+        text-align: right;
+    }
+    .expert_block .icon-bar p {
+        padding: 0px 0px 0 0;
+        font-size: 1em;
+        display: inline-grid;
+    }
+    .expert_block .icon-bar a i {
+        font-size: 15px;
+    }
+    .section-footer .navbar a {
+        font-size: 1em;
+        padding: 0px 8px 0 0;
+    }
+    .newslatter input {
+        width: 74%;
+    }
+    .section-footer .navbar {
+        padding: 5% 0 0% 15px;
+    }
+    .userName {
+        margin: -5% 0 0 11%;
+    }
+
+
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .expert_block .icon-bar a.first {
+        padding-right: 0px;
+    }
+    .expert_block .icon-bar p {
+        display: inline-grid;
+        font-size: 0.9em;
+    }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+/* @media (min-width: 1200px) { ... } */
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .section-header .navv {
+        margin: auto;
+        width: max-content;
+    }
+    .exportTextAria .userName{
+        margin: -8% 0 0 11%;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    .section-header .navv {
+        display: inline;
+        float: none;
+        margin: auto;
+    }
+}
+
+
+@media (min-width: 320px) and (max-width: 768px) {
+    .notiBackgound{
+        top: -32px;
+        right: 1%;
+    }
+    .topheader h5, .topheader .media-right h5 {
+        font-size: 1.5rem;
+    }
+    .navbar-toggle{
+        margin-top: 34px;
+    }
+    .loginUserInfo li p{
+        display: inline-block;
+    }
+    /* .exportMsgCard select{
+        width: 100%;
+    } */
+}
+
+
+@media (min-width: 320px) and (max-width: 576px) {
+    .exportTextAria .userName{
+        margin: -11% auto 0 64px!important;
+    }
+}

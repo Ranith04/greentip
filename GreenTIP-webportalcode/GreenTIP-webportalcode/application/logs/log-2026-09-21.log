@@ -1,0 +1,377 @@
+INFO - 2026-09-21 18:59:01 --> Config Class Initialized
+INFO - 2026-09-21 18:59:01 --> Hooks Class Initialized
+DEBUG - 2026-09-21 18:59:02 --> UTF-8 Support Enabled
+INFO - 2026-09-21 18:59:02 --> Utf8 Class Initialized
+INFO - 2026-09-21 18:59:02 --> URI Class Initialized
+DEBUG - 2026-09-21 18:59:02 --> No URI present. Default controller set.
+INFO - 2026-09-21 18:59:02 --> Router Class Initialized
+INFO - 2026-09-21 18:59:02 --> Output Class Initialized
+INFO - 2026-09-21 18:59:02 --> Security Class Initialized
+DEBUG - 2026-09-21 18:59:02 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-09-21 18:59:02 --> Input Class Initialized
+INFO - 2026-09-21 18:59:02 --> Language Class Initialized
+INFO - 2026-09-21 18:59:02 --> Language Class Initialized
+INFO - 2026-09-21 18:59:02 --> Config Class Initialized
+INFO - 2026-09-21 18:59:02 --> Loader Class Initialized
+INFO - 2026-09-21 18:59:02 --> Helper loaded: url_helper
+INFO - 2026-09-21 18:59:02 --> Helper loaded: typography_helper
+INFO - 2026-09-21 18:59:02 --> Helper loaded: basic_helper
+INFO - 2026-09-21 18:59:02 --> Helper loaded: form_helper
+INFO - 2026-09-21 18:59:02 --> Helper loaded: html_helper
+INFO - 2026-09-21 18:59:02 --> Helper loaded: date_helper
+INFO - 2026-09-21 18:59:03 --> Helper loaded: number_helper
+INFO - 2026-09-21 18:59:03 --> Helper loaded: text_helper
+INFO - 2026-09-21 18:59:03 --> Database Driver Class Initialized
+ERROR - 2026-09-21 18:59:03 --> Severity: Warning --> mkdir(): Invalid path /var/www/html/greentip_live/system/libraries/Session/drivers/Session_files_driver.php 117
+ERROR - 2026-09-21 18:59:03 --> Severity: error --> Exception: Session: Configured save path '' is not a directory, doesn't exist or cannot be created. /var/www/html/greentip_live/system/libraries/Session/drivers/Session_files_driver.php 119
+INFO - 2026-09-21 18:59:03 --> Config Class Initialized
+INFO - 2026-09-21 18:59:03 --> Hooks Class Initialized
+DEBUG - 2026-09-21 18:59:03 --> UTF-8 Support Enabled
+INFO - 2026-09-21 18:59:03 --> Utf8 Class Initialized
+INFO - 2026-09-21 18:59:03 --> URI Class Initialized
+DEBUG - 2026-09-21 18:59:03 --> No URI present. Default controller set.
+INFO - 2026-09-21 18:59:03 --> Router Class Initialized
+INFO - 2026-09-21 18:59:03 --> Output Class Initialized
+INFO - 2026-09-21 18:59:03 --> Security Class Initialized
+DEBUG - 2026-09-21 18:59:03 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-09-21 18:59:03 --> Input Class Initialized
+INFO - 2026-09-21 18:59:03 --> Language Class Initialized
+INFO - 2026-09-21 18:59:03 --> Language Class Initialized
+INFO - 2026-09-21 18:59:03 --> Config Class Initialized
+INFO - 2026-09-21 18:59:03 --> Loader Class Initialized
+INFO - 2026-09-21 18:59:03 --> Helper loaded: url_helper
+INFO - 2026-09-21 18:59:03 --> Helper loaded: typography_helper
+INFO - 2026-09-21 18:59:04 --> Helper loaded: basic_helper
+INFO - 2026-09-21 18:59:04 --> Helper loaded: form_helper
+INFO - 2026-09-21 18:59:04 --> Helper loaded: html_helper
+INFO - 2026-09-21 18:59:04 --> Helper loaded: date_helper
+INFO - 2026-09-21 18:59:04 --> Helper loaded: number_helper
+INFO - 2026-09-21 18:59:04 --> Helper loaded: text_helper
+INFO - 2026-09-21 18:59:04 --> Database Driver Class Initialized
+ERROR - 2026-09-21 18:59:04 --> Severity: Warning --> mkdir(): Invalid path /var/www/html/greentip_live/system/libraries/Session/drivers/Session_files_driver.php 117
+ERROR - 2026-09-21 18:59:04 --> Severity: error --> Exception: Session: Configured save path '' is not a directory, doesn't exist or cannot be created. /var/www/html/greentip_live/system/libraries/Session/drivers/Session_files_driver.php 119
+INFO - 2026-09-21 18:59:13 --> Config Class Initialized
+INFO - 2026-09-21 18:59:13 --> Hooks Class Initialized
+DEBUG - 2026-09-21 18:59:13 --> UTF-8 Support Enabled
+INFO - 2026-09-21 18:59:13 --> Utf8 Class Initialized
+INFO - 2026-09-21 18:59:13 --> URI Class Initialized
+DEBUG - 2026-09-21 18:59:14 --> No URI present. Default controller set.
+INFO - 2026-09-21 18:59:14 --> Router Class Initialized
+INFO - 2026-09-21 18:59:14 --> Output Class Initialized
+INFO - 2026-09-21 18:59:14 --> Security Class Initialized
+DEBUG - 2026-09-21 18:59:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-09-21 18:59:14 --> Input Class Initialized
+INFO - 2026-09-21 18:59:14 --> Language Class Initialized
+INFO - 2026-09-21 18:59:14 --> Language Class Initialized
+INFO - 2026-09-21 18:59:14 --> Config Class Initialized
+INFO - 2026-09-21 18:59:14 --> Loader Class Initialized
+INFO - 2026-09-21 18:59:14 --> Helper loaded: url_helper
+INFO - 2026-09-21 18:59:14 --> Helper loaded: typography_helper
+INFO - 2026-09-21 18:59:14 --> Helper loaded: basic_helper
+INFO - 2026-09-21 18:59:14 --> Helper loaded: form_helper
+INFO - 2026-09-21 18:59:14 --> Helper loaded: html_helper
+INFO - 2026-09-21 18:59:14 --> Helper loaded: date_helper
+INFO - 2026-09-21 18:59:14 --> Helper loaded: number_helper
+INFO - 2026-09-21 18:59:14 --> Helper loaded: text_helper
+INFO - 2026-09-21 18:59:14 --> Database Driver Class Initialized
+ERROR - 2026-09-21 18:59:14 --> Severity: Warning --> mkdir(): Invalid path /var/www/html/greentip_live/system/libraries/Session/drivers/Session_files_driver.php 117
+ERROR - 2026-09-21 18:59:14 --> Severity: error --> Exception: Session: Configured save path '' is not a directory, doesn't exist or cannot be created. /var/www/html/greentip_live/system/libraries/Session/drivers/Session_files_driver.php 119
+INFO - 2026-09-21 18:59:29 --> Config Class Initialized
+INFO - 2026-09-21 18:59:30 --> Hooks Class Initialized
+DEBUG - 2026-09-21 18:59:30 --> UTF-8 Support Enabled
+INFO - 2026-09-21 18:59:30 --> Utf8 Class Initialized
+INFO - 2026-09-21 18:59:30 --> URI Class Initialized
+DEBUG - 2026-09-21 18:59:30 --> No URI present. Default controller set.
+INFO - 2026-09-21 18:59:30 --> Router Class Initialized
+INFO - 2026-09-21 18:59:30 --> Output Class Initialized
+INFO - 2026-09-21 18:59:30 --> Security Class Initialized
+DEBUG - 2026-09-21 18:59:30 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-09-21 18:59:30 --> Input Class Initialized
+INFO - 2026-09-21 18:59:30 --> Language Class Initialized
+INFO - 2026-09-21 18:59:30 --> Language Class Initialized
+INFO - 2026-09-21 18:59:30 --> Config Class Initialized
+INFO - 2026-09-21 18:59:30 --> Loader Class Initialized
+INFO - 2026-09-21 18:59:30 --> Helper loaded: url_helper
+INFO - 2026-09-21 18:59:30 --> Helper loaded: typography_helper
+INFO - 2026-09-21 18:59:30 --> Helper loaded: basic_helper
+INFO - 2026-09-21 18:59:30 --> Helper loaded: form_helper
+INFO - 2026-09-21 18:59:30 --> Helper loaded: html_helper
+INFO - 2026-09-21 18:59:30 --> Helper loaded: date_helper
+INFO - 2026-09-21 18:59:30 --> Helper loaded: number_helper
+INFO - 2026-09-21 18:59:30 --> Helper loaded: text_helper
+INFO - 2026-09-21 18:59:30 --> Database Driver Class Initialized
+ERROR - 2026-09-21 18:59:30 --> Severity: Warning --> mkdir(): Invalid path /var/www/html/greentip_live/system/libraries/Session/drivers/Session_files_driver.php 117
+ERROR - 2026-09-21 18:59:30 --> Severity: error --> Exception: Session: Configured save path '' is not a directory, doesn't exist or cannot be created. /var/www/html/greentip_live/system/libraries/Session/drivers/Session_files_driver.php 119
+INFO - 2026-09-21 19:00:17 --> Config Class Initialized
+INFO - 2026-09-21 19:00:17 --> Hooks Class Initialized
+DEBUG - 2026-09-21 19:00:17 --> UTF-8 Support Enabled
+INFO - 2026-09-21 19:00:17 --> Utf8 Class Initialized
+INFO - 2026-09-21 19:00:17 --> URI Class Initialized
+DEBUG - 2026-09-21 19:00:17 --> No URI present. Default controller set.
+INFO - 2026-09-21 19:00:17 --> Router Class Initialized
+INFO - 2026-09-21 19:00:17 --> Output Class Initialized
+INFO - 2026-09-21 19:00:17 --> Security Class Initialized
+DEBUG - 2026-09-21 19:00:17 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-09-21 19:00:17 --> Input Class Initialized
+INFO - 2026-09-21 19:00:17 --> Language Class Initialized
+INFO - 2026-09-21 19:00:17 --> Language Class Initialized
+INFO - 2026-09-21 19:00:17 --> Config Class Initialized
+INFO - 2026-09-21 19:00:17 --> Loader Class Initialized
+INFO - 2026-09-21 19:00:17 --> Helper loaded: url_helper
+INFO - 2026-09-21 19:00:18 --> Helper loaded: typography_helper
+INFO - 2026-09-21 19:00:18 --> Helper loaded: basic_helper
+INFO - 2026-09-21 19:00:18 --> Helper loaded: form_helper
+INFO - 2026-09-21 19:00:18 --> Helper loaded: html_helper
+INFO - 2026-09-21 19:00:18 --> Helper loaded: date_helper
+INFO - 2026-09-21 19:00:18 --> Helper loaded: number_helper
+INFO - 2026-09-21 19:00:18 --> Helper loaded: text_helper
+INFO - 2026-09-21 19:00:18 --> Database Driver Class Initialized
+INFO - 2026-09-21 19:00:19 --> Session: Class initialized using 'files' driver.
+DEBUG - 2026-09-21 19:00:19 --> Authentication library initialized
+INFO - 2026-09-21 19:00:19 --> Cart Class Initialized
+DEBUG - 2026-09-21 19:00:19 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2026-09-21 19:00:19 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2026-09-21 19:00:19 --> Encryption Class Initialized
+INFO - 2026-09-21 19:00:19 --> Model Class Initialized
+INFO - 2026-09-21 19:00:19 --> Helper loaded: inflector_helper
+INFO - 2026-09-21 19:00:19 --> Model Class Initialized
+INFO - 2026-09-21 19:00:19 --> Controller Class Initialized
+INFO - 2026-09-21 19:00:19 --> Model Class Initialized
+INFO - 2026-09-21 19:00:19 --> Model Class Initialized
+ERROR - 2026-09-21 19:00:19 --> Severity: Notice --> Undefined variable: params /var/www/html/greentip_live/application/controllers/Index.php 24
+ERROR - 2026-09-21 19:00:19 --> Severity: Warning --> count(): Parameter must be an array or an object that implements Countable /var/www/html/greentip_live/application/helpers/basic_helper.php 1495
+INFO - 2026-09-21 19:00:19 --> Function  is: [info] :grcgreentip/index()
+DEBUG - 2026-09-21 19:00:19 --> File loaded: /var/www/html/greentip_live/application/views/Includes/header_script.php
+DEBUG - 2026-09-21 19:00:19 --> File loaded: /var/www/html/greentip_live/application/views/Includes/msg_alert.php
+DEBUG - 2026-09-21 19:00:19 --> File loaded: /var/www/html/greentip_live/application/views/Includes/header.php
+DEBUG - 2026-09-21 19:00:19 --> File loaded: /var/www/html/greentip_live/application/views/Includes/footer_scripts.php
+DEBUG - 2026-09-21 19:00:19 --> File loaded: /var/www/html/greentip_live/application/views/Includes/footer.php
+DEBUG - 2026-09-21 19:00:19 --> File loaded: /var/www/html/greentip_live/application/views/Index.php
+INFO - 2026-09-21 19:00:19 --> Final output sent to browser
+DEBUG - 2026-09-21 19:00:19 --> Total execution time: 2.5175
+INFO - 2026-09-21 19:00:29 --> Config Class Initialized
+INFO - 2026-09-21 19:00:29 --> Hooks Class Initialized
+DEBUG - 2026-09-21 19:00:29 --> UTF-8 Support Enabled
+INFO - 2026-09-21 19:00:29 --> Utf8 Class Initialized
+INFO - 2026-09-21 19:00:29 --> URI Class Initialized
+DEBUG - 2026-09-21 19:00:29 --> No URI present. Default controller set.
+INFO - 2026-09-21 19:00:29 --> Router Class Initialized
+INFO - 2026-09-21 19:00:29 --> Output Class Initialized
+INFO - 2026-09-21 19:00:29 --> Security Class Initialized
+DEBUG - 2026-09-21 19:00:29 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-09-21 19:00:29 --> Input Class Initialized
+INFO - 2026-09-21 19:00:29 --> Language Class Initialized
+INFO - 2026-09-21 19:00:29 --> Language Class Initialized
+INFO - 2026-09-21 19:00:29 --> Config Class Initialized
+INFO - 2026-09-21 19:00:29 --> Loader Class Initialized
+INFO - 2026-09-21 19:00:29 --> Helper loaded: url_helper
+INFO - 2026-09-21 19:00:29 --> Helper loaded: typography_helper
+INFO - 2026-09-21 19:00:29 --> Helper loaded: basic_helper
+INFO - 2026-09-21 19:00:29 --> Helper loaded: form_helper
+INFO - 2026-09-21 19:00:29 --> Helper loaded: html_helper
+INFO - 2026-09-21 19:00:29 --> Helper loaded: date_helper
+INFO - 2026-09-21 19:00:29 --> Helper loaded: number_helper
+INFO - 2026-09-21 19:00:29 --> Helper loaded: text_helper
+INFO - 2026-09-21 19:00:29 --> Database Driver Class Initialized
+INFO - 2026-09-21 19:00:29 --> Session: Class initialized using 'files' driver.
+DEBUG - 2026-09-21 19:00:29 --> Authentication library initialized
+INFO - 2026-09-21 19:00:29 --> Cart Class Initialized
+DEBUG - 2026-09-21 19:00:30 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2026-09-21 19:00:30 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2026-09-21 19:00:30 --> Encryption Class Initialized
+INFO - 2026-09-21 19:00:30 --> Model Class Initialized
+INFO - 2026-09-21 19:00:30 --> Helper loaded: inflector_helper
+INFO - 2026-09-21 19:00:30 --> Model Class Initialized
+INFO - 2026-09-21 19:00:30 --> Controller Class Initialized
+INFO - 2026-09-21 19:00:30 --> Model Class Initialized
+INFO - 2026-09-21 19:00:30 --> Model Class Initialized
+ERROR - 2026-09-21 19:00:30 --> Severity: Notice --> Undefined variable: params /var/www/html/greentip_live/application/controllers/Index.php 24
+ERROR - 2026-09-21 19:00:30 --> Severity: Warning --> count(): Parameter must be an array or an object that implements Countable /var/www/html/greentip_live/application/helpers/basic_helper.php 1495
+INFO - 2026-09-21 19:00:30 --> Function  is: [info] :grcgreentip/index()
+DEBUG - 2026-09-21 19:00:30 --> File loaded: /var/www/html/greentip_live/application/views/Includes/header_script.php
+DEBUG - 2026-09-21 19:00:30 --> File loaded: /var/www/html/greentip_live/application/views/Includes/msg_alert.php
+DEBUG - 2026-09-21 19:00:30 --> File loaded: /var/www/html/greentip_live/application/views/Includes/header.php
+DEBUG - 2026-09-21 19:00:30 --> File loaded: /var/www/html/greentip_live/application/views/Includes/footer_scripts.php
+DEBUG - 2026-09-21 19:00:30 --> File loaded: /var/www/html/greentip_live/application/views/Includes/footer.php
+DEBUG - 2026-09-21 19:00:30 --> File loaded: /var/www/html/greentip_live/application/views/Index.php
+INFO - 2026-09-21 19:00:30 --> Final output sent to browser
+DEBUG - 2026-09-21 19:00:30 --> Total execution time: 1.2952
+INFO - 2026-09-21 19:00:40 --> Config Class Initialized
+INFO - 2026-09-21 19:00:40 --> Hooks Class Initialized
+DEBUG - 2026-09-21 19:00:40 --> UTF-8 Support Enabled
+INFO - 2026-09-21 19:00:40 --> Utf8 Class Initialized
+INFO - 2026-09-21 19:00:40 --> URI Class Initialized
+INFO - 2026-09-21 19:00:40 --> Router Class Initialized
+INFO - 2026-09-21 19:00:40 --> Output Class Initialized
+INFO - 2026-09-21 19:00:40 --> Security Class Initialized
+DEBUG - 2026-09-21 19:00:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-09-21 19:00:41 --> Input Class Initialized
+INFO - 2026-09-21 19:00:41 --> Language Class Initialized
+INFO - 2026-09-21 19:00:41 --> Language Class Initialized
+INFO - 2026-09-21 19:00:41 --> Config Class Initialized
+INFO - 2026-09-21 19:00:41 --> Loader Class Initialized
+INFO - 2026-09-21 19:00:41 --> Helper loaded: url_helper
+INFO - 2026-09-21 19:00:41 --> Helper loaded: typography_helper
+INFO - 2026-09-21 19:00:41 --> Helper loaded: basic_helper
+INFO - 2026-09-21 19:00:41 --> Helper loaded: form_helper
+INFO - 2026-09-21 19:00:41 --> Helper loaded: html_helper
+INFO - 2026-09-21 19:00:41 --> Helper loaded: date_helper
+INFO - 2026-09-21 19:00:41 --> Helper loaded: number_helper
+INFO - 2026-09-21 19:00:41 --> Helper loaded: text_helper
+INFO - 2026-09-21 19:00:41 --> Database Driver Class Initialized
+INFO - 2026-09-21 19:00:41 --> Session: Class initialized using 'files' driver.
+DEBUG - 2026-09-21 19:00:41 --> Authentication library initialized
+INFO - 2026-09-21 19:00:41 --> Cart Class Initialized
+DEBUG - 2026-09-21 19:00:41 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2026-09-21 19:00:41 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2026-09-21 19:00:41 --> Encryption Class Initialized
+INFO - 2026-09-21 19:00:41 --> Model Class Initialized
+INFO - 2026-09-21 19:00:41 --> Helper loaded: inflector_helper
+INFO - 2026-09-21 19:00:41 --> Model Class Initialized
+INFO - 2026-09-21 19:00:41 --> Controller Class Initialized
+INFO - 2026-09-21 19:00:41 --> Model Class Initialized
+INFO - 2026-09-21 19:00:41 --> Model Class Initialized
+INFO - 2026-09-21 19:00:41 --> Model Class Initialized
+DEBUG - 2026-09-21 19:00:41 --> File loaded: /var/www/html/greentip_live/application/views/Includes/header_script.php
+DEBUG - 2026-09-21 19:00:41 --> File loaded: /var/www/html/greentip_live/application/views/Includes/msg_alert.php
+DEBUG - 2026-09-21 19:00:41 --> File loaded: /var/www/html/greentip_live/application/views/Includes/header.php
+DEBUG - 2026-09-21 19:00:42 --> File loaded: /var/www/html/greentip_live/application/views/Includes/footer_scripts.php
+DEBUG - 2026-09-21 19:00:42 --> File loaded: /var/www/html/greentip_live/application/views/Includes/footer.php
+DEBUG - 2026-09-21 19:00:42 --> File loaded: /var/www/html/greentip_live/application/views/Page.php
+INFO - 2026-09-21 19:00:42 --> Final output sent to browser
+DEBUG - 2026-09-21 19:00:42 --> Total execution time: 1.4670
+INFO - 2026-09-21 19:01:37 --> Config Class Initialized
+INFO - 2026-09-21 19:01:37 --> Hooks Class Initialized
+DEBUG - 2026-09-21 19:01:37 --> UTF-8 Support Enabled
+INFO - 2026-09-21 19:01:37 --> Utf8 Class Initialized
+INFO - 2026-09-21 19:01:37 --> URI Class Initialized
+DEBUG - 2026-09-21 19:01:37 --> No URI present. Default controller set.
+INFO - 2026-09-21 19:01:37 --> Router Class Initialized
+INFO - 2026-09-21 19:01:37 --> Output Class Initialized
+INFO - 2026-09-21 19:01:37 --> Security Class Initialized
+DEBUG - 2026-09-21 19:01:37 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-09-21 19:01:37 --> Input Class Initialized
+INFO - 2026-09-21 19:01:37 --> Language Class Initialized
+INFO - 2026-09-21 19:01:37 --> Language Class Initialized
+INFO - 2026-09-21 19:01:37 --> Config Class Initialized
+INFO - 2026-09-21 19:01:37 --> Loader Class Initialized
+INFO - 2026-09-21 19:01:37 --> Helper loaded: url_helper
+INFO - 2026-09-21 19:01:37 --> Helper loaded: typography_helper
+INFO - 2026-09-21 19:01:37 --> Helper loaded: basic_helper
+INFO - 2026-09-21 19:01:37 --> Helper loaded: form_helper
+INFO - 2026-09-21 19:01:37 --> Helper loaded: html_helper
+INFO - 2026-09-21 19:01:37 --> Helper loaded: date_helper
+INFO - 2026-09-21 19:01:37 --> Helper loaded: number_helper
+INFO - 2026-09-21 19:01:37 --> Helper loaded: text_helper
+INFO - 2026-09-21 19:01:37 --> Database Driver Class Initialized
+INFO - 2026-09-21 19:01:37 --> Session: Class initialized using 'files' driver.
+DEBUG - 2026-09-21 19:01:37 --> Authentication library initialized
+INFO - 2026-09-21 19:01:37 --> Cart Class Initialized
+DEBUG - 2026-09-21 19:01:38 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2026-09-21 19:01:38 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2026-09-21 19:01:38 --> Encryption Class Initialized
+INFO - 2026-09-21 19:01:38 --> Model Class Initialized
+INFO - 2026-09-21 19:01:38 --> Helper loaded: inflector_helper
+INFO - 2026-09-21 19:01:38 --> Model Class Initialized
+INFO - 2026-09-21 19:01:38 --> Controller Class Initialized
+INFO - 2026-09-21 19:01:38 --> Model Class Initialized
+INFO - 2026-09-21 19:01:38 --> Model Class Initialized
+ERROR - 2026-09-21 19:01:38 --> Severity: Notice --> Undefined variable: params /var/www/html/greentip_live/application/controllers/Index.php 24
+ERROR - 2026-09-21 19:01:38 --> Severity: Warning --> count(): Parameter must be an array or an object that implements Countable /var/www/html/greentip_live/application/helpers/basic_helper.php 1495
+INFO - 2026-09-21 19:01:38 --> Function  is: [info] :grcgreentip/index()
+DEBUG - 2026-09-21 19:01:38 --> File loaded: /var/www/html/greentip_live/application/views/Includes/header_script.php
+DEBUG - 2026-09-21 19:01:38 --> File loaded: /var/www/html/greentip_live/application/views/Includes/msg_alert.php
+DEBUG - 2026-09-21 19:01:38 --> File loaded: /var/www/html/greentip_live/application/views/Includes/header.php
+DEBUG - 2026-09-21 19:01:38 --> File loaded: /var/www/html/greentip_live/application/views/Includes/footer_scripts.php
+DEBUG - 2026-09-21 19:01:38 --> File loaded: /var/www/html/greentip_live/application/views/Includes/footer.php
+DEBUG - 2026-09-21 19:01:38 --> File loaded: /var/www/html/greentip_live/application/views/Index.php
+INFO - 2026-09-21 19:01:38 --> Final output sent to browser
+DEBUG - 2026-09-21 19:01:38 --> Total execution time: 1.2079
+INFO - 2026-09-21 19:01:43 --> Config Class Initialized
+INFO - 2026-09-21 19:01:43 --> Hooks Class Initialized
+DEBUG - 2026-09-21 19:01:43 --> UTF-8 Support Enabled
+INFO - 2026-09-21 19:01:43 --> Utf8 Class Initialized
+INFO - 2026-09-21 19:01:43 --> URI Class Initialized
+INFO - 2026-09-21 19:01:43 --> Router Class Initialized
+INFO - 2026-09-21 19:01:43 --> Output Class Initialized
+INFO - 2026-09-21 19:01:43 --> Security Class Initialized
+DEBUG - 2026-09-21 19:01:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-09-21 19:01:43 --> Input Class Initialized
+INFO - 2026-09-21 19:01:43 --> Language Class Initialized
+INFO - 2026-09-21 19:01:43 --> Language Class Initialized
+INFO - 2026-09-21 19:01:43 --> Config Class Initialized
+INFO - 2026-09-21 19:01:43 --> Loader Class Initialized
+INFO - 2026-09-21 19:01:43 --> Helper loaded: url_helper
+INFO - 2026-09-21 19:01:43 --> Helper loaded: typography_helper
+INFO - 2026-09-21 19:01:43 --> Helper loaded: basic_helper
+INFO - 2026-09-21 19:01:43 --> Helper loaded: form_helper
+INFO - 2026-09-21 19:01:43 --> Helper loaded: html_helper
+INFO - 2026-09-21 19:01:43 --> Helper loaded: date_helper
+INFO - 2026-09-21 19:01:43 --> Helper loaded: number_helper
+INFO - 2026-09-21 19:01:43 --> Helper loaded: text_helper
+INFO - 2026-09-21 19:01:43 --> Database Driver Class Initialized
+INFO - 2026-09-21 19:01:43 --> Session: Class initialized using 'files' driver.
+DEBUG - 2026-09-21 19:01:43 --> Authentication library initialized
+INFO - 2026-09-21 19:01:43 --> Cart Class Initialized
+DEBUG - 2026-09-21 19:01:43 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2026-09-21 19:01:44 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2026-09-21 19:01:44 --> Encryption Class Initialized
+INFO - 2026-09-21 19:01:44 --> Model Class Initialized
+INFO - 2026-09-21 19:01:44 --> Helper loaded: inflector_helper
+INFO - 2026-09-21 19:01:44 --> Model Class Initialized
+INFO - 2026-09-21 19:01:44 --> Controller Class Initialized
+INFO - 2026-09-21 19:01:44 --> Model Class Initialized
+INFO - 2026-09-21 19:01:44 --> Model Class Initialized
+INFO - 2026-09-21 19:01:44 --> Model Class Initialized
+DEBUG - 2026-09-21 19:01:44 --> File loaded: /var/www/html/greentip_live/application/views/Includes/header_script.php
+DEBUG - 2026-09-21 19:01:44 --> File loaded: /var/www/html/greentip_live/application/views/Includes/msg_alert.php
+DEBUG - 2026-09-21 19:01:44 --> File loaded: /var/www/html/greentip_live/application/views/Includes/header.php
+DEBUG - 2026-09-21 19:01:44 --> File loaded: /var/www/html/greentip_live/application/views/Includes/footer_scripts.php
+DEBUG - 2026-09-21 19:01:44 --> File loaded: /var/www/html/greentip_live/application/views/Includes/footer.php
+DEBUG - 2026-09-21 19:01:44 --> File loaded: /var/www/html/greentip_live/application/views/Page.php
+INFO - 2026-09-21 19:01:44 --> Final output sent to browser
+DEBUG - 2026-09-21 19:01:44 --> Total execution time: 0.9869
+INFO - 2026-09-21 19:01:52 --> Config Class Initialized
+INFO - 2026-09-21 19:01:52 --> Hooks Class Initialized
+DEBUG - 2026-09-21 19:01:53 --> UTF-8 Support Enabled
+INFO - 2026-09-21 19:01:53 --> Utf8 Class Initialized
+INFO - 2026-09-21 19:01:53 --> URI Class Initialized
+INFO - 2026-09-21 19:01:53 --> Router Class Initialized
+INFO - 2026-09-21 19:01:53 --> Output Class Initialized
+INFO - 2026-09-21 19:01:53 --> Security Class Initialized
+DEBUG - 2026-09-21 19:01:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2026-09-21 19:01:53 --> Input Class Initialized
+INFO - 2026-09-21 19:01:53 --> Language Class Initialized
+INFO - 2026-09-21 19:01:53 --> Language Class Initialized
+INFO - 2026-09-21 19:01:53 --> Config Class Initialized
+INFO - 2026-09-21 19:01:53 --> Loader Class Initialized
+INFO - 2026-09-21 19:01:53 --> Helper loaded: url_helper
+INFO - 2026-09-21 19:01:53 --> Helper loaded: typography_helper
+INFO - 2026-09-21 19:01:53 --> Helper loaded: basic_helper
+INFO - 2026-09-21 19:01:53 --> Helper loaded: form_helper
+INFO - 2026-09-21 19:01:53 --> Helper loaded: html_helper
+INFO - 2026-09-21 19:01:53 --> Helper loaded: date_helper
+INFO - 2026-09-21 19:01:53 --> Helper loaded: number_helper
+INFO - 2026-09-21 19:01:53 --> Helper loaded: text_helper
+INFO - 2026-09-21 19:01:53 --> Database Driver Class Initialized
+INFO - 2026-09-21 19:01:53 --> Session: Class initialized using 'files' driver.
+DEBUG - 2026-09-21 19:01:53 --> Authentication library initialized
+INFO - 2026-09-21 19:01:53 --> Cart Class Initialized
+DEBUG - 2026-09-21 19:01:53 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2026-09-21 19:01:53 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2026-09-21 19:01:53 --> Encryption Class Initialized
+INFO - 2026-09-21 19:01:53 --> Model Class Initialized
+INFO - 2026-09-21 19:01:53 --> Helper loaded: inflector_helper
+INFO - 2026-09-21 19:01:53 --> Model Class Initialized
+INFO - 2026-09-21 19:01:53 --> Controller Class Initialized
+INFO - 2026-09-21 19:01:53 --> Model Class Initialized
+INFO - 2026-09-21 19:01:53 --> Model Class Initialized
+INFO - 2026-09-21 19:01:53 --> Model Class Initialized
+DEBUG - 2026-09-21 19:01:54 --> File loaded: /var/www/html/greentip_live/application/views/Includes/header_script.php
+DEBUG - 2026-09-21 19:01:54 --> File loaded: /var/www/html/greentip_live/application/views/Includes/msg_alert.php
+DEBUG - 2026-09-21 19:01:54 --> File loaded: /var/www/html/greentip_live/application/views/Includes/header.php
+ERROR - 2026-09-21 19:01:54 --> Query error: Table 'greentip-new.knowledge_center_links_doc' doesn't exist - Invalid query: SELECT *
+FROM `knowledge_center_links_doc`
+WHERE `type` = 1
+ORDER BY `id` DESC
+INFO - 2026-09-21 19:01:54 --> Language file loaded: language/english/db_lang.php

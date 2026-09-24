@@ -1,0 +1,17 @@
+D:\greentip\backend\src\GreenTIP.Infrastructure\bin\Debug\net8.0\GreenTIP.Infrastructure.deps.json
+D:\greentip\backend\src\GreenTIP.Infrastructure\bin\Debug\net8.0\GreenTIP.Infrastructure.dll
+D:\greentip\backend\src\GreenTIP.Infrastructure\bin\Debug\net8.0\GreenTIP.Infrastructure.pdb
+D:\greentip\backend\src\GreenTIP.Infrastructure\bin\Debug\net8.0\GreenTIP.Application.dll
+D:\greentip\backend\src\GreenTIP.Infrastructure\bin\Debug\net8.0\GreenTIP.Domain.dll
+D:\greentip\backend\src\GreenTIP.Infrastructure\bin\Debug\net8.0\GreenTIP.Domain.pdb
+D:\greentip\backend\src\GreenTIP.Infrastructure\bin\Debug\net8.0\GreenTIP.Application.pdb
+D:\greentip\backend\src\GreenTIP.Infrastructure\obj\Debug\net8.0\GreenTIP.Infrastructure.csproj.AssemblyReference.cache
+D:\greentip\backend\src\GreenTIP.Infrastructure\obj\Debug\net8.0\GreenTIP.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\greentip\backend\src\GreenTIP.Infrastructure\obj\Debug\net8.0\GreenTIP.Infrastructure.AssemblyInfoInputs.cache
+D:\greentip\backend\src\GreenTIP.Infrastructure\obj\Debug\net8.0\GreenTIP.Infrastructure.AssemblyInfo.cs
+D:\greentip\backend\src\GreenTIP.Infrastructure\obj\Debug\net8.0\GreenTIP.Infrastructure.csproj.CoreCompileInputs.cache
+D:\greentip\backend\src\GreenTIP.Infrastructure\obj\Debug\net8.0\GreenTIP.35E1AB47.Up2Date
+D:\greentip\backend\src\GreenTIP.Infrastructure\obj\Debug\net8.0\GreenTIP.Infrastructure.dll
+D:\greentip\backend\src\GreenTIP.Infrastructure\obj\Debug\net8.0\refint\GreenTIP.Infrastructure.dll
+D:\greentip\backend\src\GreenTIP.Infrastructure\obj\Debug\net8.0\GreenTIP.Infrastructure.pdb
+D:\greentip\backend\src\GreenTIP.Infrastructure\obj\Debug\net8.0\ref\GreenTIP.Infrastructure.dll

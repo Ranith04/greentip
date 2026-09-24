@@ -1,0 +1,246 @@
+<?php
+$this->load->view('Includes/header_script');
+$this->load->view('Includes/header');
+?>
+<div class="container">
+    <div class="row ask_Export">
+        <?php $this->load->view('Includes/profilesidebar'); ?>
+        <div class="col-sm-9 col-md-9 col-lg-9">
+            <div class="Userprofile">
+                <?php $this->load->view('Includes/msg_alert'); ?>
+                <form class="form-horizontal" method="post" name="SendBulkEmail" id="SendBulkEmail" enctype="multipart/form-data" action="">
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Send To*</label>
+                        <div class="col-sm-10">
+                            <label class="checkbox-inline"> <input type="checkbox" class="sent_to" name="sent_to[]" value="experts" <?php if((isset($_POST['sent_to'])) && in_array("experts",$_POST['sent_to'])){ ?> checked="checked" <?php }?>> Experts </label>
+
+                            <label class="checkbox-inline"> <input type="checkbox" class="sent_to" name="sent_to[]" value="users"  <?php if((isset($_POST['sent_to'])) && in_array("users",$_POST['sent_to'])){ ?> checked="checked" <?php }?>> Users </label>
+
+                            <label class="checkbox-inline"> <input type="checkbox" class="sent_to" name="sent_to[]" id="industrial_category" value="industrial_category"  <?php if((isset($_POST['sent_to'])) && in_array("industrial_category",$_POST['sent_to'])){ ?> checked="checked" <?php }?>> Industrial Category </label>
+
+<!---------------------------------------------------------------->
+
+                         <?php if($this->UserDetail['role_type']=='0') { ?>
+
+                            <label class="checkbox-inline"> <input type="checkbox" class="sent_to" name="sent_to[]" id="Md" value="Md"  <?php if((isset($_POST['sent_to'])) && in_array("Md",$_POST['sent_to'])){ ?> checked="checked" <?php }?>> MD </label>
+
+                         <?php   } else {  ?>
+
+                            <label class="checkbox-inline"> <input type="checkbox" class="sent_to" name="sent_to[]" id="Admin" value="Admin"  <?php if((isset($_POST['sent_to'])) && in_array("Admin",$_POST['sent_to'])){ ?> checked="checked" <?php }?>> Admin </label>
+
+                         <?php  }?>
+<!---------------------------------------------------------------->
+                         
+
+                            <label class="checkbox-inline"> <input type="checkbox" class="sent_to" name="sent_to[]" id="emailid" value="emailid"  <?php if((isset($_POST['sent_to'])) && in_array("emailid",$_POST['sent_to'])){ ?> checked="checked" <?php }?>> Only Email Id(s) </label>
+
+                        </div>
+                    </div>
+                    <div class="form-group" id="emilfrm" style="display: none;">
+                        <label class="col-sm-2 control-label">Email Id</label>
+                        <div class="col-sm-10"><input type="text" disabled placeholder="Add comma separated email address" name="email" id="email" class="form-control" pattern="^([\w+-.%]+@[\w-.]+\.[A-Za-z]{2,4},*[\W]*)+$" value="<?php if((isset($_POST['email'])) && ($_POST['email']!='')){ echo $_POST['email'];} ?>"></div>
+                    </div>
+                    <div class="form-group" id="categoryfrm" style="display: none;">
+                        <label class="col-sm-2 control-label">Industrial Category</label>
+                        <div class="col-sm-10">
+                            <select name="category_id[]" id="category_id" multiple disabled class="form-control">
+                                <option value="">-Select Industrial Category-</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Subject*</label>
+                        <div class="col-sm-10">
+                            <input type="text" maxlength="255" placeholder="Subject" name="subject" id="subject" class="form-control" value="<?php echo set_value('subject'); ?>">
+                            <?php echo form_error('subject');?>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Message*</label>
+                        <div class="col-sm-10">
+                            <textarea class="form-control summernote" name="message"  id="message" cols="5"><?php echo set_value('message'); ?></textarea>
+                            <?php echo form_error('message');?>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Attachment</label>
+                        <div class="col-sm-6">
+                            <input type="file" name="attachment_file" data-icon="false" class="file-style" data-classButton="btn btn-default" data-classInput="form-control inline v-middle input-s">
+                            <?php echo form_error('attachment_file'); ?>
+                        </div>
+                    </div>
+
+                    <!-- Form Group End -->
+                    <div class="form-group">
+                        <div class="col-sm-12 text-right">
+                            <button type="submit" class="btn btn-success">Send</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<?php $this->load->view('Includes/footer'); ?>.
+<link rel="stylesheet" href="<?php echo assets_url('css','summernote.css'); ?>" type="text/css" />
+<script src="<?php echo assets_url('js', 'summernote.js'); ?>"></script>
+<script src="<?php echo assets_url('grocery_crud', 'themes/bootstrap/bower_components/bootstrap-filestyle/src/bootstrap-filestyle.js'); ?>"></script>
+<script type="text/javascript">
+    $(".file-style").filestyle({
+        buttonText: 'Select File',
+        'iconName': 'glyphicon-picture'
+    });
+    $('#SendBulkEmail').formValidation({
+        excluded: [':disabled'],
+        fields: {
+            'sent_to[]': {
+                validators: {
+                    notEmpty: {
+                        message: 'Please select at least one checkbox.'
+                    }
+                }
+            },
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'The email field is required.'
+                    }
+                }
+            },
+            'category_id[]': {
+                validators: {
+                    notEmpty: {
+                        message: 'The industrial category field is required.'
+                    }
+                }
+            },
+            attachment_file1: {
+                validators: {
+                    file: {
+                        extension: 'jpeg,jpg,png,gif,doc,docx,pdf,rtf,xls,zip,xml,xlsx',
+                        type: 'image/jpeg,image/png,image/gif,application/msword,application/pdf,application/rtf,application/vnd.ms-excel,application/zip,text/xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                        maxSize: 2097152,   // 2048 * 1024
+                        message: 'The selected file is not valid ,it should be (jpeg,jpg,png,gif,doc,docx,pdf,rtf,xls,zip,xml,xlsx)'
+                    }
+                }
+            },
+            subject: {
+                validators: {
+                    notEmpty: {
+                        message: 'The Subject field is required.'
+                    }
+                }
+            },
+            message: {
+                validators: {
+                    callback: {
+                        message: 'The Content field is required',
+                        callback: function (value, validator, $field) {
+                            // Determine the numbers which are generated in captchaOperation
+                            var returnD = true;
+                            if ($('.summernote').summernote('isEmpty')) {
+                                returnD = false;
+                            }
+                            return returnD;
+                        }
+                    }
+                }
+            }
+        }
+    }).find('[name="message"]')
+        .summernote({
+            height: 250,
+            toolbar: [
+               ['style', ['style']],
+                ['font', ['bold', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['table', ['table']],
+            ]
+        })
+        .on('summernote.change', function (customEvent, contents, $editable) {
+            // Revalidate the content when its value is changed by Summernote
+            $('#SendBulkEmail').formValidation('revalidateField', 'message');
+        });
+
+
+    <?php if ((isset($_POST['category_id'])) && ($_POST['category_id'] != '')) {?>
+    var category_id = '<?php echo implode('_', $_POST['category_id']) ?>';
+    $('#categoryfrm').show();
+    $('#category_id').prop("disabled", false);
+    industrial_categories(category_id);
+    <?php } ?>
+
+    <?php if ((isset($_POST['email'])) && ($_POST['email'] != '')) {?>
+    $('#emilfrm').show();
+    $('#email').prop("disabled", false);
+    <?php } ?>
+
+    $(".sent_to").click(function () {
+        if ($(this).prop('checked')) {
+            $(this).attr('checked', true);
+            var val = $(this).val();
+            if (val == 'industrial_category') {
+                $('#categoryfrm').show();
+                industrial_categories('');
+                $('#category_id').prop("disabled", false);
+                var bootstrapValidator = $('#SendBulkEmail').data('formValidation');
+                bootstrapValidator.enableFieldValidators('category_id', true);
+            }
+            if(val=='emailid')
+            {
+                $('#emilfrm').show();
+                $('#email').prop("disabled", false);
+                var bootstrapValidator = $('#SendBulkEmail').data('formValidation');
+                bootstrapValidator.enableFieldValidators('email', true);
+                bootstrapValidator.enableFieldValidators('subject', true);
+                bootstrapValidator.enableFieldValidators('message', true);
+            }
+        } else {
+            $(this).attr('checked', false);
+            var val = $(this).val();
+            if (val == 'industrial_category') {
+                $('#categoryfrm').hide();
+                $("#category_id").html('<option value="">-Select Industrial Category-</option>');
+                var bootstrapValidator = $('#SendBulkEmail').data('formValidation');
+                bootstrapValidator.enableFieldValidators('category_id', false);
+                $('#category_id').prop("disabled", true);
+            }
+            if (val == 'emailid') {
+                $('#emilfrm').hide();
+                $('#email').prop("disabled", true);
+                var bootstrapValidator = $('#SendNewsletter').data('formValidation');
+                bootstrapValidator.enableFieldValidators('email', false);
+                bootstrapValidator.enableFieldValidators('subject', true);
+                bootstrapValidator.enableFieldValidators('message', true);
+
+            }
+
+        }
+    });
+
+    function industrial_categories(category_id) {
+        $.ajax({
+            type: "GET",
+            url: "<?php echo base_url('admin/ajax/getAllIndustrialCategory');?>/" + category_id,
+            success: function (html) {
+                if (html) {
+                    $('#category_id').find('option:gt(0)').remove();
+                    $("#category_id option:first-child").after(html);
+
+                } else {
+                    if ($("#category_id").length > 0) {
+                        $("#category_id").html('<option value="">-Select Industrial Category-</option>');
+                    }
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>

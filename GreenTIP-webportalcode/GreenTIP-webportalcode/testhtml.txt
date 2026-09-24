@@ -1,0 +1,6 @@
+Array
+(
+    [assign_query_id] => 164
+    [user_id] => 1
+    [answer] => <h4 style="margin-right: 10px; margin-bottom: 5px; margin-left: 10px; padding: 0px; font-size: 14px; line-height: 18px; text-align: center; font-style: italic; color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif;"><b>"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."</b></h4><h5 style="margin: 5px 10px 20px; padding: 0px; font-size: 12px; line-height: 14px; text-align: center; color: rgb(0, 0, 0); font-family: &quot;Open Sans&quot;, Arial, sans-serif;">"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</h5>
+)

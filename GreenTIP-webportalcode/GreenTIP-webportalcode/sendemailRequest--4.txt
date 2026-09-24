@@ -1,0 +1,12 @@
+Array
+(
+    [/sendemail] => 
+    [0] => /mnt/50F226C713760105/LampServer/greentip_live/send_request.php
+    [1] => emailid
+    [2] => 0
+    [3] => Test Email
+    [4] => http://grcgreentip.com/sendemail
+    [5] => <p>Hi</p>
+    [6] => umang.mathur@grc-india.com
+    [7] => 
+)

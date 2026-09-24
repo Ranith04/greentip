@@ -1,0 +1,13 @@
+@font-face{font-family:"Flaticon";src:url("../fonts/flaticon.eot");src:url("../fonts/flaticon.eot#iefix") format("embedded-opentype"),url("../fonts/flaticon.woff") format("woff"),url("../fonts/flaticon.ttf") format("truetype"),url("../fonts/flaticon.svg") format("svg");font-weight:normal;font-style:normal;}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,[class^="flaticon-"]:after, [class*=" flaticon-"]:after{font-family:Flaticon;font-size:20px;font-style:normal;}
+.flaticon-balcony:before{content:"\e000";}
+.flaticon-bed33:before{content:"\e001";}
+.flaticon-cup53:before{content:"\e002";}
+.flaticon-home169:before{content:"\e003";}
+.flaticon-home173:before{content:"\e004";}
+.flaticon-motel:before{content:"\e005";}
+.flaticon-shower14:before{content:"\e006";}
+.flaticon-sport21:before{content:"\e007";}
+.flaticon-stars10:before{content:"\e008";}
+.flaticon-swim2:before{content:"\e009";}
+.flaticon-tv29:before{content:"\e00a";}

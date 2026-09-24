@@ -1,0 +1,11 @@
+D:\greentip\backend\src\GreenTIP.Domain\bin\Debug\net8.0\GreenTIP.Domain.deps.json
+D:\greentip\backend\src\GreenTIP.Domain\bin\Debug\net8.0\GreenTIP.Domain.dll
+D:\greentip\backend\src\GreenTIP.Domain\bin\Debug\net8.0\GreenTIP.Domain.pdb
+D:\greentip\backend\src\GreenTIP.Domain\obj\Debug\net8.0\GreenTIP.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\greentip\backend\src\GreenTIP.Domain\obj\Debug\net8.0\GreenTIP.Domain.AssemblyInfoInputs.cache
+D:\greentip\backend\src\GreenTIP.Domain\obj\Debug\net8.0\GreenTIP.Domain.AssemblyInfo.cs
+D:\greentip\backend\src\GreenTIP.Domain\obj\Debug\net8.0\GreenTIP.Domain.csproj.CoreCompileInputs.cache
+D:\greentip\backend\src\GreenTIP.Domain\obj\Debug\net8.0\GreenTIP.Domain.dll
+D:\greentip\backend\src\GreenTIP.Domain\obj\Debug\net8.0\refint\GreenTIP.Domain.dll
+D:\greentip\backend\src\GreenTIP.Domain\obj\Debug\net8.0\GreenTIP.Domain.pdb
+D:\greentip\backend\src\GreenTIP.Domain\obj\Debug\net8.0\ref\GreenTIP.Domain.dll
