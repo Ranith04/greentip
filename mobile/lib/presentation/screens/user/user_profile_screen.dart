@@ -160,52 +160,29 @@ class UserProfileScreen extends StatelessWidget {
                     subtitle: 'Read our terms of service',
                     onTap: () {},
                   ),
+                  const Divider(height: 1),
+                  _menuItem(
+                    icon: Icons.logout_rounded,
+                    title: 'Logout',
+                    subtitle: 'Sign out of your account securely',
+                    iconColor: AppColors.error,
+                    textColor: AppColors.error,
+                    onTap: () {
+                      LogoutDialog.show(
+                        context,
+                        onConfirm: () {
+                          context.read<AuthBloc>().add(LogoutEvent());
+                          context.go('/login');
+                        },
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
             const SizedBox(height: 24),
 
-            // Logout Button
-            InkWell(
-              onTap: () {
-                LogoutDialog.show(
-                  context,
-                  onConfirm: () {
-                    context.read<AuthBloc>().add(LogoutEvent());
-                    context.go('/login');
-                  },
-                );
-              },
-              borderRadius: BorderRadius.circular(16),
-              child: Container(
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(16),
-                  border: Border.all(color: AppColors.errorLight),
-                ),
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.logout_rounded,
-                      color: AppColors.error,
-                      size: 20,
-                    ),
-                    SizedBox(width: 8),
-                    Text(
-                      'Log Out from GreenTIP',
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: AppColors.error,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            const SizedBox(height: 24),
+
             const Text(
               'GreenTIP Portal v1.0.0 (Build 2024.1)\nMinistry / SPCB Environmental Compliance Framework',
               textAlign: TextAlign.center,
@@ -251,23 +228,25 @@ class UserProfileScreen extends StatelessWidget {
     required String title,
     required String subtitle,
     required VoidCallback onTap,
+    Color iconColor = AppColors.primary,
+    Color textColor = AppColors.textPrimary,
   }) {
     return ListTile(
       onTap: onTap,
       leading: Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
-          color: AppColors.primaryContainer.withValues(alpha: 0.5),
+          color: iconColor.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Icon(icon, color: AppColors.primaryDark, size: 20),
+        child: Icon(icon, color: iconColor, size: 20),
       ),
       title: Text(
         title,
-        style: const TextStyle(
+        style: TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w600,
-          color: AppColors.textPrimary,
+          color: textColor,
         ),
       ),
       subtitle: Text(
