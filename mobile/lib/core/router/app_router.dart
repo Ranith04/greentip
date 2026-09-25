@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import '../../data/models/article_model.dart';
 import '../../data/models/category_model.dart';
 import '../../data/models/expert_model.dart';
 import '../../data/models/query_model.dart';
 import '../../data/models/user_model.dart';
+import '../../presentation/blocs/auth/auth_bloc.dart';
+import '../../presentation/blocs/auth/auth_state.dart';
 import '../../presentation/screens/admin/add_expert_screen.dart';
 import '../../presentation/screens/admin/admin_home_screen.dart';
-import '../../presentation/screens/admin/admin_login_screen.dart';
+import '../../presentation/screens/admin/admin_more_screen.dart';
 import '../../presentation/screens/admin/admin_query_details_screen.dart';
 import '../../presentation/screens/admin/admin_settings_screen.dart';
 import '../../presentation/screens/admin/admin_shell_screen.dart';
@@ -41,38 +44,76 @@ import '../../presentation/screens/user/select_category_screen.dart';
 import '../../presentation/screens/user/user_home_screen.dart';
 import '../../presentation/screens/user/user_profile_screen.dart';
 import '../../presentation/screens/user/user_shell_screen.dart';
+import 'go_router_refresh_stream.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>(
   debugLabel: 'root',
 );
 
 class AppRouter {
-  static final GoRouter router = GoRouter(
-    navigatorKey: _rootNavigatorKey,
-    initialLocation: '/',
-    routes: [
-      // Common & Auth
-      GoRoute(path: '/', builder: (context, state) => const SplashScreen()),
-      GoRoute(
-        path: '/onboarding',
-        builder: (context, state) => const OnboardingScreen(),
-      ),
-      GoRoute(path: '/login', builder: (context, state) => const LoginScreen()),
-      GoRoute(
-        path: '/signup',
-        builder: (context, state) => const SignupScreen(),
-      ),
-      GoRoute(
+  static GoRouter getRouter(AuthBloc authBloc) {
+    return GoRouter(
+      navigatorKey: _rootNavigatorKey,
+      initialLocation: '/',
+      refreshListenable: GoRouterRefreshStream(authBloc.stream),
+      redirect: (context, state) {
+        final authState = authBloc.state;
+        final path = state.uri.path;
+
+        final isAuthRoute = path == '/' ||
+            path == '/login' ||
+            path == '/signup' ||
+            path == '/onboarding' ||
+            path == '/otp-verification';
+
+        if (authState is Unauthenticated) {
+          if (!isAuthRoute) {
+            return authState.onboardingSeen ? '/login' : '/onboarding';
+          }
+        } else if (authState is Authenticated) {
+          if (isAuthRoute) {
+            return authState.user.isAdmin ? '/admin/dashboard' : '/user/home';
+          }
+
+          if (path.startsWith('/admin') && !authState.user.isAdmin) {
+            WidgetsBinding.instance.addPostFrameCallback((_) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text("This account doesn't have admin access"),
+                  backgroundColor: Colors.red,
+                  behavior: SnackBarBehavior.floating,
+                ),
+              );
+            });
+            return '/user/home';
+          }
+
+          if (path.startsWith('/user') && authState.user.isAdmin) {
+            return '/admin/dashboard';
+          }
+        }
+        return null;
+      },
+      routes: [
+        // Common & Auth
+        GoRoute(path: '/', builder: (context, state) => const SplashScreen()),
+        GoRoute(
+          path: '/onboarding',
+          builder: (context, state) => const OnboardingScreen(),
+        ),
+        GoRoute(path: '/login', builder: (context, state) => const LoginScreen()),
+        GoRoute(
+          path: '/signup',
+          builder: (context, state) => const SignupScreen(),
+        ),
+        GoRoute(
         path: '/otp-verification',
         builder: (context, state) {
           final emailOrMobile = state.extra as String? ?? '';
           return OtpVerificationScreen(emailOrMobile: emailOrMobile);
         },
       ),
-      GoRoute(
-        path: '/admin/login',
-        builder: (context, state) => const AdminLoginScreen(),
-      ),
+
 
       // User Shell Navigation
       StatefulShellRoute.indexedStack(
@@ -223,6 +264,14 @@ class AppRouter {
           StatefulShellBranch(
             routes: [
               GoRoute(
+                path: '/admin/users',
+                builder: (context, state) => const UserListScreen(),
+              ),
+            ],
+          ),
+          StatefulShellBranch(
+            routes: [
+              GoRoute(
                 path: '/admin/experts',
                 builder: (context, state) => const ExpertListScreen(),
               ),
@@ -231,16 +280,8 @@ class AppRouter {
           StatefulShellBranch(
             routes: [
               GoRoute(
-                path: '/admin/broadcast',
-                builder: (context, state) => const ComposeEmailScreen(),
-              ),
-            ],
-          ),
-          StatefulShellBranch(
-            routes: [
-              GoRoute(
-                path: '/admin/settings',
-                builder: (context, state) => const AdminSettingsScreen(),
+                path: '/admin/more',
+                builder: (context, state) => const AdminMoreScreen(),
               ),
             ],
           ),
@@ -266,7 +307,7 @@ class AppRouter {
         },
       ),
       GoRoute(
-        path: '/admin/add-expert',
+        path: '/admin/experts/new',
         parentNavigatorKey: _rootNavigatorKey,
         builder: (context, state) => const AddExpertScreen(),
       ),
@@ -279,9 +320,14 @@ class AppRouter {
         },
       ),
       GoRoute(
-        path: '/admin/users',
+        path: '/admin/broadcast',
         parentNavigatorKey: _rootNavigatorKey,
-        builder: (context, state) => const UserListScreen(),
+        builder: (context, state) => const ComposeEmailScreen(),
+      ),
+      GoRoute(
+        path: '/admin/settings',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (context, state) => const AdminSettingsScreen(),
       ),
       GoRoute(
         path: '/admin/user-details/:id',
@@ -298,4 +344,5 @@ class AppRouter {
       ),
     ],
   );
+  }
 }

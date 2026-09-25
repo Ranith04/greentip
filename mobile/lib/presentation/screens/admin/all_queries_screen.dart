@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -13,35 +14,78 @@ class AllQueriesScreen extends StatefulWidget {
   State<AllQueriesScreen> createState() => _AllQueriesScreenState();
 }
 
-class _AllQueriesScreenState extends State<AllQueriesScreen> {
+class _AllQueriesScreenState extends State<AllQueriesScreen>
+    with SingleTickerProviderStateMixin {
   final TextEditingController _searchController = TextEditingController();
-  int? _selectedStatus;
-  String? _searchQuery;
+  final ScrollController _scrollController = ScrollController();
+  late TabController _tabController;
 
-  final List<Map<String, dynamic>> _statusFilters = [
-    {'label': 'All Inquiries', 'status': null},
+  Timer? _debounceTimer;
+  String? _searchQuery;
+  int _currentPage = 1;
+
+  final List<Map<String, dynamic>> _tabs = [
+    {'label': 'All', 'status': null},
     {'label': 'Unassigned', 'status': 0},
-    {'label': 'Assigned', 'status': 1},
-    {'label': 'Under Review', 'status': 2},
+    {'label': 'In Progress', 'status': 2},
     {'label': 'Resolved', 'status': 3},
-    {'label': 'Closed', 'status': 4},
   ];
 
   @override
   void initState() {
     super.initState();
+    _tabController = TabController(length: _tabs.length, vsync: this);
+    _tabController.addListener(_onTabChanged);
+    _scrollController.addListener(_onScroll);
     _loadQueries();
   }
 
-  void _loadQueries() {
+  void _onTabChanged() {
+    if (_tabController.indexIsChanging) return;
+    _currentPage = 1;
+    _loadQueries();
+  }
+
+  void _onSearchChanged(String val) {
+    if (_debounceTimer?.isActive ?? false) _debounceTimer!.cancel();
+    _debounceTimer = Timer(const Duration(seconds: 1), () {
+      setState(() {
+        _searchQuery = val.trim().isEmpty ? null : val.trim();
+        _currentPage = 1;
+      });
+      _loadQueries();
+    });
+  }
+
+  void _onScroll() {
+    if (_scrollController.position.pixels >=
+        _scrollController.position.maxScrollExtent - 200) {
+      final state = context.read<AdminQueryBloc>().state;
+      if (state is AdminQueriesLoaded && state.hasMoreData) {
+        _currentPage++;
+        _loadQueries(isLoadMore: true);
+      }
+    }
+  }
+
+  void _loadQueries({bool isLoadMore = false}) {
+    final status = _tabs[_tabController.index]['status'] as int?;
     context.read<AdminQueryBloc>().add(
-      LoadAdminQueriesEvent(status: _selectedStatus, search: _searchQuery),
+      LoadAdminQueriesEvent(
+        status: status,
+        search: _searchQuery,
+        page: _currentPage,
+        isLoadMore: isLoadMore,
+      ),
     );
   }
 
   @override
   void dispose() {
     _searchController.dispose();
+    _scrollController.dispose();
+    _tabController.dispose();
+    _debounceTimer?.cancel();
     super.dispose();
   }
 
@@ -53,6 +97,15 @@ class _AllQueriesScreenState extends State<AllQueriesScreen> {
         backgroundColor: Colors.white,
         elevation: 0,
         title: const Text('Compliance Inquiry Triage'),
+        bottom: TabBar(
+          controller: _tabController,
+          isScrollable: true,
+          labelColor: AppColors.primaryDark,
+          unselectedLabelColor: AppColors.textMuted,
+          indicatorColor: AppColors.primary,
+          indicatorWeight: 3,
+          tabs: _tabs.map((t) => Tab(text: t['label'] as String)).toList(),
+        ),
       ),
       body: Column(
         children: [
@@ -65,12 +118,7 @@ class _AllQueriesScreenState extends State<AllQueriesScreen> {
             ),
             child: TextField(
               controller: _searchController,
-              onSubmitted: (val) {
-                setState(
-                  () => _searchQuery = val.trim().isEmpty ? null : val.trim(),
-                );
-                _loadQueries();
-              },
+              onChanged: _onSearchChanged,
               decoration: InputDecoration(
                 hintText: 'Search by ticket ID, plant unit, or keyword...',
                 prefixIcon: const Icon(
@@ -88,55 +136,15 @@ class _AllQueriesScreenState extends State<AllQueriesScreen> {
               ),
             ),
           ),
-
-          // Horizontal Filter Chips
-          Container(
-            color: Colors.white,
-            height: 48,
-            child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              itemCount: _statusFilters.length,
-              separatorBuilder: (_, _) => const SizedBox(width: 8),
-              itemBuilder: (context, index) {
-                final item = _statusFilters[index];
-                final isSelected = _selectedStatus == item['status'];
-
-                return FilterChip(
-                  label: Text(item['label'] as String),
-                  selected: isSelected,
-                  onSelected: (val) {
-                    setState(() {
-                      _selectedStatus = item['status'] as int?;
-                    });
-                    _loadQueries();
-                  },
-                  selectedColor: AppColors.primaryContainer,
-                  labelStyle: TextStyle(
-                    fontSize: 12,
-                    fontWeight: isSelected
-                        ? FontWeight.bold
-                        : FontWeight.normal,
-                    color: isSelected
-                        ? AppColors.primaryDark
-                        : AppColors.textPrimary,
-                  ),
-                  side: BorderSide(
-                    color: isSelected ? AppColors.primary : AppColors.divider,
-                  ),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                );
-              },
-            ),
-          ),
           const Divider(height: 1),
 
           // Query List
           Expanded(
             child: RefreshIndicator(
-              onRefresh: () async => _loadQueries(),
+              onRefresh: () async {
+                _currentPage = 1;
+                _loadQueries();
+              },
               child: BlocBuilder<AdminQueryBloc, AdminQueryState>(
                 builder: (context, state) {
                   if (state is AdminQueryLoading) {
@@ -166,7 +174,10 @@ class _AllQueriesScreenState extends State<AllQueriesScreen> {
                           ),
                           const SizedBox(height: 16),
                           ElevatedButton(
-                            onPressed: _loadQueries,
+                            onPressed: () {
+                              _currentPage = 1;
+                              _loadQueries();
+                            },
                             child: const Text('Retry'),
                           ),
                         ],
@@ -178,19 +189,35 @@ class _AllQueriesScreenState extends State<AllQueriesScreen> {
                     final queries = state.queries;
 
                     if (queries.isEmpty) {
-                      return const EmptyStateWidget(
-                        icon: Icons.assignment_turned_in_outlined,
-                        title: 'No Matching Inquiries',
-                        description:
-                            'No compliance tickets found under the selected filter.',
+                      return ListView(
+                        children: const [
+                          SizedBox(height: 100),
+                          EmptyStateWidget(
+                            icon: Icons.assignment_turned_in_outlined,
+                            title: 'No Matching Inquiries',
+                            description:
+                                'No compliance tickets found under the selected filter.',
+                          ),
+                        ],
                       );
                     }
 
                     return ListView.separated(
+                      controller: _scrollController,
                       padding: const EdgeInsets.all(16.0),
-                      itemCount: queries.length,
+                      itemCount: queries.length + (state.hasMoreData ? 1 : 0),
                       separatorBuilder: (_, _) => const SizedBox(height: 12),
                       itemBuilder: (context, index) {
+                        if (index == queries.length) {
+                          return const Padding(
+                            padding: EdgeInsets.all(16.0),
+                            child: Center(
+                              child: CircularProgressIndicator(
+                                color: AppColors.primary,
+                              ),
+                            ),
+                          );
+                        }
                         final query = queries[index];
                         return QueryCard(
                           query: query,

@@ -14,11 +14,19 @@ class LoadAdminQueriesEvent extends AdminQueryEvent {
   final int? status;
   final int? categoryId;
   final String? search;
+  final int page;
+  final bool isLoadMore;
 
-  const LoadAdminQueriesEvent({this.status, this.categoryId, this.search});
+  const LoadAdminQueriesEvent({
+    this.status,
+    this.categoryId,
+    this.search,
+    this.page = 1,
+    this.isLoadMore = false,
+  });
 
   @override
-  List<Object?> get props => [status, categoryId, search];
+  List<Object?> get props => [status, categoryId, search, page, isLoadMore];
 }
 
 class AssignExpertEvent extends AdminQueryEvent {
@@ -60,11 +68,16 @@ class AdminQueryLoading extends AdminQueryState {}
 class AdminQueriesLoaded extends AdminQueryState {
   final List<QueryModel> queries;
   final int? selectedStatus;
+  final bool hasMoreData;
 
-  const AdminQueriesLoaded({required this.queries, this.selectedStatus});
+  const AdminQueriesLoaded({
+    required this.queries,
+    this.selectedStatus,
+    this.hasMoreData = true,
+  });
 
   @override
-  List<Object?> get props => [queries, selectedStatus];
+  List<Object?> get props => [queries, selectedStatus, hasMoreData];
 }
 
 class AdminQueryActionSuccess extends AdminQueryState {
@@ -99,16 +112,40 @@ class AdminQueryBloc extends Bloc<AdminQueryEvent, AdminQueryState> {
     LoadAdminQueriesEvent event,
     Emitter<AdminQueryState> emit,
   ) async {
-    emit(AdminQueryLoading());
+    if (!event.isLoadMore) {
+      emit(AdminQueryLoading());
+    }
     try {
-      final queries = await queryRepository.getQueries(
+      final newQueries = await queryRepository.getQueries(
         status: event.status,
         categoryId: event.categoryId,
         search: event.search,
+        page: event.page,
+        pageSize: 15,
       );
-      emit(AdminQueriesLoaded(queries: queries, selectedStatus: event.status));
+
+      if (event.isLoadMore && state is AdminQueriesLoaded) {
+        final currentQueries = (state as AdminQueriesLoaded).queries;
+        emit(
+          AdminQueriesLoaded(
+            queries: [...currentQueries, ...newQueries],
+            selectedStatus: event.status,
+            hasMoreData: newQueries.length == 15,
+          ),
+        );
+      } else {
+        emit(
+          AdminQueriesLoaded(
+            queries: newQueries,
+            selectedStatus: event.status,
+            hasMoreData: newQueries.length == 15,
+          ),
+        );
+      }
     } catch (e) {
-      emit(AdminQueryError(e.toString()));
+      if (!event.isLoadMore) {
+        emit(AdminQueryError(e.toString()));
+      }
     }
   }
 

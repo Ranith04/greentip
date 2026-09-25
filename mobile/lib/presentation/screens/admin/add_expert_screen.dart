@@ -20,6 +20,7 @@ class _AddExpertScreenState extends State<AddExpertScreen> {
   final _mobileController = TextEditingController();
   final _specializationController = TextEditingController();
   final _passwordController = TextEditingController();
+  bool _isActive = true;
 
   final List<String> _specializations = [
     'Water Pollution & ETP/ZLD Compliance',
@@ -56,6 +57,7 @@ class _AddExpertScreenState extends State<AddExpertScreen> {
           mobile: _mobileController.text.trim(),
           password: _passwordController.text,
           specialization: _specializationController.text.trim(),
+          status: _isActive ? 1 : 0,
         ),
       );
     }
@@ -197,6 +199,30 @@ class _AddExpertScreenState extends State<AddExpertScreen> {
                     validator: (v) => (v?.length ?? 0) < 6
                         ? 'Password must be >= 6 chars'
                         : null,
+                  ),
+                  const SizedBox(height: 18),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        'Active Status',
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.textPrimary,
+                        ),
+                      ),
+                      Switch(
+                        value: _isActive,
+                        activeThumbColor: AppColors.primary,
+                        onChanged: (val) {
+                          setState(() {
+                            _isActive = val;
+                          });
+                        },
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 36),
 

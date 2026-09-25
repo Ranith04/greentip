@@ -28,9 +28,9 @@ class AdminShellScreen extends StatelessWidget {
           unselectedItemColor: AppColors.textMuted,
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(Icons.dashboard_outlined),
-              activeIcon: Icon(Icons.dashboard_rounded),
-              label: 'Overview',
+              icon: Icon(Icons.home_outlined),
+              activeIcon: Icon(Icons.home_rounded),
+              label: 'Home',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.assignment_outlined),
@@ -40,17 +40,17 @@ class AdminShellScreen extends StatelessWidget {
             BottomNavigationBarItem(
               icon: Icon(Icons.people_outline_rounded),
               activeIcon: Icon(Icons.people_rounded),
+              label: 'Users',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.workspace_premium_outlined),
+              activeIcon: Icon(Icons.workspace_premium_rounded),
               label: 'Experts',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.mail_outline_rounded),
-              activeIcon: Icon(Icons.mail_rounded),
-              label: 'Broadcast',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.tune_rounded),
-              activeIcon: Icon(Icons.tune_rounded),
-              label: 'Settings',
+              icon: Icon(Icons.more_horiz_rounded),
+              activeIcon: Icon(Icons.more_horiz_rounded),
+              label: 'More',
             ),
           ],
         ),

@@ -272,6 +272,66 @@ class _AdminQueryDetailsScreenState extends State<AdminQueryDetailsScreen> {
                         ),
                         const SizedBox(height: 18),
 
+                        // Attachments Section
+                        if (query.attachments.isNotEmpty) ...[
+                          Container(
+                            padding: const EdgeInsets.all(18),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(16),
+                              border: Border.all(color: AppColors.divider),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  'Attachments',
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                const SizedBox(height: 10),
+                                ...query.attachments.map(
+                                  (file) => ListTile(
+                                    contentPadding: EdgeInsets.zero,
+                                    leading: Icon(
+                                      file.fileName.endsWith('.pdf')
+                                          ? Icons.picture_as_pdf
+                                          : Icons.image,
+                                      color: AppColors.primary,
+                                    ),
+                                    title: Text(
+                                      file.fileName,
+                                      style: const TextStyle(fontSize: 14),
+                                    ),
+                                    subtitle: Text(
+                                      '${(file.fileSize / 1024).toStringAsFixed(1)} KB',
+                                      style: const TextStyle(fontSize: 12),
+                                    ),
+                                    trailing: IconButton(
+                                      icon: const Icon(
+                                        Icons.download_rounded,
+                                        color: AppColors.primaryDark,
+                                      ),
+                                      onPressed: () {
+                                        ScaffoldMessenger.of(context).showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'Downloading ${file.fileName}...',
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(height: 18),
+                        ],
+
                         // Assigned Expert Card
                         Container(
                           padding: const EdgeInsets.all(18),
@@ -362,6 +422,58 @@ class _AdminQueryDetailsScreenState extends State<AdminQueryDetailsScreen> {
                           ),
                         ),
                         const SizedBox(height: 18),
+                        
+                        // Timeline Section
+                        Container(
+                          padding: const EdgeInsets.all(18),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(16),
+                            border: Border.all(color: AppColors.divider),
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'Resolution Timeline',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              const SizedBox(height: 16),
+                              _timelineItem(
+                                'Submitted',
+                                DateFormatter.formatWithTime(query.createdAt),
+                                true,
+                                isFirst: true,
+                              ),
+                              _timelineItem(
+                                'Assigned to Expert',
+                                query.assignedAt != null
+                                    ? DateFormatter.formatWithTime(query.assignedAt!)
+                                    : 'Pending',
+                                query.assignedAt != null,
+                              ),
+                              _timelineItem(
+                                'Expert Responded',
+                                query.respondedAt != null
+                                    ? DateFormatter.formatWithTime(query.respondedAt!)
+                                    : 'Pending',
+                                query.respondedAt != null,
+                              ),
+                              _timelineItem(
+                                'Closed / Reviewed',
+                                query.review != null && query.review!.createdAt != null
+                                    ? DateFormatter.formatWithTime(query.review!.createdAt!)
+                                    : (query.status == 4 ? 'Closed' : 'Pending'),
+                                query.status == 4 || query.review != null,
+                                isLast: true,
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 18),
                       ],
                     ),
                   ),
@@ -433,6 +545,88 @@ class _AdminQueryDetailsScreenState extends State<AdminQueryDetailsScreen> {
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
                 color: AppColors.textPrimary,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _timelineItem(
+    String title,
+    String subtitle,
+    bool isCompleted, {
+    bool isFirst = false,
+    bool isLast = false,
+  }) {
+    return IntrinsicHeight(
+      child: Row(
+        children: [
+          SizedBox(
+            width: 30,
+            child: Column(
+              children: [
+                if (!isFirst)
+                  Container(
+                    width: 2,
+                    height: 16,
+                    color: isCompleted ? AppColors.primary : AppColors.divider,
+                  )
+                else
+                  const SizedBox(height: 16),
+                Container(
+                  width: 12,
+                  height: 12,
+                  decoration: BoxDecoration(
+                    color: isCompleted ? AppColors.primary : Colors.white,
+                    border: Border.all(
+                      color: isCompleted ? AppColors.primary : AppColors.divider,
+                      width: 2,
+                    ),
+                    shape: BoxShape.circle,
+                  ),
+                ),
+                if (!isLast)
+                  Expanded(
+                    child: Container(
+                      width: 2,
+                      color: isCompleted ? AppColors.primary : AppColors.divider,
+                    ),
+                  )
+                else
+                  const Expanded(child: SizedBox()),
+              ],
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(bottom: 24.0, top: 12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: isCompleted ? FontWeight.bold : FontWeight.normal,
+                      color: isCompleted
+                          ? AppColors.textPrimary
+                          : AppColors.textMuted,
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    subtitle,
+                    style: TextStyle(
+                      fontSize: 12,
+                      color: isCompleted
+                          ? AppColors.textSecondary
+                          : AppColors.textMuted,
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

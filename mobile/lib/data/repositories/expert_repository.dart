@@ -39,6 +39,7 @@ class ExpertRepository {
     required String mobile,
     required String password,
     String? specialization,
+    int? status,
   }) async {
     final response = await _apiClient.post(
       ApiEndpoints.experts,
@@ -48,6 +49,7 @@ class ExpertRepository {
         'mobile': mobile,
         'password': password,
         'specialization': specialization,
+        if (status != null) 'status': status,
       },
     );
 

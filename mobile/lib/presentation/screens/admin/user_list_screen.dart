@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -53,6 +54,8 @@ class _UserListScreenState extends State<UserListScreen> {
     ),
   ];
 
+  Timer? _debounceTimer;
+
   @override
   void initState() {
     super.initState();
@@ -65,9 +68,20 @@ class _UserListScreenState extends State<UserListScreen> {
     );
   }
 
+  void _onSearchChanged(String val) {
+    if (_debounceTimer?.isActive ?? false) _debounceTimer!.cancel();
+    _debounceTimer = Timer(const Duration(seconds: 1), () {
+      setState(() {
+        _searchQuery = val.trim().isEmpty ? null : val.trim();
+      });
+      _loadUsers();
+    });
+  }
+
   @override
   void dispose() {
     _searchController.dispose();
+    _debounceTimer?.cancel();
     super.dispose();
   }
 
@@ -91,12 +105,7 @@ class _UserListScreenState extends State<UserListScreen> {
             ),
             child: TextField(
               controller: _searchController,
-              onSubmitted: (val) {
-                setState(
-                  () => _searchQuery = val.trim().isEmpty ? null : val.trim(),
-                );
-                _loadUsers();
-              },
+              onChanged: _onSearchChanged,
               decoration: InputDecoration(
                 hintText: 'Search by facility, contact name, or email...',
                 prefixIcon: const Icon(

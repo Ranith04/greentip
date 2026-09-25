@@ -26,6 +26,7 @@ class AddExpertEvent extends ExpertEvent {
   final String mobile;
   final String password;
   final String? specialization;
+  final int status;
 
   const AddExpertEvent({
     required this.name,
@@ -33,10 +34,11 @@ class AddExpertEvent extends ExpertEvent {
     required this.mobile,
     required this.password,
     this.specialization,
+    this.status = 1,
   });
 
   @override
-  List<Object?> get props => [name, email, mobile, password, specialization];
+  List<Object?> get props => [name, email, mobile, password, specialization, status];
 }
 
 class ToggleExpertStatusEvent extends ExpertEvent {
@@ -125,6 +127,7 @@ class ExpertBloc extends Bloc<ExpertEvent, ExpertState> {
         mobile: event.mobile,
         password: event.password,
         specialization: event.specialization,
+        status: event.status,
       );
       emit(const ExpertActionSuccess('Expert added successfully'));
       final experts = await expertRepository.getExperts();

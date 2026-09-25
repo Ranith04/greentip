@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'core/constants/app_strings.dart';
 import 'core/di/injection.dart';
 import 'core/router/app_router.dart';
@@ -22,8 +23,21 @@ void main() async {
   runApp(const GreenTipApp());
 }
 
-class GreenTipApp extends StatelessWidget {
+class GreenTipApp extends StatefulWidget {
   const GreenTipApp({super.key});
+
+  @override
+  State<GreenTipApp> createState() => _GreenTipAppState();
+}
+
+class _GreenTipAppState extends State<GreenTipApp> {
+  late final GoRouter _router;
+
+  @override
+  void initState() {
+    super.initState();
+    _router = AppRouter.getRouter(getIt<AuthBloc>());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +66,7 @@ class GreenTipApp extends StatelessWidget {
         title: AppStrings.appName,
         debugShowCheckedModeBanner: false,
         theme: AppTheme.lightTheme,
-        routerConfig: AppRouter.router,
+        routerConfig: _router,
       ),
     );
   }

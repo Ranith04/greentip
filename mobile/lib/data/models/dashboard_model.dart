@@ -54,6 +54,7 @@ class AdminDashboardModel extends Equatable {
   final int inProgressQueries;
   final int resolvedTodayQueries;
   final int activeExpertsCount;
+  final int totalUsers;
   final int slaBreachedQueriesCount;
   final List<QueryModel> recentUnassignedQueries;
   final List<QueryModel> recentQueries;
@@ -64,6 +65,7 @@ class AdminDashboardModel extends Equatable {
     required this.inProgressQueries,
     required this.resolvedTodayQueries,
     required this.activeExpertsCount,
+    required this.totalUsers,
     required this.slaBreachedQueriesCount,
     required this.recentUnassignedQueries,
     required this.recentQueries,
@@ -76,6 +78,7 @@ class AdminDashboardModel extends Equatable {
       inProgressQueries: json['inProgressQueries'] as int? ?? 0,
       resolvedTodayQueries: json['resolvedTodayQueries'] as int? ?? 0,
       activeExpertsCount: json['activeExpertsCount'] as int? ?? 0,
+      totalUsers: json['totalUsers'] as int? ?? 0,
       slaBreachedQueriesCount: json['slaBreachedQueriesCount'] as int? ?? 0,
       recentUnassignedQueries:
           (json['recentUnassignedQueries'] as List<dynamic>?)
@@ -97,6 +100,7 @@ class AdminDashboardModel extends Equatable {
     inProgressQueries,
     resolvedTodayQueries,
     activeExpertsCount,
+    totalUsers,
     slaBreachedQueriesCount,
     recentUnassignedQueries,
     recentQueries,

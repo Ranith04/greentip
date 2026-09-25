@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -64,6 +65,8 @@ class _ExpertListScreenState extends State<ExpertListScreen> {
     ),
   ];
 
+  Timer? _debounceTimer;
+
   @override
   void initState() {
     super.initState();
@@ -74,9 +77,20 @@ class _ExpertListScreenState extends State<ExpertListScreen> {
     context.read<ExpertBloc>().add(LoadExpertsEvent(search: _searchQuery));
   }
 
+  void _onSearchChanged(String val) {
+    if (_debounceTimer?.isActive ?? false) _debounceTimer!.cancel();
+    _debounceTimer = Timer(const Duration(seconds: 1), () {
+      setState(() {
+        _searchQuery = val.trim().isEmpty ? null : val.trim();
+      });
+      _loadExperts();
+    });
+  }
+
   @override
   void dispose() {
     _searchController.dispose();
+    _debounceTimer?.cancel();
     super.dispose();
   }
 
@@ -94,7 +108,7 @@ class _ExpertListScreenState extends State<ExpertListScreen> {
               Icons.person_add_alt_1_rounded,
               color: AppColors.primary,
             ),
-            onPressed: () => context.push('/admin/add-expert'),
+            onPressed: () => context.push('/admin/experts/new'),
           ),
           const SizedBox(width: 8),
         ],
@@ -110,12 +124,7 @@ class _ExpertListScreenState extends State<ExpertListScreen> {
             ),
             child: TextField(
               controller: _searchController,
-              onSubmitted: (val) {
-                setState(
-                  () => _searchQuery = val.trim().isEmpty ? null : val.trim(),
-                );
-                _loadExperts();
-              },
+              onChanged: _onSearchChanged,
               decoration: InputDecoration(
                 hintText: 'Search expert by name, specialization, or email...',
                 prefixIcon: const Icon(
@@ -306,7 +315,7 @@ class _ExpertListScreenState extends State<ExpertListScreen> {
           'Add Expert',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        onPressed: () => context.push('/admin/add-expert'),
+        onPressed: () => context.push('/admin/experts/new'),
       ),
     );
   }
