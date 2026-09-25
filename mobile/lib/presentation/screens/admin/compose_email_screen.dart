@@ -18,6 +18,7 @@ class _ComposeEmailScreenState extends State<ComposeEmailScreen> {
   final _subjectController = TextEditingController();
   final _messageController = TextEditingController();
   String _targetAudience = 'All Registered Facilities';
+  final List<String> _attachedFiles = [];
 
   final List<Map<String, String>> _audienceOptions = [
     {'name': 'All Registered Facilities', 'count': '142 units'},
@@ -100,6 +101,22 @@ class _ComposeEmailScreenState extends State<ComposeEmailScreen> {
                   height: 1.4,
                 ),
               ),
+              if (_attachedFiles.isNotEmpty) ...[
+                const Divider(height: 20),
+                const Text(
+                  'Attachments:',
+                  style: TextStyle(fontSize: 12, color: AppColors.textMuted),
+                ),
+                const SizedBox(height: 4),
+                Wrap(
+                  spacing: 4,
+                  children: _attachedFiles.map((f) => Chip(
+                    label: Text(f, style: const TextStyle(fontSize: 10)),
+                    padding: EdgeInsets.zero,
+                    visualDensity: VisualDensity.compact,
+                  )).toList(),
+                ),
+              ],
             ],
           ),
         ),
@@ -274,6 +291,67 @@ class _ComposeEmailScreenState extends State<ComposeEmailScreen> {
                     validator: (v) => (v?.length ?? 0) < 15
                         ? 'Message body too short (min 15 chars)'
                         : null,
+                  ),
+                  const SizedBox(height: 24),
+
+                  const Text(
+                    'Attachments',
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600),
+                  ),
+                  const SizedBox(height: 8),
+                  if (_attachedFiles.isNotEmpty)
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 12),
+                      child: Wrap(
+                        spacing: 8,
+                        runSpacing: 8,
+                        children: _attachedFiles.map((file) {
+                          return Chip(
+                            label: Text(
+                              file,
+                              style: const TextStyle(fontSize: 12),
+                            ),
+                            onDeleted: () {
+                              setState(() {
+                                _attachedFiles.remove(file);
+                              });
+                            },
+                            backgroundColor: AppColors.surface,
+                            deleteIconColor: AppColors.error,
+                            side: const BorderSide(color: AppColors.divider),
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                  SizedBox(
+                    width: double.infinity,
+                    child: OutlinedButton.icon(
+                      onPressed: () {
+                        // Mock adding an attachment
+                        setState(() {
+                          _attachedFiles.add('circular_document_${_attachedFiles.length + 1}.pdf');
+                        });
+                      },
+                      style: OutlinedButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 14),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        side: const BorderSide(color: AppColors.primary),
+                      ),
+                      icon: const Icon(
+                        Icons.attach_file,
+                        color: AppColors.primary,
+                        size: 20,
+                      ),
+                      label: const Text(
+                        'Upload Document',
+                        style: TextStyle(
+                          color: AppColors.primary,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
                   ),
                   const SizedBox(height: 28),
 

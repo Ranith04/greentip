@@ -35,7 +35,7 @@ class AdminMoreScreen extends StatelessWidget {
                     icon: Icons.mail_outline_rounded,
                     title: 'Bulk Email / Broadcast',
                     subtitle: 'Send emails to users and experts',
-                    onTap: () => context.push('/admin/broadcast'),
+                    onTap: () => context.push('/admin/bulk-email-logs'),
                   ),
                   const Divider(height: 1),
                   _navTile(

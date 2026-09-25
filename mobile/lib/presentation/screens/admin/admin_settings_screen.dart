@@ -14,9 +14,9 @@ class AdminSettingsScreen extends StatefulWidget {
 }
 
 class _AdminSettingsScreenState extends State<AdminSettingsScreen> {
-  bool _autoEscalation = true;
-  bool _maintenanceMode = false;
-  bool _emailAlerts = true;
+  bool _newQueryAlerts = true;
+  bool _expertResponses = true;
+  bool _systemAlerts = true;
 
   @override
   Widget build(BuildContext context) {
@@ -82,9 +82,9 @@ class _AdminSettingsScreenState extends State<AdminSettingsScreen> {
             ),
             const SizedBox(height: 24),
 
-            // Modules
+            // Profile Details
             const Text(
-              'Administrative Modules',
+              'Profile Details',
               style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
@@ -92,78 +92,28 @@ class _AdminSettingsScreenState extends State<AdminSettingsScreen> {
               ),
             ),
             const SizedBox(height: 10),
-
             Container(
+              padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(color: AppColors.divider),
               ),
-              child: Column(
+              child: const Column(
                 children: [
-                  _navTile(
-                    icon: Icons.business_outlined,
-                    title: 'Industrial Facilities Directory',
-                    subtitle:
-                        'Manage plant units, consent data & state PCB links',
-                    onTap: () => context.push('/admin/users'),
-                  ),
-                  const Divider(height: 1),
-                  _navTile(
-                    icon: Icons.category_outlined,
-                    title: 'Statutory Categories & Domains',
-                    subtitle:
-                        'Water, Air, Hazardous, Forest, and Safety modules',
-                    onTap: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text(
-                            'All 6 statutory compliance domains active.',
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                  const Divider(height: 1),
-                  _navTile(
-                    icon: Icons.insights_rounded,
-                    title: 'SLA Analytics & Monthly Reports',
-                    subtitle:
-                        'Resolution turnaround KPIs and compliance trends',
-                    onTap: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text(
-                            'Average SLA response time: 26.4 hours.',
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-                  const Divider(height: 1),
-                  _navTile(
-                    icon: Icons.security_rounded,
-                    title: 'System Security & Audit Trail',
-                    subtitle:
-                        'Authentication logs, role changes, and IP audits',
-                    onTap: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text(
-                            'All database transactions signed and encrypted.',
-                          ),
-                        ),
-                      );
-                    },
-                  ),
+                  _ProfileRow(label: 'Name', value: 'System Administrator'),
+                  Divider(height: 24),
+                  _ProfileRow(label: 'Role', value: 'Super Admin'),
+                  Divider(height: 24),
+                  _ProfileRow(label: 'Department', value: 'Environmental Compliance (IT)'),
                 ],
               ),
             ),
             const SizedBox(height: 24),
 
-            // Governance & SLA Policies
+            // Change Password
             const Text(
-              'Governance & SLA Rules',
+              'Security',
               style: TextStyle(
                 fontSize: 15,
                 fontWeight: FontWeight.bold,
@@ -171,7 +121,51 @@ class _AdminSettingsScreenState extends State<AdminSettingsScreen> {
               ),
             ),
             const SizedBox(height: 10),
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: AppColors.divider),
+              ),
+              child: ListTile(
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Navigating to Change Password screen...'),
+                    ),
+                  );
+                },
+                leading: Container(
+                  padding: const EdgeInsets.all(8),
+                  decoration: BoxDecoration(
+                    color: AppColors.primaryContainer.withValues(alpha: 0.5),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: const Icon(Icons.lock_outline_rounded, color: AppColors.primaryDark, size: 20),
+                ),
+                title: const Text(
+                  'Change Password',
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+                ),
+                trailing: const Icon(
+                  Icons.chevron_right_rounded,
+                  size: 20,
+                  color: AppColors.textMuted,
+                ),
+              ),
+            ),
+            const SizedBox(height: 24),
 
+            // Notification Preferences
+            const Text(
+              'Notification Preferences',
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+                color: AppColors.textPrimary,
+              ),
+            ),
+            const SizedBox(height: 10),
             Container(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -181,54 +175,54 @@ class _AdminSettingsScreenState extends State<AdminSettingsScreen> {
               child: Column(
                 children: [
                   SwitchListTile(
-                    value: _autoEscalation,
+                    value: _newQueryAlerts,
                     activeThumbColor: AppColors.primary,
                     title: const Text(
-                      'Auto-Escalate Unassigned Queries',
+                      'New Query Alerts',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     subtitle: const Text(
-                      'Notify supervisor if unassigned > 24 hours',
+                      'Receive notifications for new facility queries',
                       style: TextStyle(fontSize: 12),
                     ),
-                    onChanged: (val) => setState(() => _autoEscalation = val),
+                    onChanged: (val) => setState(() => _newQueryAlerts = val),
                   ),
                   const Divider(height: 1),
                   SwitchListTile(
-                    value: _emailAlerts,
+                    value: _expertResponses,
                     activeThumbColor: AppColors.primary,
                     title: const Text(
-                      'Real-time Dispatch Notifications',
+                      'Expert Responses',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     subtitle: const Text(
-                      'Trigger immediate email to experts upon ticket assignment',
+                      'Alert when an expert replies to a query',
                       style: TextStyle(fontSize: 12),
                     ),
-                    onChanged: (val) => setState(() => _emailAlerts = val),
+                    onChanged: (val) => setState(() => _expertResponses = val),
                   ),
                   const Divider(height: 1),
                   SwitchListTile(
-                    value: _maintenanceMode,
-                    activeThumbColor: AppColors.error,
+                    value: _systemAlerts,
+                    activeThumbColor: AppColors.primary,
                     title: const Text(
-                      'Portal Maintenance Mode',
+                      'System Alerts',
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
                     subtitle: const Text(
-                      'Temporarily pause client submissions for scheduled upgrades',
+                      'Important platform updates and maintenance info',
                       style: TextStyle(fontSize: 12),
                     ),
-                    onChanged: (val) => setState(() => _maintenanceMode = val),
+                    onChanged: (val) => setState(() => _systemAlerts = val),
                   ),
                 ],
               ),
@@ -283,35 +277,41 @@ class _AdminSettingsScreenState extends State<AdminSettingsScreen> {
     );
   }
 
-  Widget _navTile({
-    required IconData icon,
-    required String title,
-    required String subtitle,
-    required VoidCallback onTap,
-  }) {
-    return ListTile(
-      onTap: onTap,
-      leading: Container(
-        padding: const EdgeInsets.all(8),
-        decoration: BoxDecoration(
-          color: AppColors.primaryContainer.withValues(alpha: 0.5),
-          borderRadius: BorderRadius.circular(10),
+}
+
+class _ProfileRow extends StatelessWidget {
+  final String label;
+  final String value;
+
+  const _ProfileRow({required this.label, required this.value});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          width: 100,
+          child: Text(
+            label,
+            style: const TextStyle(
+              fontSize: 13,
+              color: AppColors.textMuted,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
         ),
-        child: Icon(icon, color: AppColors.primaryDark, size: 20),
-      ),
-      title: Text(
-        title,
-        style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
-      ),
-      subtitle: Text(
-        subtitle,
-        style: const TextStyle(fontSize: 11, color: AppColors.textSecondary),
-      ),
-      trailing: const Icon(
-        Icons.chevron_right_rounded,
-        size: 20,
-        color: AppColors.textMuted,
-      ),
+        Expanded(
+          child: Text(
+            value,
+            style: const TextStyle(
+              fontSize: 14,
+              color: AppColors.textPrimary,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

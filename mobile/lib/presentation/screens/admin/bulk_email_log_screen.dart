@@ -198,6 +198,18 @@ class _BulkEmailLogScreenState extends State<BulkEmailLogScreen> {
           },
         ),
       ),
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: AppColors.primary,
+        onPressed: () => context.push('/admin/broadcast'),
+        icon: const Icon(Icons.edit_document, color: Colors.white),
+        label: const Text(
+          'Compose Broadcast',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
     );
   }
 }
