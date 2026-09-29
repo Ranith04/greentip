@@ -157,6 +157,21 @@ using (var scope = app.Services.CreateScope())
         });
         dbContext.SaveChanges();
     }
+
+    if (!dbContext.Users.Any(u => u.Email == "admin@greentip.gov.in"))
+    {
+        dbContext.Users.Add(new GreenTIP.Domain.Entities.User
+        {
+            Name = "System Admin",
+            Email = "admin@greentip.gov.in",
+            Password = passwordHasher.HashPassword("admin123"),
+            RoleType = "0",
+            Status = "1",
+            ContactNo = 9876543210,
+            CreatedOn = DateTime.UtcNow
+        });
+        dbContext.SaveChanges();
+    }
 }
 
 app.Run();
